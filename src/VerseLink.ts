@@ -1,5 +1,6 @@
 export default class VerseLink {
 	constructor(
+		private version: string,
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
@@ -23,8 +24,7 @@ export default class VerseLink {
 
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
-		const version = 1;
-		let url = `${base}/${version}/${this.bookUrl}.${this.chapter}.${this.verse}`;
+		let url = `${base}/${this.version}/${this.bookUrl}.${this.chapter}.${this.verse}`;
 		if (this.verseEnd) url += `-${this.verseEnd}`;
 		return url;
 	}

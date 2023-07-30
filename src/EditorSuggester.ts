@@ -91,6 +91,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 
 		return [
 			new VerseLink(
+				this.settings.bibleVersion,
 				bookUrl,
 				bookName,
 				chapterNumber,

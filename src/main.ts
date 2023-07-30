@@ -10,16 +10,12 @@ import {
 	Setting,
 } from "obsidian";
 import SettingTab from "./SettingTab";
+import {
+	DEFAULT_SETTINGS,
+	ObsidianYouversionLinkerSettings,
+} from "./SettingsData";
 
 // Remember to rename these classes and interfaces!
-
-interface ObsidianYouversionLinkerSettings {
-	mySetting: string;
-}
-
-const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
-	mySetting: "default",
-};
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
