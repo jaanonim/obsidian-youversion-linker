@@ -26,12 +26,10 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		const currentContent = editor
 			.getLine(cursor.line)
 			.substring(0, cursor.ch);
-		console.log(currentContent);
 
 		const REG = /([123]\s?)?[A-z]+\s?\d{1,3}:\d{1,3}(-\d{1,3})?/;
 		const match = currentContent.match(REG)?.first() ?? "";
 		if (match) {
-			console.log("match");
 			return {
 				end: cursor,
 				start: {

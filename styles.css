@@ -6,3 +6,20 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.preview-youversion {
+	display: "block";
+	background-color: var(--background-secondary);
+	border: var(--border-width) var(--background-modifier-border-hover) solid;
+	color: var(--text-normal);
+	border-radius: var(--radius-s);
+	padding: var(--size-2-2);
+	pointer-events: none;
+	transition: all;
+}
+
+.info-youversion {
+	display: block;
+	color: var(--text-faint);
+	text-align: right;
+}
