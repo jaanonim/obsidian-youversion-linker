@@ -3,9 +3,8 @@
 	"name": "Obsidian YouVersion linker",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
+	"description": "Obsidian plugin that automatically link bible verses to YouVersion bible.",
 	"author": "jaanonim",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"authorUrl": "https://jaanonim.github.io/",
 	"isDesktopOnly": false
 }
