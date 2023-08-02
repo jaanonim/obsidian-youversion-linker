@@ -15,6 +15,7 @@ import {
 	ObsidianYouversionLinkerSettings,
 } from "./SettingsData";
 import linkPreview from "./LinkPreview";
+import GenerateLinks from "./GenerateLinks";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
@@ -24,6 +25,12 @@ export default class ObsidianYouversionLinker extends Plugin {
 		this.registerMarkdownPostProcessor(linkPreview);
 		this.registerEditorSuggest(new EditorSuggester(this, this.settings));
 		this.addSettingTab(new SettingTab(this.app, this));
+		this.addCommand({
+			id: "generate-links",
+			name: "Generate links",
+			editorCallback: (editor: Editor, view: MarkdownView) =>
+				GenerateLinks(editor, view, this.settings),
+		});
 	}
 
 	onunload() {}
