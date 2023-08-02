@@ -345,7 +345,7 @@ const plShortBooks = {
 
 const plShortBooksV2 = {
 	rdz: "GEN",
-	wj: "EXO",
+	wyj: "EXO",
 	kpł: "LEV",
 	lb: "NUM",
 	pwt: "DEU",
@@ -367,7 +367,7 @@ const plShortBooksV2 = {
 	koh: "ECC",
 	pnp: "SNG",
 	iz: "ISA",
-	jer: "JER",
+	jr: "JER",
 	lm: "LAM",
 	ez: "EZK",
 	dn: "DAN",
