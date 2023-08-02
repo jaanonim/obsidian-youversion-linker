@@ -16,8 +16,6 @@ import {
 } from "./SettingsData";
 import linkPreview from "./LinkPreview";
 
-// Remember to rename these classes and interfaces!
-
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
 

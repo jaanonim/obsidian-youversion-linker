@@ -27,7 +27,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 			.getLine(cursor.line)
 			.substring(0, cursor.ch);
 
-		const REG = /([123]\s?)?[A-z]+\s?\d{1,3}:\d{1,3}(-\d{1,3})?/;
+		const REG = /([123]\s?)?[A-z]+\s?\d{1,3}[:,]\d{1,3}(-\d{1,3})?/;
 		const match = currentContent.match(REG)?.first() ?? "";
 		if (match) {
 			return {
@@ -80,7 +80,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		}
 
 		const numbersPartsOfQueryString = query.substring(bookName.length);
-		const numbers = numbersPartsOfQueryString.split(/[-:]+/);
+		const numbers = numbersPartsOfQueryString.split(/[-:,]+/);
 
 		const chapterNumber = parseInt(numbers[0]);
 		const verseNumber = parseInt(numbers[1]);
