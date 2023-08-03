@@ -1,6 +1,6 @@
 export const linkRegex =
-	/([123]\s?)?[A-z]+\s?\d{1,3}[:,.]\s?\d{1,3}(-\d{1,3})?/g;
+	/([123]\s?)?\p{L}+\s?\d{1,3}[:,.]\s?\d{1,3}(-\d{1,3})?/gu;
 
-export const bookRegex = /([123]\s?)?[A-z]+/;
+export const bookRegex = /([123]\s?)?\p{L}+/u;
 
 export const separatorRegex = /[-:,.]+/;

@@ -1,0 +1,342 @@
+{
+    "GEN": [
+        "rodzaju",
+        "księgarodzaju",
+        "rdz"
+    ],
+    "EXO": [
+        "wyjścia",
+        "księgawyjścia",
+        "wj",
+        "wyj"
+    ],
+    "LEV": [
+        "kapłańska",
+        "księgakapłańska",
+        "kpl",
+        "kpł"
+    ],
+    "NUM": [
+        "liczb",
+        "księgaliczb",
+        "lb"
+    ],
+    "DEU": [
+        "powtórzonegoprawa",
+        "księgapowtórzonegoprawa",
+        "pwt"
+    ],
+    "JOS": [
+        "jozuego",
+        "księgajozuego",
+        "joz"
+    ],
+    "JDG": [
+        "sędziów",
+        "księgasędziów",
+        "sdz"
+    ],
+    "RUT": [
+        "rut",
+        "księgarut",
+        "rt"
+    ],
+    "1SA": [
+        "1samuela",
+        "1księgasamuela",
+        "1sm"
+    ],
+    "2SA": [
+        "2samuela",
+        "2księgasamuela",
+        "2sm"
+    ],
+    "1KI": [
+        "1królewska",
+        "1księgakrólewska",
+        "1krl"
+    ],
+    "2KI": [
+        "2królewska",
+        "2księgakrólewska",
+        "2krl"
+    ],
+    "1CH": [
+        "kronik",
+        "księgakronik",
+        "1krn"
+    ],
+    "2CH": [
+        "2kronik",
+        "2księgakronik",
+        "2krn"
+    ],
+    "EZR": [
+        "ezdrasza",
+        "księgaezdrasza",
+        "ezd"
+    ],
+    "NEH": [
+        "nehemiasza",
+        "księganehemiasza",
+        "ne"
+    ],
+    "EST": [
+        "estery",
+        "księgaestery",
+        "est"
+    ],
+    "JOB": [
+        "hioba",
+        "księgahioba",
+        "hi"
+    ],
+    "PSA": [
+        "psalmów",
+        "księgapsalmów",
+        "ps"
+    ],
+    "PRO": [
+        "przysłów",
+        "księgaprzysłów",
+        "prz"
+    ],
+    "ECC": [
+        "kaznodziei",
+        "księgakaznodziei",
+        "koh"
+    ],
+    "SNG": [
+        "pieśńnadpieśniami",
+        "pnp"
+    ],
+    "ISA": [
+        "izajasza",
+        "księgaizajasza",
+        "iz"
+    ],
+    "JER": [
+        "jeremiasza",
+        "księgajeremiasza",
+        "jer",
+        "jr"
+    ],
+    "LAM": [
+        "lamentacji",
+        "księgalamentacji",
+        "lm"
+    ],
+    "EZK": [
+        "ezechiela",
+        "księgaezechiela",
+        "ez"
+    ],
+    "DAN": [
+        "daniela",
+        "księgadaniela",
+        "dn"
+    ],
+    "HOS": [
+        "ozeasza",
+        "księgaozeasza",
+        "oz"
+    ],
+    "JOL": [
+        "joela",
+        "księgajoela",
+        "jl"
+    ],
+    "AMO": [
+        "amosa",
+        "księgaamosa",
+        "am"
+    ],
+    "OBA": [
+        "abdiasza",
+        "księgaabdiasza",
+        "abd",
+        "ab"
+    ],
+    "JON": [
+        "jonasza",
+        "księgajonasza",
+        "jon"
+    ],
+    "MIC": [
+        "micheasza",
+        "księgamicheasza",
+        "mi"
+    ],
+    "NAM": [
+        "nahuma",
+        "księganahuma",
+        "na"
+    ],
+    "HAB": [
+        "habakuka",
+        "księgahabakuka",
+        "ha"
+    ],
+    "ZEP": [
+        "sofoniasza",
+        "księgasofoniasza",
+        "so"
+    ],
+    "HAG": [
+        "aggeusza",
+        "księgaaggeusza",
+        "ag"
+    ],
+    "ZEC": [
+        "zachariasza",
+        "księgazachariasza",
+        "za"
+    ],
+    "MAL": [
+        "malachiasza",
+        "księgamalachiasza",
+        "mal",
+        "ml"
+    ],
+    "MAT": [
+        "mateusza",
+        "ewangeliawedługmateusza",
+        "mt"
+    ],
+    "MRK": [
+        "marka",
+        "ewangeliawedługmarka",
+        "mk"
+    ],
+    "LUK": [
+        "łukasza",
+        "ewangeliawedługłukasza",
+        "łk"
+    ],
+    "JHN": [
+        "jana",
+        "ewangeliawedługjana",
+        "jn",
+        "j"
+    ],
+    "ACT": [
+        "dziejówapostolskich",
+        "dziejeapostolskie",
+        "dz"
+    ],
+    "ROM": [
+        "rzymian",
+        "listdorzymian",
+        "rz"
+    ],
+    "1CO": [
+        "1koryntian",
+        "1listdokoryntian",
+        "1kor"
+    ],
+    "2CO": [
+        "2koryntian",
+        "2listdokoryntian",
+        "2kor"
+    ],
+    "GAL": [
+        "galatów",
+        "listdogalatów",
+        "ga",
+        "gal"
+    ],
+    "EPH": [
+        "efezjan",
+        "listdoefezjan",
+        "ef"
+    ],
+    "PHP": [
+        "filipian",
+        "listdofilipian",
+        "flp"
+    ],
+    "COL": [
+        "kolosan",
+        "listdokolosan",
+        "kol"
+    ],
+    "1TH": [
+        "1tesaloniczan",
+        "1listdotesaloniczan",
+        "1tes"
+    ],
+    "2TH": [
+        "2tesaloniczan",
+        "2listdotesaloniczan",
+        "2tes"
+    ],
+    "1TI": [
+        "1tymoteusza",
+        "1listdotymoteusza",
+        "1tm",
+        "1tym"
+    ],
+    "2TI": [
+        "2tymoteusza",
+        "2listdotymoteusza",
+        "2tm",
+        "2tym"
+    ],
+    "TIT": [
+        "tytusa",
+        "listdotytusa",
+        "tt",
+        "tyt"
+    ],
+    "PHM": [
+        "filemona",
+        "listdofilemona",
+        "flm"
+    ],
+    "HEB": [
+        "hebrajczyków",
+        "listdohebrajczyków",
+        "hbr"
+    ],
+    "JAS": [
+        "jakuba",
+        "listjakuba",
+        "jk"
+    ],
+    "1PE": [
+        "1piotra",
+        "1listpiotra",
+        "1p"
+    ],
+    "2PE": [
+        "2piotra",
+        "2listpiotra",
+        "2p"
+    ],
+    "1JN": [
+        "1jana",
+        "1listjana",
+        "1j"
+    ],
+    "2JN": [
+        "2jana",
+        "2listjana",
+        "2j"
+    ],
+    "3JN": [
+        "3jana",
+        "3listjana",
+        "3j"
+    ],
+    "JUD": [
+        "judy",
+        "listjudy",
+        "jud"
+    ],
+    "REV": [
+        "objawienia",
+        "księgaobjawienia",
+        "obj",
+        "ap"
+    ]
+}

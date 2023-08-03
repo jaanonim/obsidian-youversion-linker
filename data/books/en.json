@@ -1,0 +1,265 @@
+{
+    "GEN": [
+        "genesis",
+        "gen"
+    ],
+    "EXO": [
+        "exodus",
+        "exo"
+    ],
+    "LEV": [
+        "leviticus",
+        "lev"
+    ],
+    "NUM": [
+        "numbers",
+        "num"
+    ],
+    "DEU": [
+        "deuteronomy",
+        "deu"
+    ],
+    "JOS": [
+        "joshua",
+        "jos"
+    ],
+    "JDG": [
+        "judges",
+        "jdg"
+    ],
+    "RUT": [
+        "ruth",
+        "rut"
+    ],
+    "1SA": [
+        "1samuel",
+        "1sa"
+    ],
+    "2SA": [
+        "2samuel",
+        "2sa"
+    ],
+    "1KI": [
+        "1kings",
+        "1ki"
+    ],
+    "2KI": [
+        "2kings",
+        "2ki"
+    ],
+    "1CH": [
+        "1chronicles",
+        "1ch"
+    ],
+    "2CH": [
+        "2chronicles",
+        "2ch"
+    ],
+    "EZR": [
+        "ezra",
+        "ezr"
+    ],
+    "NEH": [
+        "nehemiah",
+        "neh"
+    ],
+    "EST": [
+        "esther",
+        "est"
+    ],
+    "JOB": [
+        "job"
+    ],
+    "PSA": [
+        "psalm",
+        "psa"
+    ],
+    "PRO": [
+        "proverbs",
+        "pro"
+    ],
+    "ECC": [
+        "ecclesiastes",
+        "ecc"
+    ],
+    "SNG": [
+        "songofsolomon",
+        "sng"
+    ],
+    "ISA": [
+        "isaiah",
+        "isa"
+    ],
+    "JER": [
+        "jeremiah",
+        "jer"
+    ],
+    "LAM": [
+        "lamentations",
+        "lam"
+    ],
+    "EZK": [
+        "ezekiel",
+        "ezk"
+    ],
+    "DAN": [
+        "daniel",
+        "dan"
+    ],
+    "HOS": [
+        "hosea",
+        "hos"
+    ],
+    "JOL": [
+        "joel",
+        "jol"
+    ],
+    "AMO": [
+        "amos",
+        "amo"
+    ],
+    "OBA": [
+        "obadiah",
+        "oba"
+    ],
+    "JON": [
+        "jonah",
+        "jon"
+    ],
+    "MIC": [
+        "micah",
+        "mic"
+    ],
+    "NAM": [
+        "nahum",
+        "nam"
+    ],
+    "HAB": [
+        "habakkuk",
+        "hab"
+    ],
+    "ZEP": [
+        "zephaniah",
+        "zep"
+    ],
+    "HAG": [
+        "haggai",
+        "hag"
+    ],
+    "ZEC": [
+        "zechariah",
+        "zec"
+    ],
+    "MAL": [
+        "malachi",
+        "mal"
+    ],
+    "MAT": [
+        "matthew",
+        "mat"
+    ],
+    "MRK": [
+        "mark",
+        "mrk"
+    ],
+    "LUK": [
+        "luke",
+        "luk"
+    ],
+    "JHN": [
+        "john",
+        "jhn"
+    ],
+    "ACT": [
+        "acts",
+        "act"
+    ],
+    "ROM": [
+        "romans",
+        "rom"
+    ],
+    "1CO": [
+        "1corinthians",
+        "1co"
+    ],
+    "2CO": [
+        "2corinthians",
+        "2co"
+    ],
+    "GAL": [
+        "galatians",
+        "gal"
+    ],
+    "EPH": [
+        "ephesians",
+        "eph"
+    ],
+    "PHP": [
+        "philippians",
+        "php"
+    ],
+    "COL": [
+        "colossians",
+        "col"
+    ],
+    "1TH": [
+        "1thessalonians",
+        "1th"
+    ],
+    "2TH": [
+        "2thessalonians",
+        "2th"
+    ],
+    "1TI": [
+        "1timothy",
+        "1ti"
+    ],
+    "2TI": [
+        "2timothy",
+        "2ti"
+    ],
+    "TIT": [
+        "titus",
+        "tit"
+    ],
+    "PHM": [
+        "philemon",
+        "phm"
+    ],
+    "HEB": [
+        "hebrews",
+        "heb"
+    ],
+    "JAS": [
+        "james",
+        "jas"
+    ],
+    "1PE": [
+        "1peter",
+        "1pe"
+    ],
+    "2PE": [
+        "2peter",
+        "2pe"
+    ],
+    "1JN": [
+        "1john",
+        "1jn"
+    ],
+    "2JN": [
+        "2john",
+        "2jn"
+    ],
+    "3JN": [
+        "3john",
+        "3jn"
+    ],
+    "JUD": [
+        "jude",
+        "jud"
+    ],
+    "REV": [
+        "revelation",
+        "rev"
+    ]
+}
