@@ -16,6 +16,7 @@ import {
 } from "./SettingsData";
 import linkPreview from "./LinkPreview";
 import GenerateLinks from "./GenerateLinks";
+import { linkPreviewPlugin } from "./LinkPreviewView";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
@@ -24,6 +25,7 @@ export default class ObsidianYouversionLinker extends Plugin {
 		await this.loadSettings();
 		this.registerMarkdownPostProcessor(linkPreview);
 		this.registerEditorSuggest(new EditorSuggester(this, this.settings));
+		this.registerEditorExtension([linkPreviewPlugin]);
 		this.addSettingTab(new SettingTab(this.app, this));
 		this.addCommand({
 			id: "generate-links",

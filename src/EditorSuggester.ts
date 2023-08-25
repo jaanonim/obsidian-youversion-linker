@@ -31,7 +31,6 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 
 		const match = currentContent.match(linkRegex)?.first() ?? "";
 		if (match) {
-			console.log(match);
 			return {
 				end: cursor,
 				start: {
