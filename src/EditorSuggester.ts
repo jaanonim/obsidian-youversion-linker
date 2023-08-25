@@ -29,19 +29,23 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 			.getLine(cursor.line)
 			.substring(0, cursor.ch);
 
-		const match = currentContent.match(linkRegex)?.first() ?? "";
-		if (match) {
-			console.log(match);
-			return {
-				end: cursor,
-				start: {
-					line: cursor.line,
-					ch: currentContent.lastIndexOf(match),
-				},
-				query: match,
-			};
-		}
-		return null;
+		const matches = currentContent.match(linkRegex);
+		if (!matches) return null;
+		return matches?.reduce((prev, match) => {
+			if (match && prev === null) {
+				const end = currentContent.lastIndexOf(match);
+				if (end === 0 || currentContent.charAt(end - 1) !== "[")
+					return {
+						end: cursor,
+						start: {
+							line: cursor.line,
+							ch: end,
+						},
+						query: match,
+					};
+			}
+			return null;
+		}, null);
 	}
 	getSuggestions(
 		context: EditorSuggestContext
