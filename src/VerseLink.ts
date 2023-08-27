@@ -4,7 +4,7 @@ export default class VerseLink {
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
-		private verse: number,
+		private verse: number | undefined,
 		private verseEnd: number | undefined
 	) {}
 
@@ -13,9 +13,11 @@ export default class VerseLink {
 	}
 
 	toSimpleText() {
-		return this.verseEnd
-			? `${this.book} ${this.chapter}:${this.verse}-${this.verseEnd}`
-			: `${this.book} ${this.chapter}:${this.verse}`;
+		return this.verse
+			? this.verseEnd
+				? `${this.book} ${this.chapter}:${this.verse}-${this.verseEnd}`
+				: `${this.book} ${this.chapter}:${this.verse}`
+			: `${this.book} ${this.chapter}`;
 	}
 
 	toLink(): string {
@@ -24,8 +26,11 @@ export default class VerseLink {
 
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
-		let url = `${base}/${this.version}/${this.bookUrl}.${this.chapter}.${this.verse}`;
-		if (this.verseEnd) url += `-${this.verseEnd}`;
+		let url = `${base}/${this.version}/${this.bookUrl}.${this.chapter}`;
+		if (this.verse) {
+			url += `.${this.verse}`;
+			if (this.verseEnd) url += `-${this.verseEnd}`;
+		}
 		return url;
 	}
 }

@@ -90,7 +90,7 @@ export function getSuggestionsFromQuery(
 	const numbers = numbersPartsOfQueryString.split(separatorRegex);
 
 	const chapterNumber = parseInt(numbers[0]);
-	const verseNumber = parseInt(numbers[1]);
+	const verseNumber = numbers.length > 1 ? parseInt(numbers[1]) : undefined;
 	const verseEndNumber =
 		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
 

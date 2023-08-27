@@ -30,6 +30,20 @@ async function processLink(link: HTMLAnchorElement) {
 			""
 		);
 		const data = JSON.parse(json_text);
+
+		console.log(data.props.pageProps);
+		if (data.props.pageProps.type !== "verse") {
+			const popup = document.createElement("div");
+			popup.addClass("preview-youversion");
+
+			popup
+				.createSpan({ cls: "error-youversion" })
+				.setText("Verse preview is unavailable for this type of link.");
+
+			tippy(link, { content: popup, allowHTML: true });
+			return;
+		}
+
 		const info =
 			data.props.pageProps.referenceTitle.title +
 			" " +

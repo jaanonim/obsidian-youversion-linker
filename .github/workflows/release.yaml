@@ -2,7 +2,7 @@ name: Obsidian Plugin Release
 # credits: https://github.com/scambier/obsidian-omnisearch/blob/master/.github/workflows/release.yml
 
 env:
-    VERSION: v1.0.1
+    VERSION: v1.0.2
 
 on: [pull_request, workflow_dispatch]
 

@@ -23,3 +23,9 @@ If your plugin does not need CSS, delete this file.
 	color: var(--text-faint);
 	text-align: right;
 }
+
+.error-youversion {
+	display: block;
+	text-align: center;
+	color: var(--text-error);
+}
