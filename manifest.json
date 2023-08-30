@@ -1,6 +1,6 @@
 {
-	"id": "obsidian-youversion-linker",
-	"name": "Obsidian YouVersion linker",
+	"id": "youversion-linker",
+	"name": "YouVersion linker",
 	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Obsidian plugin that automatically link bible verses to YouVersion bible.",
