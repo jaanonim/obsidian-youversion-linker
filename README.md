@@ -1,6 +1,6 @@
 # Obsidian YouVersion Plugin
 
-**Obsidian plugin that automatically link bible verses to YouVersion bible.**
+**Automatically link bible verses in your notes to YouVersion bible.**
 
 You need to just type for example: `John 1:1-6`.
 

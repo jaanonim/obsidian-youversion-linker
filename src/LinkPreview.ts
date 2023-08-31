@@ -31,7 +31,6 @@ async function processLink(link: HTMLAnchorElement) {
 		);
 		const data = JSON.parse(json_text);
 
-		console.log(data.props.pageProps);
 		if (data.props.pageProps.type !== "verse") {
 			const popup = document.createElement("div");
 			popup.addClass("preview-youversion");
