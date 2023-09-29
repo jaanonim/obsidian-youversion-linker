@@ -1,0 +1,265 @@
+{
+    "GEN": [
+        "gênesis",
+        "gn"
+    ],
+    "EXO": [
+        "êxodo",
+        "ex"
+    ],
+    "LEV": [
+        "levítico",
+        "lv"
+    ],
+    "NUM": [
+        "números",
+        "nm"
+    ],
+    "DEU": [
+        "deuteronômio",
+        "dt"
+    ],
+    "JOS": [
+        "josué",
+        "js"
+    ],
+    "JDG": [
+        "juízes",
+        "jz"
+    ],
+    "RUT": [
+        "rute",
+        "rt"
+    ],
+    "1SA": [
+        "1samuel",
+        "1sm"
+    ],
+    "2SA": [
+        "2samuel",
+        "2sm"
+    ],
+    "1KI": [
+        "1reis",
+        "1rs"
+    ],
+    "2KI": [
+        "2reis",
+        "2rs"
+    ],
+    "1CH": [
+        "1crônicas",
+        "1cr"
+    ],
+    "2CH": [
+        "2crônicas",
+        "2cr"
+    ],
+    "EZR": [
+        "esdras",
+        "ed"
+    ],
+    "NEH": [
+        "neemias",
+        "ne"
+    ],
+    "EST": [
+        "ester",
+        "et"
+    ],
+    "JOB": [
+        "jó"
+    ],
+    "PSA": [
+        "salmos",
+        "sl"
+    ],
+    "PRO": [
+        "provérbios",
+        "pv"
+    ],
+    "ECC": [
+        "eclesiastes",
+        "ec"
+    ],
+    "SNG": [
+        "cantaresdesalomão",
+        "ct"
+    ],
+    "ISA": [
+        "isaías",
+        "is"
+    ],
+    "JER": [
+        "jeremias",
+        "jr"
+    ],
+    "LAM": [
+        "lamentações",
+        "lm"
+    ],
+    "EZK": [
+        "ezequiel",
+        "ez"
+    ],
+    "DAN": [
+        "daniel",
+        "dn"
+    ],
+    "HOS": [
+        "oséias",
+        "os"
+    ],
+    "JOL": [
+        "joel",
+        "jl"
+    ],
+    "AMO": [
+        "amós",
+        "am"
+    ],
+    "OBA": [
+        "obadias",
+        "ob"
+    ],
+    "JON": [
+        "jonas",
+        "jn"
+    ],
+    "MIC": [
+        "miquéias",
+        "mq"
+    ],
+    "NAM": [
+        "naum",
+        "na"
+    ],
+    "HAB": [
+        "habacuque",
+        "hc"
+    ],
+    "ZEP": [
+        "sofonias",
+        "sf"
+    ],
+    "HAG": [
+        "ageu",
+        "ag"
+    ],
+    "ZEC": [
+        "zacarias",
+        "zc"
+    ],
+    "MAL": [
+        "malaquias",
+        "ml"
+    ],
+    "MAT": [
+        "mateus",
+        "mt"
+    ],
+    "MRK": [
+        "marcos",
+        "mc"
+    ],
+    "LUK": [
+        "lucas",
+        "lc"
+    ],
+    "JHN": [
+        "joão",
+        "jo"
+    ],
+    "ACT": [
+        "atos",
+        "at"
+    ],
+    "ROM": [
+        "romanos",
+        "rm"
+    ],
+    "1CO": [
+        "1coríntios",
+        "1co"
+    ],
+    "2CO": [
+        "2coríntios",
+        "2co"
+    ],
+    "GAL": [
+        "gálatas",
+        "gl"
+    ],
+    "EPH": [
+        "efésios",
+        "ef"
+    ],
+    "PHP": [
+        "filipenses",
+        "fp"
+    ],
+    "COL": [
+        "colossenses",
+        "cl"
+    ],
+    "1TH": [
+        "1tessalonicenses",
+        "1ts"
+    ],
+    "2TH": [
+        "2tessalonicenses",
+        "2ts"
+    ],
+    "1TI": [
+        "1timóteo",
+        "1tm"
+    ],
+    "2TI": [
+        "2timóteo",
+        "2tm"
+    ],
+    "TIT": [
+        "tito",
+        "tt"
+    ],
+    "PHM": [
+        "filemon",
+        "fm"
+    ],
+    "HEB": [
+        "hebreus",
+        "hb"
+    ],
+    "JAS": [
+        "tiago",
+        "tg"
+    ],
+    "1PE": [
+        "1pedro",
+        "1pe"
+    ],
+    "2PE": [
+        "2pedro",
+        "2pe"
+    ],
+    "1JN": [
+        "1joão",
+        "1jo"
+    ],
+    "2JN": [
+        "2joão",
+        "2jo"
+    ],
+    "3JN": [
+        "3joão",
+        "3jo"
+    ],
+    "JUD": [
+        "judas",
+        "jd"
+    ],
+    "REV": [
+        "apocalipse",
+        "ap"
+    ]
+}
