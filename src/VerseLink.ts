@@ -9,7 +9,11 @@ export default class VerseLink {
 	) {}
 
 	public render(el: HTMLElement) {
-		el.createDiv().setText(this.toSimpleText());
+		const div = el.createDiv();
+		div.createSpan().setText(this.toSimpleText());
+		const span = div.createSpan();
+		span.addClass("verse-link-info");
+		span.setText(this.bookUrl);
 	}
 
 	toSimpleText() {
