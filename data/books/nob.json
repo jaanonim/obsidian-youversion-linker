@@ -1,0 +1,200 @@
+{
+    "GEN": [
+        "1mos"
+    ],
+    "EXO": [
+        "2mos"
+    ],
+    "LEV": [
+        "3mos"
+    ],
+    "NUM": [
+        "4mos"
+    ],
+    "DEU": [
+        "5mos"
+    ],
+    "JOS": [
+        "jos"
+    ],
+    "JDG": [
+        "dom"
+    ],
+    "RUT": [
+        "rut"
+    ],
+    "1SA": [
+        "1sam"
+    ],
+    "2SA": [
+        "2sam"
+    ],
+    "1KI": [
+        "1kong"
+    ],
+    "2KI": [
+        "2kong"
+    ],
+    "1CH": [
+        "1krøn"
+    ],
+    "2CH": [
+        "2krøn"
+    ],
+    "EZR": [
+        "esra"
+    ],
+    "NEH": [
+        "neh"
+    ],
+    "EST": [
+        "est"
+    ],
+    "JOB": [
+        "job"
+    ],
+    "PSA": [
+        "sal"
+    ],
+    "PRO": [
+        "ordsp"
+    ],
+    "ECC": [
+        "fork"
+    ],
+    "SNG": [
+        "høys"
+    ],
+    "ISA": [
+        "jes"
+    ],
+    "JER": [
+        "jer"
+    ],
+    "LAM": [
+        "klag"
+    ],
+    "EZK": [
+        "esek"
+    ],
+    "DAN": [
+        "dan"
+    ],
+    "HOS": [
+        "hos"
+    ],
+    "JOL": [
+        "jol"
+    ],
+    "AMO": [
+        "am"
+    ],
+    "OBA": [
+        "ob"
+    ],
+    "JON": [
+        "jona"
+    ],
+    "MIC": [
+        "mi"
+    ],
+    "NAM": [
+        "nah"
+    ],
+    "HAB": [
+        "hab"
+    ],
+    "ZEP": [
+        "sef"
+    ],
+    "HAG": [
+        "hag"
+    ],
+    "ZEC": [
+        "sak"
+    ],
+    "MAL": [
+        "mal"
+    ],
+    "MAT": [
+        "matt"
+    ],
+    "MRK": [
+        "mark"
+    ],
+    "LUK": [
+        "luk"
+    ],
+    "JHN": [
+        "joh"
+    ],
+    "ACT": [
+        "apg"
+    ],
+    "ROM": [
+        "rom"
+    ],
+    "1CO": [
+        "1kor"
+    ],
+    "2CO": [
+        "2kor"
+    ],
+    "GAL": [
+        "gal"
+    ],
+    "EPH": [
+        "ef"
+    ],
+    "PHP": [
+        "fil"
+    ],
+    "COL": [
+        "kol"
+    ],
+    "1TH": [
+        "1tess"
+    ],
+    "2TH": [
+        "2tess"
+    ],
+    "1TI": [
+        "1tim"
+    ],
+    "2TI": [
+        "2tim"
+    ],
+    "TIT": [
+        "tit"
+    ],
+    "PHM": [
+        "filem"
+    ],
+    "HEB": [
+        "hebr"
+    ],
+    "JAS": [
+        "jak"
+    ],
+    "1PE": [
+        "1pet"
+    ],
+    "2PE": [
+        "2pet"
+    ],
+    "1JN": [
+        "1joh"
+    ],
+    "2JN": [
+        "2joh"
+    ],
+    "3JN": [
+        "3joh"
+    ],
+    "JUD": [
+        "jud"
+    ],
+    "REV": [
+        "åp"
+    ]
+}
