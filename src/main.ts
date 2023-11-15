@@ -24,9 +24,13 @@ export default class ObsidianYouversionLinker extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
-		this.registerMarkdownPostProcessor(linkPreview);
 		this.registerEditorSuggest(new EditorSuggester(this, this.settings));
-		this.registerEditorExtension([linkPreviewPlugin]);
+
+		if (this.settings.linkPreviewRead)
+			this.registerMarkdownPostProcessor(linkPreview);
+		if (this.settings.linkPreviewLive)
+			this.registerEditorExtension([linkPreviewPlugin]);
+
 		this.addSettingTab(new SettingTab(this.app, this));
 		this.addCommand({
 			id: "generate-links",

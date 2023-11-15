@@ -73,5 +73,31 @@ export default class SettingTab extends PluginSettingTab {
 					new Notice("Bible version settings updated");
 				});
 			});
+
+		new Setting(containerEl)
+			.setName("Link Preview in read view")
+			.setDesc(
+				"Enable or disable verse preview shown when hovered over link in read view. DISCLAIMER: Will take effect after restart."
+			)
+			.addToggle((toggle) => {
+				toggle.setValue(this.plugin.settings.linkPreviewRead);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.linkPreviewRead = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Link Preview in edit view (experimental)")
+			.setDesc(
+				"Enable or disable verse preview shown when hovered over link in edit view. DISCLAIMER: Will take effect after restart."
+			)
+			.addToggle((toggle) => {
+				toggle.setValue(this.plugin.settings.linkPreviewLive);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.linkPreviewLive = value;
+					await this.plugin.saveSettings();
+				});
+			});
 	}
 }
