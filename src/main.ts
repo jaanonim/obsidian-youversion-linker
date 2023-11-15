@@ -14,9 +14,10 @@ import {
 	DEFAULT_SETTINGS,
 	ObsidianYouversionLinkerSettings,
 } from "./SettingsData";
-import linkPreview from "./LinkPreview";
+
 import GenerateLinks from "./GenerateLinks";
-import { linkPreviewPlugin } from "./LinkPreviewView";
+import { linkPreviewPlugin } from "./LinkPreviewEditor";
+import linkPreview from "./LinkPreviewReader";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;

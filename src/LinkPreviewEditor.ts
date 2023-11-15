@@ -10,9 +10,7 @@ import {
 	ViewUpdate,
 	WidgetType,
 } from "@codemirror/view";
-import { verify } from "crypto";
-import { MarkdownRenderChild } from "obsidian";
-import tippy from "tippy.js";
+import LinkPreviewManager from "./LinkPreview";
 
 class LinkPreviewView implements PluginValue {
 	decorations: DecorationSet;
@@ -31,33 +29,40 @@ class LinkPreviewView implements PluginValue {
 
 	buildDecorations(view: EditorView): DecorationSet {
 		const builder = new RangeSetBuilder<Decoration>();
+		let last_f: number = 0;
+		let last_t: number = 0;
+		let content: string = "";
+		let urls: Array<string> = [];
 
 		for (let { from, to } of view.visibleRanges) {
 			syntaxTree(view.state).iterate({
 				from,
 				to,
 				enter(node) {
-					console.log("e", node.type.name);
-					return;
+					if (node.type.name.startsWith("link")) {
+						const slice = view.state.sliceDoc(node.from, node.to);
+						last_f = node.from;
+						last_t = node.to;
+						content = slice;
+					}
 					if (node.type.name.startsWith("string_url")) {
 						const slice = view.state.sliceDoc(node.from, node.to);
-						console.log(slice);
-						builder.add(
-							node.from,
-							node.to,
-							Decoration.replace({
-								widget: new LinkTooltip(slice, slice),
-							})
-						);
+						if (slice.startsWith("https://www.bible.com/bible")) {
+							urls.push(slice);
+							builder.add(
+								last_f,
+								last_t,
+								Decoration.replace({
+									widget: new LinkTooltip(content, slice),
+								})
+							);
+						}
 					}
-				},
-				leave(node) {
-					console.log("l", node.type.name);
 				},
 				mode: 2,
 			});
 		}
-
+		LinkPreviewManager.clearCache(urls);
 		return builder.finish();
 	}
 }
@@ -81,7 +86,7 @@ class LinkTooltip extends WidgetType {
 		el.href = this.url;
 		el.innerHTML = this.text;
 
-		tippy(el, { content: "działa" });
+		LinkPreviewManager.processLink(el);
 
 		return el;
 	}
