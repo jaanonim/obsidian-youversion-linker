@@ -50,8 +50,6 @@ export default class LinkPreviewManager {
 			popup
 				.createSpan({ cls: "error-youversion" })
 				.setText("Verse preview is unavailable for this link.");
-
-			return;
 		} else {
 			popup
 				.createSpan({ cls: "content-youversion" })
