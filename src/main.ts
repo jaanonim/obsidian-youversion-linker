@@ -14,16 +14,23 @@ import {
 	DEFAULT_SETTINGS,
 	ObsidianYouversionLinkerSettings,
 } from "./SettingsData";
-import linkPreview from "./LinkPreview";
+
 import GenerateLinks from "./GenerateLinks";
+import { linkPreviewPlugin } from "./LinkPreviewEditor";
+import linkPreview from "./LinkPreviewReader";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
 
 	async onload() {
 		await this.loadSettings();
-		this.registerMarkdownPostProcessor(linkPreview);
 		this.registerEditorSuggest(new EditorSuggester(this, this.settings));
+
+		if (this.settings.linkPreviewRead)
+			this.registerMarkdownPostProcessor(linkPreview);
+		if (this.settings.linkPreviewLive)
+			this.registerEditorExtension([linkPreviewPlugin]);
+
 		this.addSettingTab(new SettingTab(this.app, this));
 		this.addCommand({
 			id: "generate-links",

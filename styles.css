@@ -29,3 +29,8 @@ If your plugin does not need CSS, delete this file.
 	text-align: center;
 	color: var(--text-error);
 }
+
+.verse-link-info {
+	color: var(--text-faint);
+	padding-left: 1ch;
+}
