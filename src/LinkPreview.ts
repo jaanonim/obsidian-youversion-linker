@@ -22,11 +22,11 @@ export default class LinkPreviewManager {
 
 				try {
 					const data = JSON.parse(json_text);
-          
-          if (data.props.pageProps.type !== "verse") {
-            throw;
-          }
-          
+
+					if (data.props.pageProps.type !== "verse") {
+						throw 1;
+					}
+
 					const info =
 						data.props.pageProps.referenceTitle.title +
 						" " +
@@ -43,27 +43,23 @@ export default class LinkPreviewManager {
 			}
 		}
 
-		if (this.cache[link.href].err) {
-      
-      const popup = document.createElement("div");
-      popup.addClass("preview-youversion");
-
-      popup
-        .createSpan({ cls: "error-youversion" })
-        .setText("Verse preview is unavailable for this link.");
-
-      tippy(link, { content: popup, allowHTML: true });
-      return;
-		}
 		const popup = document.createElement("div");
 		popup.addClass("preview-youversion");
 
-		popup
-			.createSpan({ cls: "content-youversion" })
-			.setText(this.cache[link.href]?.verses);
-		popup
-			.createSpan({ cls: "info-youversion" })
-			.setText(this.cache[link.href].info);
+		if (this.cache[link.href].err) {
+			popup
+				.createSpan({ cls: "error-youversion" })
+				.setText("Verse preview is unavailable for this link.");
+
+			return;
+		} else {
+			popup
+				.createSpan({ cls: "content-youversion" })
+				.setText(this.cache[link.href]?.verses);
+			popup
+				.createSpan({ cls: "info-youversion" })
+				.setText(this.cache[link.href].info);
+		}
 
 		tippy(link, { content: popup, allowHTML: true });
 	}
