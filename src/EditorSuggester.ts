@@ -1,4 +1,4 @@
-import getBook from "./Books";
+import getBooks from "./Books";
 import { bookRegex, linkRegex, separatorRegex } from "./Regex";
 import { ObsidianYouversionLinkerSettings } from "./SettingsData";
 import VerseLink from "./VerseLink";
@@ -29,18 +29,23 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 			.getLine(cursor.line)
 			.substring(0, cursor.ch);
 
-		const match = currentContent.match(linkRegex)?.first() ?? "";
-		if (match) {
-			return {
-				end: cursor,
-				start: {
-					line: cursor.line,
-					ch: currentContent.lastIndexOf(match),
-				},
-				query: match,
-			};
-		}
-		return null;
+		const matches = currentContent.match(linkRegex);
+		if (!matches) return null;
+		return matches?.reduce((prev, match) => {
+			if (match && prev === null) {
+				const end = currentContent.lastIndexOf(match);
+				if (end === 0 || currentContent.charAt(end - 1) !== "[")
+					return {
+						end: cursor,
+						start: {
+							line: cursor.line,
+							ch: end,
+						},
+						query: match,
+					};
+			}
+			return null;
+		}, null);
 	}
 	getSuggestions(
 		context: EditorSuggestContext
@@ -75,8 +80,8 @@ export function getSuggestionsFromQuery(
 		return [];
 	}
 
-	const bookUrl = getBook(bookName);
-	if (!bookUrl) {
+	const booksUrl = getBooks(bookName);
+	if (!booksUrl.length) {
 		console.error(`could not find book url`, bookName);
 		return [];
 	}
@@ -85,18 +90,19 @@ export function getSuggestionsFromQuery(
 	const numbers = numbersPartsOfQueryString.split(separatorRegex);
 
 	const chapterNumber = parseInt(numbers[0]);
-	const verseNumber = parseInt(numbers[1]);
+	const verseNumber = numbers.length > 1 ? parseInt(numbers[1]) : undefined;
 	const verseEndNumber =
 		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
 
-	return [
-		new VerseLink(
-			settings.bibleVersion,
-			bookUrl,
-			bookName,
-			chapterNumber,
-			verseNumber,
-			verseEndNumber
-		),
-	];
+	return booksUrl.map(
+		(bookUrl) =>
+			new VerseLink(
+				settings.bibleVersion,
+				bookUrl,
+				bookName,
+				chapterNumber,
+				verseNumber,
+				verseEndNumber
+			)
+	);
 }

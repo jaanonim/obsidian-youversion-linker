@@ -22,6 +22,11 @@ export default class LinkPreviewManager {
 
 				try {
 					const data = JSON.parse(json_text);
+          
+          if (data.props.pageProps.type !== "verse") {
+            throw;
+          }
+          
 					const info =
 						data.props.pageProps.referenceTitle.title +
 						" " +
@@ -39,9 +44,17 @@ export default class LinkPreviewManager {
 		}
 
 		if (this.cache[link.href].err) {
-			return;
-		}
+      
+      const popup = document.createElement("div");
+      popup.addClass("preview-youversion");
 
+      popup
+        .createSpan({ cls: "error-youversion" })
+        .setText("Verse preview is unavailable for this link.");
+
+      tippy(link, { content: popup, allowHTML: true });
+      return;
+		}
 		const popup = document.createElement("div");
 		popup.addClass("preview-youversion");
 
