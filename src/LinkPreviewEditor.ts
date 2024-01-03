@@ -45,7 +45,10 @@ class LinkPreviewView implements PluginValue {
 						last_t = node.to;
 						content = slice;
 					}
-					if (node.type.name.startsWith("string_url")) {
+					if (
+						node.type.name.endsWith("string_url") &&
+						!node.type.name.startsWith("formatting")
+					) {
 						const slice = view.state.sliceDoc(node.from, node.to);
 						if (slice.startsWith("https://www.bible.com/bible")) {
 							urls.push(slice);

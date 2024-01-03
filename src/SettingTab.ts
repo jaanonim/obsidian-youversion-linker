@@ -75,6 +75,17 @@ export default class SettingTab extends PluginSettingTab {
 			});
 
 		new Setting(containerEl)
+			.setName("Trigger")
+			.setDesc("Trigger for autocomplete in edit mode. Supports regex.")
+			.addText((text) => {
+				text.setValue(this.plugin.settings.trigger);
+				text.onChange(async (value) => {
+					this.plugin.settings.trigger = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
 			.setName("Link Preview in read view")
 			.setDesc(
 				"Enable or disable verse preview shown when hovered over link in read view. DISCLAIMER: Will take effect after restart."
