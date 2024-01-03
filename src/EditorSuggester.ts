@@ -25,9 +25,10 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		editor: Editor,
 		file: TFile | null
 	): EditorSuggestTriggerInfo | null {
-		const currentContent = editor
-			.getLine(cursor.line)
-			.substring(0, cursor.ch);
+		const currentLine = editor.getLine(cursor.line);
+		const pos = currentLine.search(new RegExp(this.settings.trigger, "u"));
+		if (pos < 0) return null;
+		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 
 		const matches = currentContent.match(linkRegex);
 		if (!matches) return null;
@@ -39,7 +40,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 						end: cursor,
 						start: {
 							line: cursor.line,
-							ch: end,
+							ch: pos,
 						},
 						query: match,
 					};

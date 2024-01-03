@@ -3,6 +3,7 @@ export interface ObsidianYouversionLinkerSettings {
 	bibleVersion: string;
 	linkPreviewRead: boolean;
 	linkPreviewLive: boolean;
+	trigger: string;
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -10,4 +11,5 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	bibleVersion: "1",
 	linkPreviewRead: true,
 	linkPreviewLive: true,
+	trigger: "@",
 };
