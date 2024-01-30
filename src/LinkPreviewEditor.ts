@@ -87,6 +87,7 @@ class LinkTooltip extends WidgetType {
 	toDOM(view: EditorView): HTMLElement {
 		const el = document.createElement("a");
 		el.href = this.url;
+		el.target = "_blank";
 		el.innerHTML = this.text;
 
 		LinkPreviewManager.processLink(el);
