@@ -27,16 +27,16 @@ const ptBr = _ptBr as {
 const de = _de as {
 	[key: string]: string[];
 };
-const cn = _zhCN as {
+const zhCn = _zhCN as {
 	[key: string]: string[];
 };
-const hk = _zhHK as {
+const zhHk = _zhHK as {
 	[key: string]: string[];
 };
 
 
 Object.keys(books).forEach((b) => {
-	books[b].push(...en[b], ...nob[b], ...pl[b], ...ptBr[b], ...de[b],...zh[b],...hk[b] );
+	books[b].push(...en[b], ...nob[b], ...pl[b], ...ptBr[b], ...de[b],...zhCn[b],...zhHk[b] );
 });
 
 export default function getBooks(str: string): Array<string> {
