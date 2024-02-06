@@ -5,6 +5,8 @@ import _nob from "../data/books/nob.json";
 import _pl from "../data/books/pl.json";
 import _ptBr from "../data/books/pt-br.json";
 import _de from "../data/books/de.json";
+import _zhCN from "../data/books/zh_CN.json"
+import _zhHK from "../data/books/zh_HK.json"
 
 const books = _books as {
 	[key: string]: string[];
@@ -25,9 +27,16 @@ const ptBr = _ptBr as {
 const de = _de as {
 	[key: string]: string[];
 };
+const cn = _zhCN as {
+	[key: string]: string[];
+};
+const hk = _zhHK as {
+	[key: string]: string[];
+};
+
 
 Object.keys(books).forEach((b) => {
-	books[b].push(...en[b], ...nob[b], ...pl[b], ...ptBr[b], ...de[b]);
+	books[b].push(...en[b], ...nob[b], ...pl[b], ...ptBr[b], ...de[b],...zh[b],...hk[b] );
 });
 
 export default function getBooks(str: string): Array<string> {
