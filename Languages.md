@@ -7,3 +7,5 @@ Thanks to the community, we have support for the following languages:
 -   Brazilian Portuguese - [brunofow](https://github.com/brunofow)
 -   Norwegian - [cmeeren](https://github.com/cmeeren)
 -   German - [Tecur](https://github.com/Tecur)
+-   Chinese - [John Huang](https://github.com/junwhuan)
+
