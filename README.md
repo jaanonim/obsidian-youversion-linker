@@ -9,7 +9,7 @@
 You need to just type for example: `@ John 1:1-6`.
 `@` char is a trigger for suggestion and it can be changed in settings.
 
-I'm from Poland so plugin supports polish books names (eq. `J 1:1-6`, `Mt 24,1`). If you would like it to support your language books names feel free to make PR (you need to create json in `data/books` and add it in `src/Books.ts`).
+I'm from Poland so plugin supports polish books names (eq. `J 1:1-6`, `Mt 24,1`). If you would like it to support your language books names read the guide in [Languages.md](./Languages.md).
 
 **New future 🎉** <br>
 Preview of verse after hover over the link.
