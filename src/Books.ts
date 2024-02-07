@@ -1,52 +1,32 @@
 import _books from "../data/books/books.json";
+import booksNames from "./BooksLists";
+import { ObsidianYouversionLinkerSettings } from "./SettingsData";
 
-import _en from "../data/books/en.json";
-import _nob from "../data/books/nob.json";
-import _pl from "../data/books/pl.json";
-import _ptBr from "../data/books/pt-br.json";
-import _de from "../data/books/de.json";
-import _zhCN from "../data/books/zh-CN.json";
-import _zhHK from "../data/books/zh-HK.json";
+export type BooksLangList = { [key: string]: { [key: string]: string[] } };
 
-const books = _books as {
-	[key: string]: string[];
-};
+let books: { [key: string]: string[] } | null = null;
 
-const en = _en as {
-	[key: string]: string[];
-};
-const nob = _nob as {
-	[key: string]: string[];
-};
-const pl = _pl as {
-	[key: string]: string[];
-};
-const ptBr = _ptBr as {
-	[key: string]: string[];
-};
-const de = _de as {
-	[key: string]: string[];
-};
-const zhCn = _zhCN as {
-	[key: string]: string[];
-};
-const zhHk = _zhHK as {
-	[key: string]: string[];
-};
+export function generateBooksList(settings: ObsidianYouversionLinkerSettings) {
+	const booksLocal = _books as {
+		[key: string]: string[];
+	};
 
-Object.keys(books).forEach((b) => {
-	books[b].push(
-		...en[b],
-		...nob[b],
-		...pl[b],
-		...ptBr[b],
-		...de[b],
-		...zhCn[b],
-		...zhHk[b]
-	);
-});
+	settings.selectedBooksLanguages.forEach((lang_name) => {
+		const lang = booksNames[lang_name];
+		Object.keys(booksLocal).forEach((book) => {
+			booksLocal[book].push(...lang[book]);
+		});
+	});
+	return booksLocal;
+}
 
-export default function getBooks(str: string): Array<string> {
+export default function getBooks(
+	str: string,
+	settings: ObsidianYouversionLinkerSettings
+): Array<string> {
 	str = str.toLowerCase().replace(/\s/g, "");
-	return Object.keys(books).filter((key) => books[key].includes(str));
+	if (books == null) {
+		books = generateBooksList(settings);
+	}
+	return Object.keys(books).filter((key) => books![key].includes(str));
 }

@@ -1,6 +1,8 @@
 import ObsidianYouversionLinker from "./main";
 import { App, Notice, PluginSettingTab, Setting } from "obsidian";
 import VERSIONS from "../data/versions.json";
+import booksNames from "./BooksLists";
+import { generateBooksList } from "./Books";
 
 export default class SettingTab extends PluginSettingTab {
 	plugin: ObsidianYouversionLinker;
@@ -85,6 +87,66 @@ export default class SettingTab extends PluginSettingTab {
 				});
 			});
 
+		const notSelectedLanguages = Object.keys(booksNames)
+			.sort()
+			.filter(
+				(ele) =>
+					!this.plugin.settings.selectedBooksLanguages.contains(ele)
+			);
+
+		new Setting(containerEl)
+			.setName("Languages of books names and abbreviations")
+			.setDesc(
+				"Select languages of books names and abbreviations to be used in autocomplete."
+			)
+			.addButton((button) => {
+				button
+					.setIcon("plus")
+					.setTooltip("Add language of books names")
+					.onClick(async () => {
+						this.plugin.settings.selectedBooksLanguages.push(
+							notSelectedLanguages[0]
+						);
+						this.onSelectedBooksLanguagesUpdate();
+					});
+
+				button.setDisabled(notSelectedLanguages.length < 1);
+				if (button.disabled) {
+					if (!button.buttonEl.hasClass("btn-settings-disabled"))
+						button.buttonEl.addClass("btn-settings-disabled");
+				} else {
+					button.buttonEl.removeClass("btn-settings-disabled");
+				}
+			});
+
+		this.plugin.settings.selectedBooksLanguages.forEach((lang, index) => {
+			const s = new Setting(containerEl)
+				.addDropdown((dropdown) => {
+					[...notSelectedLanguages, lang].sort().forEach((name) => {
+						dropdown.addOption(`${name}`, `${name}`);
+					});
+					dropdown.setValue(lang);
+					dropdown.onChange(async (value) => {
+						this.plugin.settings.selectedBooksLanguages[index] =
+							value;
+						this.onSelectedBooksLanguagesUpdate();
+					});
+				})
+				.addExtraButton((button) => {
+					button
+						.setIcon("cross")
+						.setTooltip("Delete")
+						.onClick(async () => {
+							this.plugin.settings.selectedBooksLanguages.splice(
+								index,
+								1
+							);
+							this.onSelectedBooksLanguagesUpdate();
+						});
+				});
+			s.infoEl.remove();
+		});
+
 		new Setting(containerEl)
 			.setName("Link Preview in read view")
 			.setDesc(
@@ -110,5 +172,11 @@ export default class SettingTab extends PluginSettingTab {
 					await this.plugin.saveSettings();
 				});
 			});
+	}
+
+	async onSelectedBooksLanguagesUpdate() {
+		await this.plugin.saveSettings();
+		generateBooksList(this.plugin.settings);
+		this.display();
 	}
 }

@@ -4,6 +4,7 @@ export interface ObsidianYouversionLinkerSettings {
 	linkPreviewRead: boolean;
 	linkPreviewLive: boolean;
 	trigger: string;
+	selectedBooksLanguages: string[];
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -12,4 +13,5 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	linkPreviewRead: true,
 	linkPreviewLive: true,
 	trigger: "@",
+	selectedBooksLanguages: ["english"],
 };

@@ -1,14 +1,5 @@
 import { EditorSuggester } from "./EditorSuggester";
-import {
-	App,
-	Editor,
-	MarkdownView,
-	Modal,
-	Notice,
-	Plugin,
-	PluginSettingTab,
-	Setting,
-} from "obsidian";
+import { Editor, MarkdownView, Plugin } from "obsidian";
 import SettingTab from "./SettingTab";
 import {
 	DEFAULT_SETTINGS,

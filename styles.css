@@ -34,3 +34,8 @@ If your plugin does not need CSS, delete this file.
 	color: var(--text-faint);
 	padding-left: 1ch;
 }
+
+.btn-settings-disabled {
+	pointer-events: none;
+	opacity: 0.3;
+}

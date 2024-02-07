@@ -81,7 +81,7 @@ export function getSuggestionsFromQuery(
 		return [];
 	}
 
-	const booksUrl = getBooks(bookName);
+	const booksUrl = getBooks(bookName, settings);
 	if (!booksUrl.length) {
 		console.error(`could not find book url`, bookName);
 		return [];
