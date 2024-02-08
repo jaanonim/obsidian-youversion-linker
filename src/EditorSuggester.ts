@@ -95,15 +95,17 @@ export function getSuggestionsFromQuery(
 	const verseEndNumber =
 		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
 
-	return booksUrl.map(
-		(bookUrl) =>
-			new VerseLink(
-				settings.bibleVersion,
-				bookUrl,
-				bookName,
-				chapterNumber,
-				verseNumber,
-				verseEndNumber
-			)
+	return booksUrl.flatMap((bookUrl) =>
+		settings.bibleVersions.map(
+			(version) =>
+				new VerseLink(
+					version,
+					bookUrl,
+					bookName,
+					chapterNumber,
+					verseNumber,
+					verseEndNumber
+				)
+		)
 	);
 }

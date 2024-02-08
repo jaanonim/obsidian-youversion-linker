@@ -39,3 +39,11 @@ If your plugin does not need CSS, delete this file.
 	pointer-events: none;
 	opacity: 0.3;
 }
+
+.version-settings-dropdown {
+	width: 50% !important;
+}
+
+.book-settings-dropdown {
+	width: 100% !important;
+}

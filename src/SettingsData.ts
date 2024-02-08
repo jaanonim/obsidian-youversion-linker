@@ -1,6 +1,10 @@
+export interface BibleVersion {
+	id: string;
+	language: string;
+}
+
 export interface ObsidianYouversionLinkerSettings {
-	bibleLanguage: string;
-	bibleVersion: string;
+	bibleVersions: BibleVersion[];
 	linkPreviewRead: boolean;
 	linkPreviewLive: boolean;
 	trigger: string;
@@ -8,8 +12,12 @@ export interface ObsidianYouversionLinkerSettings {
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
-	bibleLanguage: "eng",
-	bibleVersion: "1",
+	bibleVersions: [
+		{
+			id: "1",
+			language: "eng",
+		},
+	],
 	linkPreviewRead: true,
 	linkPreviewLive: true,
 	trigger: "@",
