@@ -1,6 +1,9 @@
+import { BibleVersion } from "./SettingsData";
+import VERSIONS from "../data/versions.json";
+
 export default class VerseLink {
 	constructor(
-		private version: string,
+		private version: BibleVersion,
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
@@ -13,7 +16,11 @@ export default class VerseLink {
 		div.createSpan().setText(this.toSimpleText());
 		const span = div.createSpan();
 		span.addClass("verse-link-info");
-		span.setText(this.bookUrl);
+
+		const versionAbbr = (VERSIONS as any)[this.version.language].data.find(
+			(v: any) => v.id == this.version.id
+		).abbreviation;
+		span.setText(`${this.bookUrl} - ${versionAbbr}`);
 	}
 
 	toSimpleText() {
@@ -30,7 +37,7 @@ export default class VerseLink {
 
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
-		let url = `${base}/${this.version}/${this.bookUrl}.${this.chapter}`;
+		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
 		if (this.verse) {
 			url += `.${this.verse}`;
 			if (this.verseEnd) url += `-${this.verseEnd}`;

@@ -15,26 +15,19 @@ If you want to add support for a new language, you can do so by following these 
 
 1. Fork the repository.
 2. Create a new file in `data/books` with the name of the language (e.g. `data/books/pl.json`) with books names.
-3. Import json file to `src/Books.ts` as shown in the example:
+3. Import json file to `src/BooksLists.ts` as shown in the example:
 
 ```ts
 import _pl from "../data/books/pl.json";
 ```
 
 ```ts
-const pl = _pl as {
-	[key: string]: string[];
-};
-```
-
-```ts
-Object.keys(books).forEach((b) => {
-	books[b].push(
-		// ...
-		...pl[b]
-		// ...
-	);
-});
+// prettier-ignore
+const booksNames = {
+	// ...
+	"Polish": pl,
+	// ...
+} as BooksLangList;
 ```
 
 (See the other languages for examples.)
