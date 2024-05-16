@@ -8,7 +8,7 @@ Thanks to the community, we have support for the following languages:
 -   Norwegian - [cmeeren](https://github.com/cmeeren)
 -   German - [Tecur](https://github.com/Tecur)
 -   Chinese - [John Huang](https://github.com/junwhuan)
-
+-   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 ## Adding new language support
 
 If you want to add support for a new language, you can do so by following these steps:
