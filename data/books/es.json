@@ -1,0 +1,301 @@
+{
+    "GEN": [
+        "génesis",
+        "gen",
+        "gn"
+    ],
+    "EXO": [
+        "éxodo",
+        "exo",
+        "ex"
+    ],
+    "LEV": [
+        "levítico",
+        "lev",
+        "lv"
+    ],
+    "NUM": [
+        "números",
+        "num",
+        "nm"
+    ],
+    "DEU": [
+        "deuteronomio",
+        "deu",
+        "dt"
+    ],
+    "JOS": [
+        "josué",
+        "jos",
+        "js"
+    ],
+    "JDG": [
+        "jueces",
+        "jue"
+    ],
+    "RUT": [
+        "rut",
+        "rt"
+    ],
+    "1SA": [
+        "1samuel",
+        "1sa",
+        "1s"
+    ],
+    "2SA": [
+        "2samuel",
+        "2sa",
+        "2s"
+    ],
+    "1KI": [
+        "1reyes",
+        "1re",
+        "1r"
+    ],
+    "2KI": [
+        "2reyes",
+        "2re",
+        "2r"
+    ],
+    "1CH": [
+        "1crónicas",
+        "1cro",
+        "1cr"
+    ],
+    "2CH": [
+        "2crónicas",
+        "2cro",
+        "2cr"
+    ],
+    "EZR": [
+        "esdras",
+        "esd"
+    ],
+    "NEH": [
+        "nehemías",
+        "neh"
+    ],
+    "EST": [
+        "ester",
+        "est"
+    ],
+    "JOB": [
+        "job"
+    ],
+    "PSA": [
+        "salmos",
+        "sal",
+        "sl"
+    ],
+    "PRO": [
+        "proverbios",
+        "pro",
+        "pr"
+    ],
+    "ECC": [
+        "eclesiastés",
+        "ecl",
+        "ec"
+    ],
+    "SNG": [
+        "cantares",
+        "can",
+        "cnt"
+    ],
+    "ISA": [
+        "isaías",
+        "isa",
+        "is"
+    ],
+    "JER": [
+        "jeremías",
+        "jer"
+    ],
+    "LAM": [
+        "lamentaciones",
+        "lam",
+        "lm"
+    ],
+    "EZK": [
+        "ezequiel",
+        "eze",
+        "ez"
+    ],
+    "DAN": [
+        "daniel",
+        "dan",
+        "dn"
+    ],
+    "HOS": [
+        "oseas",
+        "os"
+    ],
+    "JOL": [
+        "joel",
+        "jl"
+    ],
+    "AMO": [
+        "amos",
+        "am"
+    ],
+    "OBA": [
+        "abdías",
+        "abd"
+    ],
+    "JON": [
+        "jonás",
+        "jon"
+    ],
+    "MIC": [
+        "miqueas",
+        "miq",
+        "mi"
+    ],
+    "NAM": [
+        "nahum",
+        "nah"
+    ],
+    "HAB": [
+        "habacuc",
+        "hab"
+    ],
+    "ZEP": [
+        "sofonías",
+        "sof"
+    ],
+    "HAG": [
+        "hageo",
+        "hag"
+    ],
+    "ZEC": [
+        "zacarías",
+        "zac"
+    ],
+    "MAL": [
+        "malaquías",
+        "mal"
+    ],
+    "MAT": [
+        "mateo",
+        "mat",
+        "mt"
+    ],
+    "MRK": [
+        "marcos",
+        "mar",
+        "mr"
+    ],
+    "LUK": [
+        "lucas",
+        "luc",
+        "lc"
+    ],
+    "JHN": [
+        "juan",
+        "jn"
+    ],
+    "ACT": [
+        "hechos",
+        "hch"
+    ],
+    "ROM": [
+        "romanos",
+        "rom",
+        "ro"
+    ],
+    "1CO": [
+        "1corintios",
+        "1co"
+    ],
+    "2CO": [
+        "2corintios",
+        "2co"
+    ],
+    "GAL": [
+        "gálatas",
+        "gal",
+        "ga"
+    ],
+    "EPH": [
+        "efesios",
+        "efe",
+        "ef"
+    ],
+    "PHP": [
+        "filipenses",
+        "fil"
+    ],
+    "COL": [
+        "colosenses",
+        "col"
+    ],
+    "1TH": [
+        "1tesalonicenses",
+        "1tes",
+        "1ts"
+    ],
+    "2TH": [
+        "2tesalonicenses",
+        "2tes",
+        "2ts"
+    ],
+    "1TI": [
+        "1timoteo",
+        "1ti"
+    ],
+    "2TI": [
+        "2timoteo",
+        "2ti"
+    ],
+    "TIT": [
+        "tito",
+        "tit"
+    ],
+    "PHM": [
+        "filemon",
+        "filem",
+        "flm"
+    ],
+    "HEB": [
+        "hebreos",
+        "heb",
+        "he"
+    ],
+    "JAS": [
+        "santiago",
+        "sant",
+        "stg"
+    ],
+    "1PE": [
+        "1pedro",
+        "1ped",
+        "1pe"
+    ],
+    "2PE": [
+        "2pedro",
+        "2ped",
+        "2pe"
+    ],
+    "1JN": [
+        "1juan",
+        "1jn"
+    ],
+    "2JN": [
+        "2juan",
+        "2jn"
+    ],
+    "3JN": [
+        "3juan",
+        "3jn"
+    ],
+    "JUD": [
+        "judas",
+        "jud"
+    ],
+    "REV": [
+        "apocalipsis",
+        "apoc",
+        "apo"
+        "ap"
+    ]
+}
