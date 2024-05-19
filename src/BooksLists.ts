@@ -8,6 +8,7 @@ import de from "../data/books/de.json";
 import zhCN from "../data/books/zh-CN.json";
 import zhHK from "../data/books/zh-HK.json";
 import es from "../data/books/es.json";
+import uk from "../data/books/uk.json";
 
 // prettier-ignore
 const booksNames = {
@@ -19,6 +20,7 @@ const booksNames = {
 	"Polish": pl,
 	"Portuguese (Brazil)": ptBr,
 	"Spanish": es,
+	"Ukrainian": uk
 } as BooksLangList;
 
 export default booksNames;
