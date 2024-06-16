@@ -9,7 +9,6 @@ Thanks to the community, we have support for the following languages:
 -   German - [Tecur](https://github.com/Tecur)
 -   Chinese - [John Huang](https://github.com/junwhuan)
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
--   Romanian - [Paul Timoce](https://github.com/paultimoce)
 
 ## Adding new language support
 
