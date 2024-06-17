@@ -2,13 +2,14 @@
 
 Thanks to the community, we have support for the following languages:
 
--   English - [jaanonim](https://github.com/jaanonim)
--   Polish - [jaanonim](https://github.com/jaanonim)
--   Brazilian Portuguese - [brunofow](https://github.com/brunofow)
--   Norwegian - [cmeeren](https://github.com/cmeeren)
+-   English - [Jaanonim](https://github.com/jaanonim)
+-   Polish - [Jaanonim](https://github.com/jaanonim)
+-   Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
+-   Norwegian - [Cmeeren](https://github.com/cmeeren)
 -   German - [Tecur](https://github.com/Tecur)
 -   Chinese - [John Huang](https://github.com/junwhuan)
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
+-   Romanian - [Paul Timoce](https://github.com/paultimoce)
 
 ## Adding new language support
 
