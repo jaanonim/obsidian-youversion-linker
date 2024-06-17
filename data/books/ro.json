@@ -19,11 +19,11 @@
         "deuteronom",
         "deu"
     ],
-    "IOS": [
+    "JOS": [
         "iosua",
         "ios"
     ],
-    "JUD": [
+    "JDG": [
         "judecatori",
         "jud"
     ],
@@ -39,23 +39,23 @@
         "2samuel",
         "2sa"
     ],
-    "1IMP": [
+    "1KI": [
         "1împărați",
         "1imparati",
         "1imp",
         "1împ"
     ],
-    "2IMP": [
+    "2KI": [
         "2împărați",
         "2imparati",
         "2imp",
         "2împ"
     ],
-    "1CRON": [
+    "1CH": [
         "1cronici",
         "1cron"
     ],
-    "2CRON": [
+    "2CH": [
         "2cronici",
         "2cron"
     ],
@@ -63,7 +63,7 @@
         "ezra",
         "ezr"
     ],
-    "NEEM": [
+    "NEH": [
         "neeemia",
         "neem"
     ],
@@ -71,7 +71,7 @@
         "estera",
         "est"
     ],
-    "IOV": [
+    "JOB": [
         "iov"
     ],
     "PSA": [
@@ -82,11 +82,11 @@
         "proverbe",
         "pro"
     ],
-    "ECL": [
+    "ECC": [
         "eclesiastul",
         "ecl"
     ],
-    "CANT": [
+    "SNG": [
         "cântareacântărilor",
         "cantareacantarilor",
         "cânt",
@@ -96,17 +96,17 @@
         "isaia",
         "isa"
     ],
-    "IER": [
+    "JER": [
         "ieremia",
         "ier"
     ],
-    "PLANG": [
+    "LAM": [
         "plângerileluiieremia",
         "plangerileluiieremia",
         "plangeri",
         "plângeri"
     ],
-    "EZEC": [
+    "EZK": [
         "ezechiel",
         "ezec"
     ],
@@ -114,27 +114,27 @@
         "daniel",
         "dan"
     ],
-    "OSEA": [
+    "HOS": [
         "OSEA"
     ],
-    "IOEL": [
+    "JOL": [
         "ioel"
     ],
-    "AMOS": [
+    "AMO": [
         "amos",
         "amo"
     ],
-    "OBADIA": [
+    "OBA": [
         "obadia",
         "oba"
     ],
-    "IONA": [
+    "JON": [
         "iona"
     ],
-    "MICA": [
+    "MIC": [
         "mica"
     ],
-    "NAUM": [
+    "NAM": [
         "naum",
         "nau"
     ],
@@ -142,7 +142,7 @@
         "habacuc",
         "hab"
     ],
-    "TEF": [
+    "ZEP": [
         "tefania",
         "țefania",
         "tef",
@@ -152,7 +152,7 @@
         "hagai",
         "hag"
     ],
-    "ZAH": [
+    "ZEC": [
         "zaharia",
         "zah"
     ],
@@ -164,17 +164,17 @@
         "matei",
         "mat"
     ],
-    "MARC": [
+    "MRK": [
         "marcu",
         "marc"
     ],
-    "LUCA": [
+    "LUK": [
         "luca"
     ],
-    "IOAN": [
+    "JHN": [
         "ioan"
     ],
-    "FAPTE": [
+    "ACT": [
         "fapte",
         "faptele apostolilor"
     ],
@@ -194,11 +194,11 @@
         "galateni",
         "gal"
     ],
-    "EFES": [
+    "EPH": [
         "efeseni",
         "ef"
     ],
-    "FIL": [
+    "PHP": [
         "filipeni",
         "fil"
     ],
@@ -206,34 +206,34 @@
         "coloseni",
         "col"
     ],
-    "1TES": [
+    "1TH": [
         "1tesaloniceni",
         "1tes"
     ],
-    "2TES": [
+    "2TH": [
         "2tesaloniceni",
         "2tes"
     ],
-    "1TIM": [
+    "1TI": [
         "1timotei",
         "1tim"
     ],
-    "2TIM": [
+    "2TI": [
         "2timotei",
         "2tim"
     ],
     "TIT": [
         "tit"
     ],
-    "FIL": [
+    "PHM": [
         "filimon",
         "fil"
     ],
-    "EVR": [
+    "HEB": [
         "evrei",
         "evr"
     ],
-    "IAC": [
+    "JAS": [
         "iacov",
         "iac"
     ],
@@ -245,20 +245,20 @@
         "2petru",
         "2pe"
     ],
-    "1IOAN": [
+    "1JH": [
         "1ioan"
     ],
-    "2IOAN": [
+    "2JN": [
         "2ioan"
     ],
-    "3IOAN": [
+    "3JN": [
         "3ioan"
     ],
-    "IUD": [
+    "JUD": [
         "iuda",
         "iud"
     ],
-    "APOC": [
+    "REV": [
         "apocalipsa",
         "apoc"
     ]
