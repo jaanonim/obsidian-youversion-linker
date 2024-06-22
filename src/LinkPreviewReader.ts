@@ -1,7 +1,5 @@
 import { MarkdownPostProcessorContext } from "obsidian";
-import tippy from "tippy.js";
 import LinkPreviewManager from "./LinkPreview";
-import { link } from "fs";
 
 export default function linkPreview(
 	element: HTMLElement,
