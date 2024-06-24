@@ -1,5 +1,6 @@
 import { requestUrl } from "obsidian";
 import tippy from "tippy.js";
+import { htmlCleanupRegex, htmlDataRegex } from "./Regex";
 
 type cacheType = { [key: string]: any };
 
@@ -11,14 +12,9 @@ export default class LinkPreviewManager {
 			const res = await requestUrl(link.href);
 			let text = await res.text;
 
-			const match = text.match(
-				/<script\s*id="__NEXT_DATA__"\s*type="application\/json"\s*>.+?(?=<\/script>\s*<\/body>\s*<\/html>)/
-			);
+			const match = text.match(htmlDataRegex);
 			if (match) {
-				const json_text = match[0].replace(
-					/<script\s*id="__NEXT_DATA__"\s*type="application\/json"\s*>/,
-					""
-				);
+				const json_text = match[0].replace(htmlCleanupRegex, "");
 
 				try {
 					const data = JSON.parse(json_text);

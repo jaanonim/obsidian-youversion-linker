@@ -1,0 +1,209 @@
+{
+  "GEN": [
+    "1mos"
+  ],
+  "EXO": [
+    "2mos"
+  ],
+  "LEV": [
+    "3mos"
+  ],
+  "NUM": [
+    "4mos"
+  ],
+  "DEU": [
+    "5mos"
+  ],
+  "JOS": [
+    "jos",
+    "josua"
+  ],
+  "JDG": [
+    "dom"
+  ],
+  "RUT": [
+    "rut"
+  ],
+  "1SA": [
+    "1sam"
+  ],
+  "2SA": [
+    "2sam"
+  ],
+  "1KI": [
+    "1kung"
+  ],
+  "2KI": [
+    "2kung"
+  ],
+  "1CH": [
+    "1krön"
+  ],
+  "2CH": [
+    "2krön"
+  ],
+  "EZR": [
+    "esra"
+  ],
+  "NEH": [
+    "neh"
+  ],
+  "EST": [
+    "est",
+    "ester"
+  ],
+  "JOB": [
+    "job"
+  ],
+  "PSA": [
+    "ps",
+    "psaltaren"
+  ],
+  "PRO": [
+    "ords",
+    "ord"
+  ],
+  "ECC": [
+    "pred",
+    "predikaren"
+  ],
+  "SNG": [
+    "hv",
+    "högav",
+    "högavisan"
+  ],
+  "ISA": [
+    "jes",
+    "jesaja"
+  ],
+  "JER": [
+    "jer",
+    "jeremia"
+  ],
+  "LAM": [
+    "klag"
+  ],
+  "EZK": [
+    "hes"
+  ],
+  "DAN": [
+    "dan"
+  ],
+  "HOS": [
+    "hos"
+  ],
+  "JOL": [
+    "joel"
+  ],
+  "AMO": [
+    "amos"
+  ],
+  "OBA": [
+    "ob"
+  ],
+  "JON": [
+    "jona"
+  ],
+  "MIC": [
+    "mika"
+  ],
+  "NAM": [
+    "nah"
+  ],
+  "HAB": [
+    "hab"
+  ],
+  "ZEP": [
+    "sef"
+  ],
+  "HAG": [
+    "hag"
+  ],
+  "ZEC": [
+    "sak"
+  ],
+  "MAL": [
+    "mal"
+  ],
+  "MAT": [
+    "matt"
+  ],
+  "MRK": [
+    "mark"
+  ],
+  "LUK": [
+    "luk"
+  ],
+  "JHN": [
+    "joh"
+  ],
+  "ACT": [
+    "apg"
+  ],
+  "ROM": [
+    "rom"
+  ],
+  "1CO": [
+    "1kor"
+  ],
+  "2CO": [
+    "2kor"
+  ],
+  "GAL": [
+    "gal"
+  ],
+  "EPH": [
+    "ef"
+  ],
+  "PHP": [
+    "fil"
+  ],
+  "COL": [
+    "kol"
+  ],
+  "1TH": [
+    "1thess"
+  ],
+  "2TH": [
+    "2thess"
+  ],
+  "1TI": [
+    "1tim"
+  ],
+  "2TI": [
+    "2tim"
+  ],
+  "TIT": [
+    "tit"
+  ],
+  "PHM": [
+    "filem"
+  ],
+  "HEB": [
+    "hebr"
+  ],
+  "JAS": [
+    "jak"
+  ],
+  "1PE": [
+    "1pet"
+  ],
+  "2PE": [
+    "2pet"
+  ],
+  "1JN": [
+    "1joh"
+  ],
+  "2JN": [
+    "2joh"
+  ],
+  "3JN": [
+    "3joh"
+  ],
+  "JUD": [
+    "jud"
+  ],
+  "REV": [
+    "upp"
+  ]
+}
