@@ -11,7 +11,7 @@ Thanks to the community, we have support for the following languages:
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
--   Ukrainian - [seesmof](https://github.com/seesmof)
+-   Ukrainian - [Seesmof](https://github.com/seesmof)
 
 ## Adding new language support
 
@@ -37,6 +37,6 @@ const booksNames = {
 (See the other languages for examples.)
 
 4. Add your name to the list above in this file (`Languages.md`).
-5. Create a PR with the changes. (I will review it and merge it.)
+5. Create a PR with the changes. Title it `Add {some_languges} book names` for eg: `Add Polish book names`. (I will review it and merge it.)
 
 **Thank you for your contribution!**
