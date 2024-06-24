@@ -11,7 +11,7 @@ Thanks to the community, we have support for the following languages:
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
--   Ukrainian - [by community for community](https://www.bible.com/uk/bible/3786/JHN.1.CUV) ✝️💞
+-   Ukrainian - [seesmof](https://github.com/seesmof)
 
 ## Adding new language support
 
