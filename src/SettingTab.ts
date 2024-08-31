@@ -19,12 +19,27 @@ export default class SettingTab extends PluginSettingTab {
 		this.bibleVersionSettings();
 
 		new Setting(containerEl)
-			.setName("Trigger")
-			.setDesc("Trigger for autocomplete in edit mode. Supports regex.")
+			.setName("Link trigger")
+			.setDesc(
+				"Trigger for autocomplete for linking verse in edit mode. Supports regex."
+			)
 			.addText((text) => {
-				text.setValue(this.plugin.settings.trigger);
+				text.setValue(this.plugin.settings.linkTrigger);
 				text.onChange(async (value) => {
-					this.plugin.settings.trigger = value;
+					this.plugin.settings.linkTrigger = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Quote Trigger")
+			.setDesc(
+				"Trigger for autocomplete for quoting verse in edit mode. Supports regex."
+			)
+			.addText((text) => {
+				text.setValue(this.plugin.settings.embedTrigger);
+				text.onChange(async (value) => {
+					this.plugin.settings.embedTrigger = value;
 					await this.plugin.saveSettings();
 				});
 			});
