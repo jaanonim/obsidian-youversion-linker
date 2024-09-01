@@ -124,29 +124,30 @@ export function getSuggestionsFromQuery(
 	const verseEndNumber =
 		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
 
-	return booksUrl
-		.flatMap((bookUrl) =>
-			settings.bibleVersions.map((version) => {
-				if (isLink) {
-					return new VerseLink(
-						version,
-						bookUrl,
-						bookName,
-						chapterNumber,
-						verseNumber,
-						verseEndNumber
-					);
-				} else if (verseNumber !== undefined) {
-					return new VerseEmbed(
-						version,
-						bookUrl,
-						bookName,
-						chapterNumber,
-						verseNumber,
-						verseEndNumber
-					);
-				}
-			})
-		)
-		.filter((v) => v !== undefined);
+	return booksUrl.flatMap(
+		(bookUrl) =>
+			settings.bibleVersions
+				.map((version) => {
+					if (isLink) {
+						return new VerseLink(
+							version,
+							bookUrl,
+							bookName,
+							chapterNumber,
+							verseNumber,
+							verseEndNumber
+						);
+					} else if (verseNumber !== undefined) {
+						return new VerseEmbed(
+							version,
+							bookUrl,
+							bookName,
+							chapterNumber,
+							verseNumber,
+							verseEndNumber
+						);
+					}
+				})
+				.filter((v) => v !== undefined) as Verse[]
+	);
 }
