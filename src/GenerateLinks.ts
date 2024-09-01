@@ -14,11 +14,15 @@ export default function GenerateLinks(
 
 		const match = [...line.matchAll(linkRegex)];
 		match.forEach((match) => {
-			const suggestions = getSuggestionsFromQuery(match[0], settings);
-			suggestions.forEach((s) => {
+			const suggestions = getSuggestionsFromQuery(
+				match[0],
+				true,
+				settings
+			);
+			suggestions.forEach(async (s) => {
 				if (match.index === undefined) return;
 				editor.replaceRange(
-					s.toLink(),
+					await s.toReplace(),
 					{
 						line: i,
 						ch: match.index,

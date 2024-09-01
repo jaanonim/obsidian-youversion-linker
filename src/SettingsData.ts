@@ -7,7 +7,8 @@ export interface ObsidianYouversionLinkerSettings {
 	bibleVersions: BibleVersion[];
 	linkPreviewRead: boolean;
 	linkPreviewLive: boolean;
-	trigger: string;
+	linkTrigger: string;
+	embedTrigger: string;
 	selectedBooksLanguages: string[];
 }
 
@@ -20,6 +21,7 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	],
 	linkPreviewRead: true,
 	linkPreviewLive: true,
-	trigger: "@",
+	linkTrigger: "@",
+	embedTrigger: ">",
 	selectedBooksLanguages: ["English"],
 };

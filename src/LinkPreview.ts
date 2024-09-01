@@ -2,64 +2,90 @@ import { requestUrl } from "obsidian";
 import tippy from "tippy.js";
 import { htmlCleanupRegex, htmlDataRegex } from "./Regex";
 
-type cacheType = { [key: string]: any };
+type CacheElement = {
+	info: { version: string; title: string };
+	verses: string;
+	err: boolean;
+};
+
+type CacheType = { [key: string]: CacheElement };
 
 export default class LinkPreviewManager {
-	static cache: cacheType = {};
+	static cache: CacheType = {};
 
 	static async processLink(link: HTMLAnchorElement) {
-		if (!this.cache[link.href]) {
-			const res = await requestUrl(link.href);
-			let text = await res.text;
-
-			const match = text.match(htmlDataRegex);
-			if (match) {
-				const json_text = match[0].replace(htmlCleanupRegex, "");
-
-				try {
-					const data = JSON.parse(json_text);
-
-					if (data.props.pageProps.type !== "verse") {
-						throw 1;
-					}
-
-					const info =
-						data.props.pageProps.referenceTitle.title +
-						" " +
-						data.props.pageProps.version.local_abbreviation;
-					const verses = data.props.pageProps.verses
-						.map((ele: any) => ele.content)
-						.join(" ");
-					this.cache[link.href] = { info, verses };
-				} catch {
-					this.cache[link.href] = { err: true };
-				}
-			} else {
-				this.cache[link.href] = { err: true };
-			}
-		}
+		const content = await this.processUrl(link.href);
 
 		const popup = document.createElement("div");
 		popup.addClass("preview-youversion");
 
-		if (this.cache[link.href].err) {
+		if (content.err) {
 			popup
 				.createSpan({ cls: "error-youversion" })
 				.setText("Verse preview is unavailable for this link.");
 		} else {
 			popup
 				.createSpan({ cls: "content-youversion" })
-				.setText(this.cache[link.href]?.verses);
+				.setText(content.verses);
 			popup
 				.createSpan({ cls: "info-youversion" })
-				.setText(this.cache[link.href].info);
+				.setText(content.info.title + " " + content.info.version);
 		}
 
 		tippy(link, { content: popup, allowHTML: true });
 	}
 
+	static async processUrl(url: string): Promise<CacheElement> {
+		if (!this.cache[url]) {
+			try {
+				const res = await requestUrl(url);
+				let text = await res.text;
+
+				const match = text.match(htmlDataRegex);
+				if (match) {
+					const json_text = match[0].replace(htmlCleanupRegex, "");
+
+					const data = JSON.parse(json_text);
+
+					if (data.props.pageProps.type !== "verse") {
+						throw 1;
+					}
+
+					const info = {
+						title: data.props.pageProps.referenceTitle.title,
+						version:
+							data.props.pageProps.version.local_abbreviation,
+					};
+					const verses = data.props.pageProps.verses
+						.map((ele: any) => ele.content)
+						.join(" ");
+
+					if (verses.length < 1) {
+						throw 1;
+					}
+
+					this.cache[url] = { err: false, info, verses };
+				} else {
+					throw 1;
+				}
+			} catch {
+				this.cache[url] = {
+					err: true,
+					info: { title: "", version: "" },
+					verses: "",
+				};
+			}
+		}
+		return this.cache[url];
+	}
+
 	static clearCache(notClear: Array<string>) {
-		let dict: cacheType = {};
+		console.info(
+			`Clearing cache... (${Math.abs(
+				Object.keys(this.cache).length - notClear.length
+			)} items)`
+		);
+		let dict: CacheType = {};
 		notClear.forEach((ele) => {
 			dict[ele] = this.cache[ele];
 		});

@@ -1,6 +1,8 @@
 import getBooks from "./Books";
 import { bookRegex, linkRegex, separatorRegex } from "./Regex";
 import { ObsidianYouversionLinkerSettings } from "./SettingsData";
+import Verse from "./Verse";
+import VerseEmbed from "./VerseEmbed";
 import VerseLink from "./VerseLink";
 import ObsidianYouversionLinker from "./main";
 import {
@@ -26,8 +28,19 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		file: TFile | null
 	): EditorSuggestTriggerInfo | null {
 		const currentLine = editor.getLine(cursor.line);
-		const pos = currentLine.search(new RegExp(this.settings.trigger, "u"));
-		if (pos < 0) return null;
+
+		const link_pos = currentLine.search(
+			new RegExp(this.settings.linkTrigger, "u")
+		);
+		const embed_pos = currentLine.search(
+			new RegExp(this.settings.embedTrigger, "u")
+		);
+
+		if (link_pos < 0 && embed_pos < 0) return null;
+		const isLink =
+			link_pos >= 0 &&
+			(cursor.ch - link_pos > cursor.ch - embed_pos || embed_pos < 0);
+		const pos = isLink ? link_pos : embed_pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 
 		const matches = currentContent.match(linkRegex);
@@ -42,26 +55,41 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 							line: cursor.line,
 							ch: pos,
 						},
-						query: match,
+						query: (isLink ? "@" : ">") + match,
 					};
 			}
 			return null;
 		}, null);
 	}
+
 	getSuggestions(
 		context: EditorSuggestContext
 	): VerseLink[] | Promise<VerseLink[]> {
-		return getSuggestionsFromQuery(context.query, this.settings);
+		const query = context.query;
+		const isLink = query[0] !== ">";
+
+		if (query[0] !== "@" && query[0] !== ">") {
+			console.error(`INTERNAL: query should start with @ or >`);
+		}
+
+		return getSuggestionsFromQuery(
+			query.substring(1),
+			isLink,
+			this.settings
+		);
 	}
 
-	renderSuggestion(value: VerseLink, el: HTMLElement): void {
+	renderSuggestion(value: Verse, el: HTMLElement): void {
 		value.render(el);
 	}
 
-	selectSuggestion(value: VerseLink, evt: MouseEvent | KeyboardEvent): void {
+	async selectSuggestion(
+		value: Verse,
+		evt: MouseEvent | KeyboardEvent
+	): Promise<void> {
 		if (this.context) {
 			(this.context.editor as Editor).replaceRange(
-				value.toLink(),
+				await value.toReplace(),
 				this.context.start,
 				this.context.end
 			);
@@ -71,8 +99,9 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 
 export function getSuggestionsFromQuery(
 	query: string,
+	isLink: boolean,
 	settings: ObsidianYouversionLinkerSettings
-): VerseLink[] {
+): Verse[] {
 	console.debug("get suggestion for query ", query.toLowerCase());
 
 	const bookName = query.match(bookRegex)?.first();
@@ -95,17 +124,30 @@ export function getSuggestionsFromQuery(
 	const verseEndNumber =
 		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
 
-	return booksUrl.flatMap((bookUrl) =>
-		settings.bibleVersions.map(
-			(version) =>
-				new VerseLink(
-					version,
-					bookUrl,
-					bookName,
-					chapterNumber,
-					verseNumber,
-					verseEndNumber
-				)
-		)
+	return booksUrl.flatMap(
+		(bookUrl) =>
+			settings.bibleVersions
+				.map((version) => {
+					if (isLink) {
+						return new VerseLink(
+							version,
+							bookUrl,
+							bookName,
+							chapterNumber,
+							verseNumber,
+							verseEndNumber
+						);
+					} else if (verseNumber !== undefined) {
+						return new VerseEmbed(
+							version,
+							bookUrl,
+							bookName,
+							chapterNumber,
+							verseNumber,
+							verseEndNumber
+						);
+					}
+				})
+				.filter((v) => v !== undefined) as Verse[]
 	);
 }
