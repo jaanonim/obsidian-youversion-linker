@@ -8,7 +8,7 @@ export default class VerseEmbed extends Verse {
 			return `>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
 			// prettier-ignore
-			return `>[!Quote] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${content.verses}\n`;
+			return `>[!Quote] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${content.verses.replace(/\n/g,'\n>')}\n`;
 		}
 	}
 }
