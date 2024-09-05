@@ -5,6 +5,7 @@
     ],
     "EXO": [
         "exodus",
+        "exod",
         "exo"
     ],
     "LEV": [
@@ -17,14 +18,17 @@
     ],
     "DEU": [
         "deuteronomy",
+        "deut",
         "deu"
     ],
     "JOS": [
         "joshua",
+        "josh",
         "jos"
     ],
     "JDG": [
         "judges",
+        "judg",
         "jdg"
     ],
     "RUT": [
@@ -33,26 +37,36 @@
     ],
     "1SA": [
         "1samuel",
+        "1sam",
         "1sa"
     ],
     "2SA": [
         "2samuel",
+        "2sam",
         "2sa"
     ],
     "1KI": [
+        "1kingdoms",
         "1kings",
+        "1kgsdms",
+        "1kgs",
         "1ki"
     ],
     "2KI": [
+        "2kingdoms",
         "2kings",
+        "2kgsdms",
+        "2kgs",
         "2ki"
     ],
     "1CH": [
         "1chronicles",
+        "1chr",
         "1ch"
     ],
     "2CH": [
         "2chronicles",
+        "2chr",
         "2ch"
     ],
     "EZR": [
@@ -65,6 +79,7 @@
     ],
     "EST": [
         "esther",
+        "esth",
         "est"
     ],
     "JOB": [
@@ -72,18 +87,28 @@
     ],
     "PSA": [
         "psalm",
-        "psa"
+        "psa",
+        "pss",
+        "ps"
     ],
     "PRO": [
         "proverbs",
+        "prov",
         "pro"
     ],
     "ECC": [
         "ecclesiastes",
-        "ecc"
+        "qoheleth",
+        "eccl",
+        "ecc",
+        "qoh"
     ],
     "SNG": [
         "songofsolomon",
+        "songofsongs",
+        "canticles",
+        "song",
+        "cant",
         "sng"
     ],
     "ISA": [
@@ -100,6 +125,7 @@
     ],
     "EZK": [
         "ezekiel",
+        "ezek",
         "ezk"
     ],
     "DAN": [
@@ -120,6 +146,7 @@
     ],
     "OBA": [
         "obadiah",
+        "obad",
         "oba"
     ],
     "JON": [
@@ -140,6 +167,7 @@
     ],
     "ZEP": [
         "zephaniah",
+        "zeph",
         "zep"
     ],
     "HAG": [
@@ -148,6 +176,7 @@
     ],
     "ZEC": [
         "zechariah",
+        "zech",
         "zec"
     ],
     "MAL": [
@@ -156,6 +185,7 @@
     ],
     "MAT": [
         "matthew",
+        "matt",
         "mat"
     ],
     "MRK": [
@@ -180,10 +210,12 @@
     ],
     "1CO": [
         "1corinthians",
+        "1cor",
         "1co"
     ],
     "2CO": [
         "2corinthians",
+        "2cor",
         "2co"
     ],
     "GAL": [
@@ -196,6 +228,7 @@
     ],
     "PHP": [
         "philippians",
+        "phil",
         "php"
     ],
     "COL": [
@@ -204,18 +237,22 @@
     ],
     "1TH": [
         "1thessalonians",
+        "1thess",
         "1th"
     ],
     "2TH": [
         "2thessalonians",
+        "2thess",
         "2th"
     ],
     "1TI": [
         "1timothy",
+        "1tim",
         "1ti"
     ],
     "2TI": [
         "2timothy",
+        "2tim",
         "2ti"
     ],
     "TIT": [
@@ -224,6 +261,7 @@
     ],
     "PHM": [
         "philemon",
+        "phlm",
         "phm"
     ],
     "HEB": [
@@ -236,10 +274,12 @@
     ],
     "1PE": [
         "1peter",
+        "1pet",
         "1pe"
     ],
     "2PE": [
         "2peter",
+        "2pet",
         "2pe"
     ],
     "1JN": [
