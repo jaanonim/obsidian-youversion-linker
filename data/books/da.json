@@ -1,0 +1,344 @@
+{
+    "GEN": [
+        "1mosebog",
+		"1_mosebog",
+        "1mos",
+        "1_mos"
+    ],
+    "EXO": [
+        "2mosebog",
+		"2_mosebog",
+        "2mos",
+        "2_mos"
+    ],
+    "LEV": [
+        "3mosebog",
+		"3_mosebog",
+        "3mos",
+        "3_mos"
+    ],
+    "NUM": [
+        "4mosebog",
+		"4_mosebog",
+        "4mos",
+        "4_mos"
+    ],
+    "DEU": [
+        "5mosebog",
+		"5_mosebog",
+        "5mos",
+        "5_mos"
+    ],
+    "JOS": [
+        "josva",
+        "jos"
+    ],
+    "JDG": [
+        "dommerbogen",
+        "dommer",
+		"dom"
+    ],
+    "RUT": [
+        "ruth"
+    ],
+    "1SA": [
+        "1samuel",
+		"1_samuel",
+		"1_sam",
+        "1sam"
+    ],
+    "2SA": [
+        "2samuel",
+		"2_samuel",
+		"2_sam",
+        "2sam"
+    ],
+    "1KI": [
+        "1kong",
+        "1_kong",
+		"1kongebog",
+		"1_kongebog"
+    ],
+    "2KI": [
+        "2kong",
+		"2_kong",
+        "2kongebog",
+		"2_kongebog"
+    ],
+    "1CH": [
+        "1krøn",
+		"1_krøn",
+        "1krønikkebog",
+		"1_krønikkebog"
+    ],
+    "2CH": [
+        "2krøn",
+		"2_krøn",
+        "2krønikkebog",
+		"2_krønikkebog"
+    ],
+    "EZR": [
+        "ezra",
+        "ez"
+    ],
+    "NEH": [
+        "nehemias",
+        "neh"
+    ],
+    "EST": [
+        "ester",
+        "est"
+    ],
+    "JOB": [
+        "job"
+    ],
+    "PSA": [
+        "salme",
+		"salmer",
+		"salmernes",
+        "sl"
+    ],
+    "PRO": [
+        "ordsprog",
+        "ordsp"
+    ],
+    "ECC": [
+        "prædiker",
+        "præd",
+        "prædikerens"
+    ],
+    "SNG": [
+        "højsangen",
+		"højsang",
+        "højs"
+    ],
+    "ISA": [
+        "esajas",
+        "es",
+        "esa"
+    ],
+    "JER": [
+        "jeremias",
+        "jer"
+    ],
+    "LAM": [
+        "klagesangene",
+        "klages",
+        "klage"
+    ],
+    "EZK": [
+        "ezekiel",
+        "ez",
+		"eze"
+    ],
+    "DAN": [
+        "daniel",
+        "dan"
+    ],
+    "HOS": [
+        "hosea",
+        "hos"
+    ],
+    "JOL": [
+        "joel"
+    ],
+    "AMO": [
+        "amos",
+        "am"
+    ],
+    "OBA": [
+        "obadias",
+        "obad"
+    ],
+    "JON": [
+        "jonas",
+        "jon"
+    ],
+    "MIC": [
+        "mika"
+    ],
+    "NAM": [
+        "nahum",
+        "nah"
+    ],
+    "HAB": [
+        "habakkuk",
+        "hab"
+    ],
+    "ZEP": [
+        "sefanias",
+        "sef"
+    ],
+    "HAG": [
+        "haggaj",
+        "hagg"
+    ],
+    "ZEC": [
+        "zakarias",
+        "zak",
+		"zk"
+    ],
+    "MAL": [
+        "malakias",
+        "mal"
+    ],
+    "MAT": [
+        "matt",
+		"matthæus",
+        "mt"
+    ],
+    "MRK": [
+        "markus",
+        "mark",
+		"mk"
+    ],
+    "LUK": [
+        "lukas",
+        "lk",
+        "luk"
+    ],
+    "JHN": [
+        "john",
+        "johannes",
+		"jh"
+    ],
+    "ACT": [
+        "apg",
+		"apostlenes"
+    ],
+    "ROM": [
+        "romerbrevet",
+		"romerne",
+        "rom"
+    ],
+    "1CO": [
+        "1_korintherbrev",
+		"1korintherbrev",
+		"1_korinther",
+		"1korinther",
+        "1kor",
+		"1_kor"
+    ],
+    "2CO": [
+        "2_korintherbrev",
+		"2korintherbrev",
+		"2_korinther",
+		"2korinther",
+        "2kor",
+		"2_kor"
+    ],
+    "GAL": [
+        "galaterbrevet",
+		"galaterne",
+        "gal"
+    ],
+    "EPH": [
+        "efeserbrevet",
+		"efeserne",
+        "ef"
+    ],
+    "PHP": [
+        "filipperbrevet",
+		"filipperne",
+        "fil"
+    ],
+    "COL": [
+        "kolossenserbrevet",
+		"kolossenserne",
+        "kol"
+    ],
+    "1TH": [
+        "1_thessalonikerbrev",
+		"1thessalonikerbrev",
+		"1_thessaloniker",
+		"1thessaloniker",
+        "1thess",
+        "1_thess"
+    ],
+    "2TH": [
+        "2_thessalonikerbrev",
+		"2thessalonikerbrev",
+		"2_thessaloniker",
+		"2thessaloniker",
+        "2thess",
+        "2_thess"
+    ],
+    "1TI": [
+        "1timotheusbrev",
+		"1_timotheusbrev",
+		"1timotheus",
+		"1_timotheus",
+        "1tim",
+		"1_tim"
+    ],
+    "2TI": [
+        "2timotheusbrev",
+		"2_timotheusbrev",
+		"1timotheus",
+		"1_timotheus",
+        "2tim",
+		"2_tim"
+    ],
+    "TIT": [
+        "titusbrevet",
+		"titus",
+        "tit"
+    ],
+    "PHM": [
+        "filemon",
+        "filem"
+    ],
+    "HEB": [
+        "hebræerbrevet",
+		"hebræerne",
+        "hebr",
+        "heb"
+    ],
+    "JAS": [
+        "jakobsbrevet",
+        "jakob",
+        "jak"
+    ],
+    "1PE": [
+        "1peter",
+		"1_peter",
+        "1_pet",
+		"1pet"
+    ],
+    "2PE": [
+        "2peter",
+		"2_peter",
+        "2_pet",
+		"2pet"
+    ],
+    "1JN": [
+        "1joh",
+		"1_joh",
+		"1johannes",
+		"1_johannes"
+    ],
+    "2JN": [
+        "2joh",
+		"2_joh",
+		"2johannes",
+		"2_johannes"
+    ],
+    "3JN": [
+        "3joh",
+		"3_joh",
+		"3johannes",
+		"3_johannes"
+    ],
+    "JUD": [
+        "judasbrevet",
+        "judas",
+		"jud"
+    ],
+    "REV": [
+        "åbenbaring",
+        "åb",
+        "aab",
+        "aabenbaring"
+		
+    ]
+}
