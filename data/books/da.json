@@ -1,79 +1,75 @@
 {
     "GEN": [
-        "1. Mosebog",
-        "1Mos",
-        "1_Mos",
-		"1 Mos"
+        "1mosebog",
+        "1mos",
+        "1_mos"
     ],
     "EXO": [
-        "éxodo",
-        "exo",
-        "ex"
+        "2mosebog",
+        "2mos",
+        "2_mos"
     ],
     "LEV": [
-        "levítico",
-        "lev",
-        "lv"
+        "3mosebog",
+        "3mos",
+        "3_mos"
     ],
     "NUM": [
-        "números",
-        "num",
-        "nm"
+        "4mosebog",
+        "4mos",
+        "4_mos"
     ],
     "DEU": [
-        "deuteronomio",
-        "deu",
-        "dt"
+        "5mosebog",
+        "5mos",
+        "5_mos"
     ],
     "JOS": [
-        "Josva",
-        "jos",
-        "js"
+        "josva",
+        "jos"
     ],
     "JDG": [
-        "jueces",
-        "jue"
+        "dommerbogen",
+        "dommer",
+		"dom"
     ],
     "RUT": [
-        "rut",
-        "rt"
+        "ruth"
     ],
     "1SA": [
         "1samuel",
-        "1sa",
-        "1s"
+		"1_samuel",
+		"1_sam",
+        "1sam"
     ],
     "2SA": [
         "2samuel",
-        "2sa",
-        "2s"
+		"2_samuel",
+		"2_sam",
+        "2sam"
     ],
     "1KI": [
-        "1reyes",
-        "1re",
-        "1r"
+        "1kong",
+        "1kongebog"
     ],
     "2KI": [
-        "2reyes",
-        "2re",
-        "2r"
+        "2kong",
+        "2kongebog"
     ],
     "1CH": [
-        "1crónicas",
-        "1cro",
-        "1cr"
+        "1krøn",
+        "1krønikkebog"
     ],
     "2CH": [
-        "2crónicas",
-        "2cro",
-        "2cr"
+        "2krøn",
+        "2krønikkebog"
     ],
     "EZR": [
-        "esdras",
-        "esd"
+        "ezra",
+        "ez"
     ],
     "NEH": [
-        "nehemías",
+        "nehemias",
         "neh"
     ],
     "EST": [
@@ -84,14 +80,12 @@
         "job"
     ],
     "PSA": [
-        "salmos",
-        "sal",
+        "salme",
         "sl"
     ],
     "PRO": [
-        "proverbios",
-        "pro",
-        "pr"
+        "ordsprog",
+        "ordsp"
     ],
     "ECC": [
         "eclesiastés",
@@ -177,36 +171,35 @@
         "mal"
     ],
     "MAT": [
-        "mateo",
+        "matt",
+		"matthæus",
         "mat",
         "mt"
     ],
     "MRK": [
-        "marcos",
-        "mar",
-        "mr"
+        "markus",
+        "mark"
     ],
     "LUK": [
-        "lucas",
-        "luc",
-        "lc"
+        "lukas",
+        "lk",
+        "luk"
     ],
     "JHN": [
-        "juan",
-        "jn"
+        "john",
+        "johannes",
+		"jh"
     ],
     "ACT": [
-        "hechos",
-        "hch"
+        "apg"
     ],
     "ROM": [
-        "romanos",
-        "rom",
-        "ro"
+        "romerbrevet",
+        "rom"
     ],
     "1CO": [
         "1corintios",
-        "1co"
+        "1kor"
     ],
     "2CO": [
         "2corintios",
