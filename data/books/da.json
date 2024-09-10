@@ -1,26 +1,31 @@
 {
     "GEN": [
         "1mosebog",
+		"1_mosebog",
         "1mos",
         "1_mos"
     ],
     "EXO": [
         "2mosebog",
+		"2_mosebog",
         "2mos",
         "2_mos"
     ],
     "LEV": [
         "3mosebog",
+		"3_mosebog",
         "3mos",
         "3_mos"
     ],
     "NUM": [
         "4mosebog",
+		"4_mosebog",
         "4mos",
         "4_mos"
     ],
     "DEU": [
         "5mosebog",
+		"5_mosebog",
         "5mos",
         "5_mos"
     ],
@@ -50,19 +55,27 @@
     ],
     "1KI": [
         "1kong",
-        "1kongebog"
+        "1_kong",
+		"1kongebog",
+		"1_kongebog"
     ],
     "2KI": [
         "2kong",
-        "2kongebog"
+		"2_kong",
+        "2kongebog",
+		"2_kongebog"
     ],
     "1CH": [
         "1krøn",
-        "1krønikkebog"
+		"1_krøn",
+        "1krønikkebog",
+		"1_krønikkebog"
     ],
     "2CH": [
         "2krøn",
-        "2krønikkebog"
+		"2_krøn",
+        "2krønikkebog",
+		"2_krønikkebog"
     ],
     "EZR": [
         "ezra",
@@ -81,6 +94,8 @@
     ],
     "PSA": [
         "salme",
+		"salmer",
+		"salmernes",
         "sl"
     ],
     "PRO": [
@@ -88,97 +103,94 @@
         "ordsp"
     ],
     "ECC": [
-        "eclesiastés",
-        "ecl",
-        "ec"
+        "prædiker",
+        "præd",
+        "prædikerens"
     ],
     "SNG": [
-        "cantares",
-        "can",
-        "cnt"
+        "højsangen",
+		"højsang",
+        "højs"
     ],
     "ISA": [
-        "isaías",
-        "isa",
-        "is"
+        "esajas",
+        "es",
+        "esa"
     ],
     "JER": [
-        "jeremías",
+        "jeremias",
         "jer"
     ],
     "LAM": [
-        "lamentaciones",
-        "lam",
-        "lm"
+        "klagesangene",
+        "klages",
+        "klage"
     ],
     "EZK": [
-        "ezequiel",
-        "eze",
-        "ez"
+        "ezekiel",
+        "ez",
+		"eze"
     ],
     "DAN": [
         "daniel",
-        "dan",
-        "dn"
+        "dan"
     ],
     "HOS": [
-        "oseas",
-        "os"
+        "hosea",
+        "hos"
     ],
     "JOL": [
-        "joel",
-        "jl"
+        "joel"
     ],
     "AMO": [
         "amos",
         "am"
     ],
     "OBA": [
-        "abdías",
-        "abd"
+        "obadias",
+        "obad"
     ],
     "JON": [
-        "jonás",
+        "jonas",
         "jon"
     ],
     "MIC": [
-        "miqueas",
-        "miq",
-        "mi"
+        "mika"
     ],
     "NAM": [
         "nahum",
         "nah"
     ],
     "HAB": [
-        "habacuc",
+        "habakkuk",
         "hab"
     ],
     "ZEP": [
-        "sofonías",
-        "sof"
+        "sefanias",
+        "sef"
     ],
     "HAG": [
-        "hageo",
-        "hag"
+        "haggaj",
+        "hagg"
     ],
     "ZEC": [
-        "zacarías",
-        "zac"
+        "zakarias",
+        "zak",
+		"zk"
     ],
     "MAL": [
-        "malaquías",
+        "malakias",
         "mal"
     ],
     "MAT": [
         "matt",
 		"matthæus",
-        "mat",
         "mt"
     ],
     "MRK": [
         "markus",
-        "mark"
+        "mark",
+		"mk"
     ],
     "LUK": [
         "lukas",
@@ -191,105 +203,142 @@
 		"jh"
     ],
     "ACT": [
-        "apg"
+        "apg",
+		"apostlenes"
     ],
     "ROM": [
         "romerbrevet",
+		"romerne",
         "rom"
     ],
     "1CO": [
-        "1corintios",
-        "1kor"
+        "1_korintherbrev",
+		"1korintherbrev",
+		"1_korinther",
+		"1korinther",
+        "1kor",
+		"1_kor"
     ],
     "2CO": [
-        "2corintios",
-        "2co"
+        "2_korintherbrev",
+		"2korintherbrev",
+		"2_korinther",
+		"2korinther",
+        "2kor",
+		"2_kor"
     ],
     "GAL": [
-        "gálatas",
-        "gal",
-        "ga"
+        "galaterbrevet",
+		"galaterne",
+        "gal"
     ],
     "EPH": [
-        "efesios",
-        "efe",
+        "efeserbrevet",
+		"efeserne",
         "ef"
     ],
     "PHP": [
-        "filipenses",
+        "filipperbrevet",
+		"filipperne",
         "fil"
     ],
     "COL": [
-        "colosenses",
-        "col"
+        "kolossenserbrevet",
+		"kolossenserne",
+        "kol"
     ],
     "1TH": [
-        "1tesalonicenses",
-        "1tes",
-        "1ts"
+        "1_thessalonikerbrev",
+		"1thessalonikerbrev",
+		"1_thessaloniker",
+		"1thessaloniker",
+        "1thess",
+        "1_thess"
     ],
     "2TH": [
-        "2tesalonicenses",
-        "2tes",
-        "2ts"
+        "2_thessalonikerbrev",
+		"2thessalonikerbrev",
+		"2_thessaloniker",
+		"2thessaloniker",
+        "2thess",
+        "2_thess"
     ],
     "1TI": [
-        "1timoteo",
-        "1ti"
+        "1timotheusbrev",
+		"1_timotheusbrev",
+		"1timotheus",
+		"1_timotheus",
+        "1tim",
+		"1_tim"
     ],
     "2TI": [
-        "2timoteo",
-        "2ti"
+        "2timotheusbrev",
+		"2_timotheusbrev",
+		"1timotheus",
+		"1_timotheus",
+        "2tim",
+		"2_tim"
     ],
     "TIT": [
-        "tito",
+        "titusbrevet",
+		"titus",
         "tit"
     ],
     "PHM": [
         "filemon",
         "filem",
-        "flm"
     ],
     "HEB": [
-        "hebreos",
-        "heb",
-        "he"
+        "hebræerbrevet",
+		"hebræerne",
+        "hebr",
+        "heb"
     ],
     "JAS": [
-        "santiago",
-        "sant",
-        "stg"
+        "jakobsbrevet",
+        "jakob",
+        "jak"
     ],
     "1PE": [
-        "1pedro",
-        "1ped",
-        "1pe"
+        "1peter",
+		"1_peter",
+        "1_pet",
+		"1pet"
     ],
     "2PE": [
-        "2pedro",
-        "2ped",
-        "2pe"
+        "2peter",
+		"2_peter",
+        "2_pet",
+		"2pet"
     ],
     "1JN": [
-        "1juan",
-        "1jn"
+        "1joh",
+		"1_joh",
+		"1johannes",
+		"1_johannes"
     ],
     "2JN": [
-        "2juan",
-        "2jn"
+        "2joh",
+		"2_joh",
+		"2johannes",
+		"2_johannes"
     ],
     "3JN": [
-        "3juan",
-        "3jn"
+        "3joh",
+		"3_joh",
+		"3johannes",
+		"3_johannes"
     ],
     "JUD": [
+        "judasbrevet",
         "judas",
-        "jud"
+		"jud"
     ],
     "REV": [
-        "apocalipsis",
-        "apoc",
-        "apo",
-        "ap"
+        "åbenbaring",
+        "åb",
+        "aab",
+        "aabenbaring"
+		
     ]
 }
