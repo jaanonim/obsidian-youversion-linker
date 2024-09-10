@@ -2,8 +2,9 @@
 
 Thanks to the community, we have support for the following languages:
 
--   Chinese - [John Huang](https://github.com/junwhuan)
 -   Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
+-   Chinese - [John Huang](https://github.com/junwhuan)
+- 	Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
 -   English - [Jaanonim](https://github.com/jaanonim)
 -   German - [Tecur](https://github.com/Tecur)
 -   Norwegian - [Cmeeren](https://github.com/cmeeren)
@@ -11,10 +12,8 @@ Thanks to the community, we have support for the following languages:
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
--   Ukrainian - [Seesmof](https://github.com/seesmof)
 - 	Rusian - [Sakardin](https://github.com/Sakardin)
-- 	Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
-
+-   Ukrainian - [Seesmof](https://github.com/seesmof)
 
 ## Adding new language support
 
