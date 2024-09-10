@@ -12,7 +12,8 @@ Thanks to the community, we have support for the following languages:
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
-- Rusian - [Sakardin](https://github.com/Sakardin)
+- 	Rusian - [Sakardin](https://github.com/Sakardin)
+- 	Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
 
 
 ## Adding new language support
