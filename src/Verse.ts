@@ -7,8 +7,7 @@ export default abstract class Verse {
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
-		private verse: number | undefined,
-		private verseEnd: number | undefined
+		private verses: string
 	) {}
 
 	public render(el: HTMLElement) {
@@ -24,11 +23,12 @@ export default abstract class Verse {
 	}
 
 	toSimpleText() {
-		return this.verse
-			? this.verseEnd
-				? `${this.book} ${this.chapter}:${this.verse}-${this.verseEnd}`
-				: `${this.book} ${this.chapter}:${this.verse}`
-			: `${this.book} ${this.chapter}`;
+		const formatBookNameHandler = (book: string) => {
+			return book.charAt(0).toUpperCase() + book.toLowerCase().slice(1);
+		}
+		return this.verses
+			? `${formatBookNameHandler(this.book)} ${this.chapter}:${this.verses.replaceAll(',', ', ')}`
+			: `${formatBookNameHandler(this.book)} ${this.chapter}`;
 	}
 
 	abstract toReplace(): Promise<string>;
@@ -36,9 +36,8 @@ export default abstract class Verse {
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
-		if (this.verse) {
-			url += `.${this.verse}`;
-			if (this.verseEnd) url += `-${this.verseEnd}`;
+		if (this.verses) {
+			url += `.${this.verses}`;
 		}
 		return url;
 	}

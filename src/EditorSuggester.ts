@@ -26,9 +26,8 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		cursor: EditorPosition,
 		editor: Editor,
 		file: TFile | null
-	): EditorSuggestTriggerInfo | null {
+	): EditorSuggestTriggerInfo | null {		
 		const currentLine = editor.getLine(cursor.line);
-
 		const link_pos = currentLine.search(
 			new RegExp(this.settings.linkTrigger, "u")
 		);
@@ -116,14 +115,12 @@ export function getSuggestionsFromQuery(
 		return [];
 	}
 
-	const numbersPartsOfQueryString = query.substring(bookName.length);
+	const numbersPartsOfQueryString = query.substring(bookName.length);		
 	const numbers = numbersPartsOfQueryString.split(separatorRegex);
-
+	const verses = numbersPartsOfQueryString.split(':')[1].replaceAll(' ', '').trim() // get verses provide by user
 	const chapterNumber = parseInt(numbers[0]);
 	const verseNumber = numbers.length > 1 ? parseInt(numbers[1]) : undefined;
-	const verseEndNumber =
-		numbers.length === 3 ? parseInt(numbers[2]) : undefined;
-
+	
 	return booksUrl.flatMap(
 		(bookUrl) =>
 			settings.bibleVersions
@@ -134,8 +131,7 @@ export function getSuggestionsFromQuery(
 							bookUrl,
 							bookName,
 							chapterNumber,
-							verseNumber,
-							verseEndNumber
+							verses
 						);
 					} else if (verseNumber !== undefined) {
 						return new VerseEmbed(
@@ -143,8 +139,7 @@ export function getSuggestionsFromQuery(
 							bookUrl,
 							bookName,
 							chapterNumber,
-							verseNumber,
-							verseEndNumber
+							verses
 						);
 					}
 				})

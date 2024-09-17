@@ -1,30 +1,37 @@
 {
     "GEN": [
         "gênesis",
+        "genesis",
         "gn"
     ],
     "EXO": [
         "êxodo",
+        "exodo",
         "ex"
     ],
     "LEV": [
         "levítico",
+        "levitico",
         "lv"
     ],
     "NUM": [
         "números",
+        "numeros",
         "nm"
     ],
     "DEU": [
         "deuteronômio",
+        "deuteronomio",
         "dt"
     ],
     "JOS": [
         "josué",
+        "josue",
         "js"
     ],
     "JDG": [
         "juízes",
+        "juizes",
         "jz"
     ],
     "RUT": [
@@ -49,10 +56,12 @@
     ],
     "1CH": [
         "1crônicas",
+        "1cronicas",
         "1cr"
     ],
     "2CH": [
         "2crônicas",
+        "2cronicas",
         "2cr"
     ],
     "EZR": [
@@ -76,6 +85,7 @@
     ],
     "PRO": [
         "provérbios",
+        "proverbios",
         "pv"
     ],
     "ECC": [
@@ -84,10 +94,14 @@
     ],
     "SNG": [
         "cantaresdesalomão",
+        "cantares",
+        "cânticodoscânticos",
+        "canticodoscanticos",
         "ct"
     ],
     "ISA": [
         "isaías",
+        "isaias",
         "is"
     ],
     "JER": [
@@ -96,6 +110,8 @@
     ],
     "LAM": [
         "lamentações",
+        "lamentaçoes",
+        "lamentacoes",
         "lm"
     ],
     "EZK": [
@@ -108,6 +124,7 @@
     ],
     "HOS": [
         "oséias",
+        "oseias",
         "os"
     ],
     "JOL": [
@@ -116,6 +133,7 @@
     ],
     "AMO": [
         "amós",
+        "amos",
         "am"
     ],
     "OBA": [
@@ -128,6 +146,7 @@
     ],
     "MIC": [
         "miquéias",
+        "miqueias",
         "mq"
     ],
     "NAM": [
@@ -168,6 +187,7 @@
     ],
     "JHN": [
         "joão",
+        "joao",
         "jo"
     ],
     "ACT": [
@@ -180,18 +200,22 @@
     ],
     "1CO": [
         "1coríntios",
+        "1corintios",
         "1co"
     ],
     "2CO": [
         "2coríntios",
+        "2corintios",
         "2co"
     ],
     "GAL": [
         "gálatas",
+        "galatas",
         "gl"
     ],
     "EPH": [
         "efésios",
+        "efesios",
         "ef"
     ],
     "PHP": [
@@ -212,10 +236,12 @@
     ],
     "1TI": [
         "1timóteo",
+        "1timoteo",
         "1tm"
     ],
     "2TI": [
         "2timóteo",
+        "2timoteo",
         "2tm"
     ],
     "TIT": [
@@ -244,14 +270,17 @@
     ],
     "1JN": [
         "1joão",
+        "1joao",
         "1jo"
     ],
     "2JN": [
         "2joão",
+        "2joao",
         "2jo"
     ],
     "3JN": [
         "3joão",
+        "3joao",
         "3jo"
     ],
     "JUD": [
