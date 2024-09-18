@@ -1,13 +1,27 @@
 import { BibleVersion } from "./SettingsData";
 import VERSIONS from "../data/versions.json";
 
+export class VerseElement {
+	public start: number;
+	public end: number | undefined;
+
+	public constructor(start: number, end: number | undefined) {
+		this.start = start;
+		this.end = end;
+	}
+
+	public toString() {
+		return `${this.start}${this.end ? `-${this.end}` : ""}`;
+	}
+}
+
 export default abstract class Verse {
 	constructor(
 		private version: BibleVersion,
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
-		private verses: string
+		private verses: Array<VerseElement>
 	) {}
 
 	public render(el: HTMLElement) {
@@ -23,8 +37,10 @@ export default abstract class Verse {
 	}
 
 	toSimpleText() {
-		return this.verses
-			? `${this.book} ${this.chapter}:${this.verses}`
+		return this.verses.length > 0
+			? `${this.book} ${this.chapter}:${this.verses
+					.map((verse) => verse.toString())
+					.join(", ")}`
 			: `${this.book} ${this.chapter}`;
 	}
 
@@ -33,9 +49,8 @@ export default abstract class Verse {
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
-		if (this.verses) {
-			url += `.${this.verses.replaceAll(' ', '').replaceAll(/[–—]/g, '-').trim()}`;
-			// remove the empty spaces and replace the en-dash to normal dash to insert the verses in URL
+		if (this.verses.length > 0) {
+			url += `.${this.verses.map((verse) => verse.toString()).join(",")}`;
 		}
 		return url;
 	}

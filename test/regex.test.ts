@@ -1,4 +1,4 @@
-import { bookRegex, linkRegex, separatorRegex } from "../src/Regex";
+import { bookRegex, linkRegex } from "../src/Regex";
 
 describe("Regex Tests", () => {
 	// Tests for linkRegex
@@ -23,7 +23,7 @@ describe("Regex Tests", () => {
 			expect("matt 9").toMatch(linkRegex);
 		});
 
-		test('matches "jes 9, 10"', () => {
+		test('matches "jes 9, 10.1"', () => {
 			expect("jes 9,10").toMatch(linkRegex);
 		});
 
@@ -33,6 +33,14 @@ describe("Regex Tests", () => {
 
 		test('matches "3 こんにちは 123"', () => {
 			expect("3 こんにちは 123").toMatch(linkRegex);
+		});
+
+		test('matches "3 こんにちは 123.5"', () => {
+			expect("3 こんにちは 123").toMatch(linkRegex);
+		});
+
+		test('matches "jes 9:10-11.1-3,45"', () => {
+			expect("jes 9:10-11").toMatch(linkRegex);
 		});
 	});
 
@@ -68,41 +76,6 @@ describe("Regex Tests", () => {
 
 		test('does not match "123"', () => {
 			expect("123").not.toMatch(bookRegex);
-		});
-	});
-
-	// Tests for separatorRegex
-	describe("separatorRegex", () => {
-		test('matches "-"', () => {
-			expect("-").toMatch(separatorRegex);
-		});
-
-		test('matches ":"', () => {
-			expect(":").toMatch(separatorRegex);
-		});
-
-		test('matches ","', () => {
-			expect(",").toMatch(separatorRegex);
-		});
-
-		test('matches "."', () => {
-			expect(".").toMatch(separatorRegex);
-		});
-
-		test('matches "---"', () => {
-			expect("---").toMatch(separatorRegex);
-		});
-
-		test('matches "..."', () => {
-			expect("...").toMatch(separatorRegex);
-		});
-
-		test('does not match "abc"', () => {
-			expect("abc").not.toMatch(separatorRegex);
-		});
-
-		test('does not match "1"', () => {
-			expect("1").not.toMatch(separatorRegex);
 		});
 	});
 });

@@ -1,7 +1,12 @@
 import getBooks from "./Books";
-import { bookRegex, linkRegex, separatorRegex } from "./Regex";
+import {
+	bookRegex,
+	linkRegex,
+	chapterSeparatorRegex,
+	rangeSeparatorRegex,
+} from "./Regex";
 import { ObsidianYouversionLinkerSettings } from "./SettingsData";
-import Verse from "./Verse";
+import Verse, { VerseElement } from "./Verse";
 import VerseEmbed from "./VerseEmbed";
 import VerseLink from "./VerseLink";
 import ObsidianYouversionLinker from "./main";
@@ -96,6 +101,19 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 	}
 }
 
+export function processVerses(verses_str: Array<string>): Array<VerseElement> {
+	return verses_str
+		.map((verse) => {
+			const [start, end] = verse
+				.split(rangeSeparatorRegex)
+				.map((v) => (v === undefined ? undefined : parseInt(v)));
+			return start === undefined
+				? undefined
+				: new VerseElement(start, end);
+		})
+		.filter((v) => v !== undefined) as Array<VerseElement>;
+}
+
 export function getSuggestionsFromQuery(
 	query: string,
 	isLink: boolean,
@@ -116,15 +134,12 @@ export function getSuggestionsFromQuery(
 	}
 
 	const numbersPartsOfQueryString = query.substring(bookName.length);
-	const numbers = numbersPartsOfQueryString.split(separatorRegex);
-	let verses: string;
-	if (numbers.length !== 1) {
-		verses = numbersPartsOfQueryString.split(/[:,.]/).slice(1).join(',') // split the verses of the chapter, join the verses using a ',' for separate verses.
-	}
-	
-	const chapterNumber = parseInt(numbers[0]);
-	const verseNumber = numbers.length > 1 ? parseInt(numbers[1]) : undefined;
-	
+	const [chapter_str, ...verses_str] = numbersPartsOfQueryString.split(
+		chapterSeparatorRegex
+	);
+	const verses = processVerses(verses_str);
+	const chapterNumber = parseInt(chapter_str);
+
 	return booksUrl.flatMap(
 		(bookUrl) =>
 			settings.bibleVersions
@@ -137,7 +152,7 @@ export function getSuggestionsFromQuery(
 							chapterNumber,
 							verses
 						);
-					} else if (verseNumber !== undefined) {
+					} else if (verses.length !== 0) {
 						return new VerseEmbed(
 							version,
 							bookUrl,
