@@ -26,7 +26,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		cursor: EditorPosition,
 		editor: Editor,
 		file: TFile | null
-	): EditorSuggestTriggerInfo | null {		
+	): EditorSuggestTriggerInfo | null {
 		const currentLine = editor.getLine(cursor.line);
 		const link_pos = currentLine.search(
 			new RegExp(this.settings.linkTrigger, "u")
@@ -117,7 +117,11 @@ export function getSuggestionsFromQuery(
 
 	const numbersPartsOfQueryString = query.substring(bookName.length);		
 	const numbers = numbersPartsOfQueryString.split(separatorRegex);
-	const verses = numbersPartsOfQueryString.split(':')[1].replaceAll(' ', '').trim() // get verses provide by user
+	let verses: string;
+	if (numbers.length !== 1) {
+		verses = numbersPartsOfQueryString.split(/[:,.]/).slice(1).join(',') // split the verses of the chapter, join the verses using a ',' for separate verses.
+	}
+	
 	const chapterNumber = parseInt(numbers[0]);
 	const verseNumber = numbers.length > 1 ? parseInt(numbers[1]) : undefined;
 	

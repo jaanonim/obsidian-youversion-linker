@@ -23,12 +23,9 @@ export default abstract class Verse {
 	}
 
 	toSimpleText() {
-		const formatBookNameHandler = (book: string) => {
-			return book.charAt(0).toUpperCase() + book.toLowerCase().slice(1);
-		}
 		return this.verses
-			? `${formatBookNameHandler(this.book)} ${this.chapter}:${this.verses.replaceAll(',', ', ')}`
-			: `${formatBookNameHandler(this.book)} ${this.chapter}`;
+			? `${this.book} ${this.chapter}:${this.verses}`
+			: `${this.book} ${this.chapter}`;
 	}
 
 	abstract toReplace(): Promise<string>;
@@ -37,7 +34,8 @@ export default abstract class Verse {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
 		if (this.verses) {
-			url += `.${this.verses}`;
+			url += `.${this.verses.replaceAll(' ', '').replaceAll(/[–—]/g, '-').trim()}`;
+			// remove the empty spaces and replace the en-dash to normal dash to insert the verses in URL
 		}
 		return url;
 	}
