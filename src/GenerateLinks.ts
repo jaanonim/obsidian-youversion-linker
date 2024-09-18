@@ -14,25 +14,23 @@ export default function GenerateLinks(
 		suggestions.map((suggestion) => {
 			const index = suggestions.indexOf(suggestion);
 			if (index >= 0) {
-				suggestions = suggestions.slice(index, 1)
+				suggestions = suggestions.slice(index, 1);
 			}
-		})
-		return suggestions
-	}
-	
+		});
+		return suggestions;
+	};
+
 	const lines = editor.lineCount();
 	for (let i = 0; i < lines; i++) {
 		const line = editor.getLine(i);
 
-		const match = [...line.matchAll(linkRegex)];		
+		const match = [...line.matchAll(linkRegex)];
 		match.forEach((match) => {
-			const suggestions = removeDuplicatedSuggestionsHandler(getSuggestionsFromQuery(
-				match[0],
-				true,
-				settings
-			));			
+			const suggestions = removeDuplicatedSuggestionsHandler(
+				getSuggestionsFromQuery(match[0], true, settings)
+			);
 			suggestions.forEach(async (s) => {
-				if (match.index === undefined) return;				
+				if (match.index === undefined) return;
 				editor.replaceRange(
 					await s.toReplace(),
 					{
