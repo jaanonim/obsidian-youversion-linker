@@ -115,7 +115,7 @@ export function getSuggestionsFromQuery(
 		return [];
 	}
 
-	const numbersPartsOfQueryString = query.substring(bookName.length);		
+	const numbersPartsOfQueryString = query.substring(bookName.length);
 	const numbers = numbersPartsOfQueryString.split(separatorRegex);
 	let verses: string;
 	if (numbers.length !== 1) {
