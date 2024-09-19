@@ -1,14 +1,27 @@
 import { BibleVersion } from "./SettingsData";
 import VERSIONS from "../data/versions.json";
 
+export class VerseElement {
+	public start: number;
+	public end: number | undefined;
+
+	public constructor(start: number, end: number | undefined) {
+		this.start = start;
+		this.end = end;
+	}
+
+	public toString() {
+		return `${this.start}${this.end ? `-${this.end}` : ""}`;
+	}
+}
+
 export default abstract class Verse {
 	constructor(
 		private version: BibleVersion,
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
-		private verse: number | undefined,
-		private verseEnd: number | undefined
+		private verses: Array<VerseElement>
 	) {}
 
 	public render(el: HTMLElement) {
@@ -24,10 +37,10 @@ export default abstract class Verse {
 	}
 
 	toSimpleText() {
-		return this.verse
-			? this.verseEnd
-				? `${this.book} ${this.chapter}:${this.verse}-${this.verseEnd}`
-				: `${this.book} ${this.chapter}:${this.verse}`
+		return this.verses.length > 0
+			? `${this.book} ${this.chapter}:${this.verses
+					.map((verse) => verse.toString())
+					.join(", ")}`
 			: `${this.book} ${this.chapter}`;
 	}
 
@@ -36,9 +49,8 @@ export default abstract class Verse {
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
-		if (this.verse) {
-			url += `.${this.verse}`;
-			if (this.verseEnd) url += `-${this.verseEnd}`;
+		if (this.verses.length > 0) {
+			url += `.${this.verses.map((verse) => verse.toString()).join(",")}`;
 		}
 		return url;
 	}

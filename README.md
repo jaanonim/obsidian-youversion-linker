@@ -6,7 +6,7 @@
 
 **List of supported languages can be found [here](./Languages.md).**
 
-You need to just type for example: `@ John 1:1-6` to link verse to quote verse use for example: `> John 1:1-6`.
+You need to just type for example: `@ John 1:1-6` to link verse to quote verse use for example: `> John 1:1-6`. Now it also supports multiple verses like: `John 3:16,18-20`.
 
 `@` and `>` char is a trigger for suggestion and it can be changed in settings.
 In settings you can select witch version of bible you want to use and books names in witch language will be detected.
