@@ -25,7 +25,7 @@ If you want to add support for a new language, you can do so by following these 
 3. Import json file to `src/BooksLists.ts` as shown in the example:
 
 ```ts
-import _pl from "../data/books/pl.json";
+import pl from "../data/books/pl.json";
 ```
 
 ```ts
