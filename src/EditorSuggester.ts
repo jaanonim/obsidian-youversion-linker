@@ -43,7 +43,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		if (link_pos < 0 && embed_pos < 0) return null;
 		const isLink =
 			link_pos >= 0 &&
-			(cursor.ch - link_pos > cursor.ch - embed_pos || embed_pos < 0);
+			(cursor.ch - link_pos < cursor.ch - embed_pos || embed_pos < 0);
 		const pos = isLink ? link_pos : embed_pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 
