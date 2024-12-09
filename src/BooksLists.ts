@@ -6,6 +6,7 @@ import nob from "../data/books/nob.json";
 import pl from "../data/books/pl.json";
 import ptBr from "../data/books/pt-br.json";
 import de from "../data/books/de.json";
+import nl from "../data/books/nl.json";
 import zhCN from "../data/books/zh-CN.json";
 import zhHK from "../data/books/zh-HK.json";
 import es from "../data/books/es.json";
@@ -20,6 +21,7 @@ const booksNames = {
 	"Chinese Simplified": zhCN,
 	"Chinese Traditional": zhHK,
 	"Danish": da,
+	"Dutch": nl,
 	"English": en,
 	"German": de,
 	"Norwegian": nob,
