@@ -1,0 +1,297 @@
+{
+    "GEN": [
+        "genesis",
+        "gen"
+    ],
+    "EXO": [
+        "exodus",
+        "exod",
+        "exo",
+		"ex"
+    ],
+    "LEV": [
+        "leviticus",
+        "lev"
+    ],
+    "NUM": [
+        "numeri",
+        "num"
+    ],
+    "DEU": [
+        "deuteronomium",
+        "deut",
+        "deu"
+    ],
+    "JOS": [
+        "jozua",
+        "joz"
+    ],
+    "JDG": [
+        "richteren",
+        "richt",
+        "ri"
+    ],
+    "RUT": [
+        "ruth",
+        "rut"
+    ],
+    "1SA": [
+        "1samuel",
+        "1sam",
+        "1sa"
+    ],
+    "2SA": [
+        "2samuel",
+        "2sam",
+        "2sa"
+    ],
+    "1KI": [
+        "1koningen",
+        "1kon"
+    ],
+    "2KI": [
+        "2koningen",
+        "2kon"
+    ],
+    "1CH": [
+        "1kronieken",
+        "1kron",
+        "1kr"
+    ],
+    "2CH": [
+        "2kronieken",
+        "2kron",
+        "2kr"
+    ],
+    "EZR": [
+        "ezra",
+        "ezr"
+    ],
+    "NEH": [
+        "nehemia",
+        "neh"
+    ],
+    "EST": [
+        "esther",
+        "esth",
+        "est"
+    ],
+    "JOB": [
+        "job"
+    ],
+    "PSA": [
+        "psalm",
+        "psa",
+        "ps"
+    ],
+    "PRO": [
+        "spreuken",
+        "spr"
+    ],
+    "ECC": [
+        "prediker",
+        "pred",
+        "pr"
+    ],
+    "SNG": [
+        "hooglied",
+        "hoogl",
+        "hoog"
+    ],
+    "ISA": [
+        "jesaja",
+        "jes"
+    ],
+    "JER": [
+        "jeremia",
+        "jer"
+    ],
+    "LAM": [
+        "klaagliederen",
+        "klaag",
+		"klaagl"
+    ],
+    "EZK": [
+        "ezechiël",
+        "ezech",
+        "eze"
+    ],
+    "DAN": [
+        "daniel",
+        "dan"
+    ],
+    "HOS": [
+        "hosea",
+        "hos"
+    ],
+    "JOL": [
+        "joël",
+        "jol"
+    ],
+    "AMO": [
+        "amos",
+        "amo",
+		"am"
+    ],
+    "OBA": [
+        "obadja",
+        "obad",
+        "oba",
+		"ob"
+    ],
+    "JON": [
+        "jona",
+        "jon"
+    ],
+    "MIC": [
+        "micha",
+        "mic",
+		"mi"
+    ],
+    "NAM": [
+        "nahum",
+        "nah"
+    ],
+    "HAB": [
+        "habakuk",
+        "hab"
+    ],
+    "ZEP": [
+        "sefanja",
+        "sef",
+		"zef"
+    ],
+    "HAG": [
+        "haggai",
+        "hag"
+    ],
+    "ZEC": [
+        "zacharia",
+        "zach",
+        "zac"
+    ],
+    "MAL": [
+        "maleachi",
+        "mal"
+    ],
+    "MAT": [
+        "mattheüs",
+        "matt",
+        "mat"
+    ],
+    "MRK": [
+        "marcus",
+        "marc"
+    ],
+    "LUK": [
+        "lucas",
+        "luc"
+    ],
+    "JHN": [
+        "johannes",
+        "joh"
+    ],
+    "ACT": [
+        "handelingen",
+        "hand"
+    ],
+    "ROM": [
+        "romeinen",
+        "rom"
+    ],
+    "1CO": [
+        "1korinthiërs",
+        "1kor",
+        "1cor"
+    ],
+    "2CO": [
+        "2korinthiërs",
+        "2kor",
+        "2cor"
+    ],
+    "GAL": [
+        "galaten",
+        "gal"
+    ],
+    "EPH": [
+        "efeziërs",
+        "efz",
+        "ef"
+    ],
+    "PHP": [
+        "filippenzen",
+        "fil"
+    ],
+    "COL": [
+        "kolossenzen",
+        "kol",
+        "col"
+    ],
+    "1TH": [
+        "1tessalonicenzen",
+        "1tess",
+        "1tes"
+    ],
+    "2TH": [
+        "2tessalonicenzen",
+        "2tess",
+        "2tes"
+    ],
+    "1TI": [
+        "1timotheüs",
+        "1tim"
+    ],
+    "2TI": [
+        "2timotheüs",
+        "2tim"
+    ],
+    "TIT": [
+        "titus",
+        "tit"
+    ],
+    "PHM": [
+        "filemon",
+        "filem"
+    ],
+    "HEB": [
+        "hebreëen",
+        "hebr",
+		"heb"
+    ],
+    "JAS": [
+        "jakobus",
+        "jak",
+        "jac"
+    ],
+    "1PE": [
+        "1petrus",
+        "1petr",
+        "1pet"
+    ],
+    "2PE": [
+        "2petrus",
+        "2petr",
+        "2pet"
+    ],
+    "1JN": [
+        "1johannes",
+        "1joh"
+    ],
+    "2JN": [
+        "2johannes",
+        "2joh"
+    ],
+    "3JN": [
+        "3johannes",
+        "3joh"
+    ],
+    "JUD": [
+        "judas",
+        "jud"
+    ],
+    "REV": [
+        "openbaring",
+        "openb",
+        "op"
+    ]
+}
