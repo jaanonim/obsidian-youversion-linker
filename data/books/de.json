@@ -2,30 +2,35 @@
     "GEN": [
         "1mose",
         "1mos",
+		"1mo",
         "genesis",
         "gen"
     ],
     "EXO": [
         "2mose",
         "2mos",
+		"2mo",
         "exodus",
         "ex"
     ],
     "LEV": [
         "3mose",
         "3mos",
+		"3mo",
         "levitikus",
         "lev"
     ],
     "NUM": [
         "4mose",
         "4mos",
+		"4mo",
         "numeri",
         "num"
     ],
     "DEU": [
         "5mose",
         "5mos",
+		"5mo",
         "deuteronomium",
         "dtn"
     ],
@@ -39,7 +44,7 @@
     ],
     "RUT": [
         "rut",
-        "rut"
+        "rt"
     ],
     "1SA": [
         "1samuel",
@@ -51,11 +56,13 @@
     ],
     "1KI": [
         "1könige",
-        "1kön"
+        "1kön",
+		"1kö"
     ],
     "2KI": [
         "2könige",
-        "2kön"
+        "2kön",
+		"2kö"
     ],
     "1CH": [
         "1chronik",
@@ -67,7 +74,7 @@
     ],
     "EZR": [
         "esra",
-        "esra"
+        "esr"
     ],
     "NEH": [
         "nehemia",
@@ -104,7 +111,8 @@
     ],
     "SNG": [
         "hoheslied",
-        "hld"
+        "hld",
+		"hl"
     ],
     "ISA": [
         "jesaja",
@@ -118,7 +126,8 @@
     "LAM": [
         "klageliederjeremias",
         "klagelieder",
-        "klgl"
+		"klgl",
+        "kla"
     ],
     "EZK": [
         "ezechiel",
@@ -142,10 +151,12 @@
     ],
     "OBA": [
         "obadja",
-        "obd"
+        "obd",
+		"ob"
     ],
     "JON": [
-        "jona"
+        "jona",
+		"jon"
     ],
     "MIC": [
         "micha",
@@ -161,7 +172,8 @@
     ],
     "ZEP": [
         "zefanja",
-        "zef"
+        "zeph",
+		"zef"
     ],
     "HAG": [
         "haggai",
@@ -226,11 +238,13 @@
     ],
     "1TH": [
         "1thessalonicher",
-        "1thess"
+        "1thess",
+		"1th"
     ],
     "2TH": [
         "2thessalonicher",
-        "2thess"
+        "2thess",
+		"2th"
     ],
     "1TI": [
         "1timotheus",
@@ -258,11 +272,13 @@
     ],
     "1PE": [
         "1petrus",
-        "1petr"
+        "1petr",
+		"1pt"
     ],
     "2PE": [
         "2petrus",
-        "2petr"
+        "2petr",
+		"2pt"
     ],
     "1JN": [
         "1johannes",
