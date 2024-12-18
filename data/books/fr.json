@@ -1,0 +1,321 @@
+{
+    "GEN": [
+        "genèse",
+        "genese",
+        "gn",
+        "gen"
+    ],
+    "EXO": [
+        "exode",
+        "ex"
+    ],
+    "LEV": [
+        "lévitique",
+        "levitique",
+        "lev"
+    ],
+    "NUM": [
+        "nombres",
+        "nb"
+    ],
+    "DEU": [
+        "deutéronome",
+        "deuteronome",
+        "deut",
+        "dt"
+    ],
+    "JOS": [
+        "josué",
+        "josue",
+        "jos",
+        "js"
+    ],
+    "JDG": [
+        "juges",
+        "jg"
+    ],
+    "RUT": [
+        "ruth",
+        "rt"
+    ],
+    "1SA": [
+        "1samuel",
+        "1sam",
+        "1s"
+    ],
+    "2SA": [
+        "2samuel",
+        "2sam",
+        "2s"
+    ],
+    "1KI": [
+        "1rois",
+        "1r"
+    ],
+    "2KI": [
+        "2rois",
+        "2r"
+    ],
+    "1CH": [
+        "1chroniques",
+        "1chr",
+        "1ch"
+    ],
+    "2CH": [
+        "2chroniques",
+        "2chr",
+        "2ch"
+    ],
+    "EZR": [
+        "esdras",
+        "esd"
+    ],
+    "NEH": [
+        "néhémie",
+        "nehemie",
+        "neh",
+        "né"
+    ],
+    "EST": [
+        "esther",
+        "esth",
+        "est"
+    ],
+    "JOB": [
+        "job",
+        "jb"
+    ],
+    "PSA": [
+        "psaumes",
+        "psa",
+        "pss",
+        "ps"
+    ],
+    "PRO": [
+        "proverbes",
+        "prov",
+        "pro",
+        "pr"
+    ],
+    "ECC": [
+        "ecclesiaste",
+        "qoheleth",
+        "eccl",
+        "ecc",
+        "ec",
+        "qoh"
+    ],
+    "SNG": [
+        "cantique_des_cantiques",
+        "cantiquedescantiques",
+        "cantique",
+        "cant",
+        "ct"
+    ],
+    "ISA": [
+        "esaie",
+        "es"
+    ],
+    "JER": [
+        "jérémie",
+        "jeremie",
+        "jr"
+    ],
+    "LAM": [
+        "lamentations",
+        "lm"
+    ],
+    "EZK": [
+        "ezéchiel",
+        "ezechiel",
+        "ez"
+    ],
+    "DAN": [
+        "daniel",
+        "dn"
+    ],
+    "HOS": [
+        "osée",
+        "osee",
+        "os"
+    ],
+    "JOL": [
+        "joël",
+        "joel",
+        "jl"
+    ],
+    "AMO": [
+        "amos",
+        "am"
+    ],
+    "OBA": [
+        "abdias",
+        "ab"
+    ],
+    "JON": [
+        "jonas",
+        "jon"
+    ],
+    "MIC": [
+        "michée",
+        "michee",
+        "mi"
+    ],
+    "NAM": [
+        "nahum",
+        "na"
+    ],
+    "HAB": [
+        "habakuk",
+        "ha"
+    ],
+    "ZEP": [
+        "sophonie",
+        "soph",
+        "so"
+    ],
+    "HAG": [
+        "aggée",
+        "aggee",
+        "ag"
+    ],
+    "ZEC": [
+        "zacharie",
+        "zach",
+        "za"
+    ],
+    "MAL": [
+        "malachie",
+        "mal",
+        "ml"
+    ],
+    "MAT": [
+        "matthieu",
+        "matt",
+        "mt"
+    ],
+    "MRK": [
+        "marc",
+        "mc"
+    ],
+    "LUK": [
+        "luc",
+        "lc"
+    ],
+    "JHN": [
+        "jean",
+        "jn"
+    ],
+    "ACT": [
+        "actes",
+        "act",
+        "ac",
+    ],
+    "ROM": [
+        "romains",
+        "rm"
+    ],
+    "1CO": [
+        "1corinthiens",
+        "1cor",
+        "1co"
+    ],
+    "2CO": [
+        "2corinthiens",
+        "2cor",
+        "2co"
+    ],
+    "GAL": [
+        "galates",
+        "gal",
+        "ga",
+    ],
+    "EPH": [
+        "ephésiens",
+        "eph",
+        "ep"
+    ],
+    "PHP": [
+        "philippiens",
+        "phil",
+        "ph"
+    ],
+    "COL": [
+        "colossiens",
+        "col"
+    ],
+    "1TH": [
+        "1thessaloniciens",
+        "1thess",
+        "1th"
+    ],
+    "2TH": [
+        "2thessaloniciens",
+        "2thess",
+        "2th"
+    ],
+    "1TI": [
+        "1timothée",
+        "1timothee",
+        "1tim",
+        "1tm"
+    ],
+    "2TI": [
+        "2timothée",
+        "2timothee",
+        "2tim",
+        "2tm"
+    ],
+    "TIT": [
+        "tite",
+        "tt"
+    ],
+    "PHM": [
+        "philémon",
+        "philemon",
+        "phlm",
+        "phm"
+    ],
+    "HEB": [
+        "hébreux",
+        "hebreux",
+        "hé",
+        "he",
+        "hb",
+    ],
+    "JAS": [
+        "jacques",
+        "jc"
+    ],
+    "1PE": [
+        "1pierre",
+        "1pi",
+        "1p"
+    ],
+    "2PE": [
+        "2pierre",
+        "2pi",
+        "2p"
+    ],
+    "1JN": [
+        "1jean",
+        "1jn"
+    ],
+    "2JN": [
+        "2jean",
+        "2jn"
+    ],
+    "3JN": [
+        "3jean",
+        "3jn"
+    ],
+    "JUD": [
+        "jude",
+        "jd"
+    ],
+    "REV": [
+        "apocalypse",
+        "apo",
+        "ap"
+    ]
+}
