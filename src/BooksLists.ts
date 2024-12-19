@@ -15,6 +15,7 @@ import sv from "../data/books/sv.json";
 import uk from "../data/books/uk.json";
 import ru from "../data/books/ru.json";
 import ko from "../data/books/ko.json";
+import fr from "../data/books/fr.json";
 
 // prettier-ignore
 const booksNames = {
@@ -32,7 +33,8 @@ const booksNames = {
 	"Romanian": ro,
 	"Ukrainian": uk,
 	"Russian": ru,
-	"Korean": ko
+	"Korean": ko,
+	"French": fr
 } as BooksLangList;
 
 export default booksNames;

@@ -16,6 +16,7 @@ Thanks to the community, we have support for the following languages:
 -   Rusian - [Sakardin](https://github.com/Sakardin)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
 -   Korean - [Woollim](https://github.com/woollim)
+-   French - [Cedriane](https://github.com/Cedriane)
 
 ## Adding new language support
 
