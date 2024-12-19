@@ -7,6 +7,7 @@ Thanks to the community, we have support for the following languages:
 -   Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
 -   Dutch - [Jaap Kramer](https://github.com/jaapkramer)
 -   English - [Jaanonim](https://github.com/jaanonim)
+-   French - [Cedriane](https://github.com/Cedriane)
 -   German - [Tecur](https://github.com/Tecur)
 -   Norwegian - [Cmeeren](https://github.com/cmeeren)
 -   Polish - [Jaanonim](https://github.com/jaanonim)
@@ -16,7 +17,6 @@ Thanks to the community, we have support for the following languages:
 -   Rusian - [Sakardin](https://github.com/Sakardin)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
 -   Korean - [Woollim](https://github.com/woollim)
--   French - [Cedriane](https://github.com/Cedriane)
 
 ## Adding new language support
 

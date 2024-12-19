@@ -24,6 +24,7 @@ const booksNames = {
 	"Danish": da,
 	"Dutch": nl,
 	"English": en,
+	"French": fr,
 	"German": de,
 	"Norwegian": nob,
 	"Polish": pl,
@@ -34,7 +35,6 @@ const booksNames = {
 	"Ukrainian": uk,
 	"Russian": ru,
 	"Korean": ko,
-	"French": fr
 } as BooksLangList;
 
 export default booksNames;
