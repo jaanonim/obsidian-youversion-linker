@@ -46,21 +46,28 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 			(cursor.ch - link_pos < cursor.ch - embed_pos || embed_pos < 0);
 		const pos = isLink ? link_pos : embed_pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
+		const prefix = currentLine.substring(0, pos);
 
 		const matches = currentContent.match(linkRegex);
 		if (!matches) return null;
 		return matches?.reduce((prev, match) => {
 			if (match && prev === null) {
 				const end = currentContent.lastIndexOf(match);
-				if (end === 0 || currentContent.charAt(end - 1) !== "[")
+				if (end === 0 || currentContent.charAt(end - 1) !== "[") {
+					const t = isLink
+						? "@"
+						: prefix.match(/^ {1,3}$/gm)
+						? ">"
+						: "<";
 					return {
 						end: cursor,
 						start: {
 							line: cursor.line,
 							ch: pos,
 						},
-						query: (isLink ? "@" : ">") + match,
+						query: t + match,
 					};
+				}
 			}
 			return null;
 		}, null);
@@ -70,15 +77,17 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		context: EditorSuggestContext
 	): VerseLink[] | Promise<VerseLink[]> {
 		const query = context.query;
-		const isLink = query[0] !== ">";
+		const isLink = query[0] == "@";
+		const insertNewLine = query[0] == "<";
 
-		if (query[0] !== "@" && query[0] !== ">") {
+		if (query[0] !== "@" && query[0] !== ">" && query[0] !== "<") {
 			console.error(`INTERNAL: query should start with @ or >`);
 		}
 
 		return getSuggestionsFromQuery(
 			query.substring(1),
 			isLink,
+			insertNewLine,
 			this.settings
 		);
 	}
@@ -117,6 +126,7 @@ export function processVerses(verses_str: Array<string>): Array<VerseElement> {
 export function getSuggestionsFromQuery(
 	query: string,
 	isLink: boolean,
+	insertNewLine: boolean,
 	settings: ObsidianYouversionLinkerSettings
 ): Verse[] {
 	console.debug("get suggestion for query ", query.toLowerCase());
@@ -158,7 +168,8 @@ export function getSuggestionsFromQuery(
 							bookUrl,
 							bookName,
 							chapterNumber,
-							verses
+							verses,
+							insertNewLine
 						);
 					}
 				})
