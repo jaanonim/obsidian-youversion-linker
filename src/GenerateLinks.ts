@@ -27,7 +27,7 @@ export default function GenerateLinks(
 		const match = [...line.matchAll(linkRegex)];
 		match.forEach((match) => {
 			const suggestions = removeDuplicatedSuggestionsHandler(
-				getSuggestionsFromQuery(match[0], true, settings)
+				getSuggestionsFromQuery(match[0], true, false, settings)
 			);
 			suggestions.forEach(async (s) => {
 				if (match.index === undefined) return;
