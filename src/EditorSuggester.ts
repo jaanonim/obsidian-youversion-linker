@@ -169,7 +169,8 @@ export function getSuggestionsFromQuery(
 							bookName,
 							chapterNumber,
 							verses,
-							insertNewLine
+							insertNewLine,
+							settings.calloutName
 						);
 					}
 				})

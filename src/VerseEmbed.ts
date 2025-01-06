@@ -9,7 +9,8 @@ export default class VerseEmbed extends Verse {
 		book: string,
 		chapter: number,
 		verses: Array<VerseElement>,
-		private insertNewLine: boolean
+		private insertNewLine: boolean,
+		private calloutName: string
 	) {
 		super(version, bookUrl, book, chapter, verses);
 	}
@@ -21,7 +22,7 @@ export default class VerseEmbed extends Verse {
 			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
 			// prettier-ignore
-			return `${p}>[!Quote] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${content.verses.replace(/\n/g,'\n>')}\n`;
+			return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${content.verses.replace(/\n/g,'\n>')}\n`;
 		}
 	}
 }
