@@ -10,6 +10,7 @@ export interface ObsidianYouversionLinkerSettings {
 	linkTrigger: string;
 	embedTrigger: string;
 	selectedBooksLanguages: string[];
+	calloutName: string;
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -24,4 +25,5 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	linkTrigger: "@",
 	embedTrigger: ">",
 	selectedBooksLanguages: ["English"],
+	calloutName: "Bible",
 };

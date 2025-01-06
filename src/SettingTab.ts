@@ -71,6 +71,19 @@ export default class SettingTab extends PluginSettingTab {
 					await this.plugin.saveSettings();
 				});
 			});
+
+		new Setting(containerEl)
+			.setName("Callout name")
+			.setDesc(
+				"When quoting verse, the name of the callout block. Can be set to any build in callout names (eg: 'Quote', 'Info'), by default is set to custom callout 'Bible'."
+			)
+			.addText((text) => {
+				text.setValue(this.plugin.settings.calloutName);
+				text.onChange(async (value) => {
+					this.plugin.settings.calloutName = value;
+					await this.plugin.saveSettings();
+				});
+			});
 	}
 
 	bibleVersionSettings() {
