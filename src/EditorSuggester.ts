@@ -101,11 +101,22 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		evt: MouseEvent | KeyboardEvent
 	): Promise<void> {
 		if (this.context) {
-			(this.context.editor as Editor).replaceRange(
+			const editor = this.context.editor as Editor;
+			editor.replaceRange(
 				await value.toReplace(),
 				this.context.start,
 				this.context.end
 			);
+			const endInsert = await value.endInsert();
+			if (endInsert && endInsert.length > 0) {
+				const lastLineNumber = editor.lastLine();
+				const lastCharNumber = editor.getLine(lastLineNumber).length;
+				const pos = {
+					line: lastLineNumber,
+					ch: lastCharNumber,
+				};
+				editor.replaceRange(endInsert, pos, pos);
+			}
 		}
 	}
 }

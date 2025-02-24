@@ -46,6 +46,10 @@ export default abstract class Verse {
 
 	abstract toReplace(): Promise<string>;
 
+	async endInsert(): Promise<string> {
+		return "";
+	}
+
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
