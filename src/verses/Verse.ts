@@ -1,5 +1,5 @@
-import { BibleVersion } from "./SettingsData";
-import VERSIONS from "../data/versions.json";
+import { BibleVersion } from "../settings/SettingsData";
+import VERSIONS from "../../data/versions.json";
 
 export class VerseElement {
 	public start: number;
@@ -14,6 +14,7 @@ export class VerseElement {
 		return `${this.start}${this.end ? `-${this.end}` : ""}`;
 	}
 }
+
 
 export default abstract class Verse {
 	constructor(
@@ -45,6 +46,10 @@ export default abstract class Verse {
 	}
 
 	abstract toReplace(): Promise<string>;
+
+	async endInsert(): Promise<string> {
+		return "";
+	}
 
 	getUrl(): string {
 		const base = "https://www.bible.com/bible";

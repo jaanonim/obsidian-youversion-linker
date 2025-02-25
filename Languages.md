@@ -24,7 +24,7 @@ If you want to add support for a new language, you can do so by following these 
 
 1. Fork the repository.
 2. Create a new file in `data/books` with the name of the language (e.g. `data/books/pl.json`) with books names.
-3. Import json file to `src/BooksLists.ts` as shown in the example:
+3. Import json file to `src/books/BooksLists.ts` as shown in the example:
 
 ```ts
 import pl from "../data/books/pl.json";
@@ -42,6 +42,6 @@ const booksNames = {
 (See the other languages for examples.)
 
 4. Add your name to the list above in this file (`Languages.md`).
-5. Create a PR with the changes. Title it `Add {some_languges} book names` for eg: `Add Polish book names`. (I will review it and merge it.)
+5. Create a PR with the changes. Title it `Add {some_language} book names` for eg: `Add Polish book names`. (I will review it and merge it.)
 
 **Thank you for your contribution!**

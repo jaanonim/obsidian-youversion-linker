@@ -1,14 +1,14 @@
 import { EditorSuggester } from "./EditorSuggester";
 import { Editor, MarkdownView, Plugin } from "obsidian";
-import SettingTab from "./SettingTab";
+import SettingTab from "./settings/SettingTab";
 import {
 	DEFAULT_SETTINGS,
 	ObsidianYouversionLinkerSettings,
-} from "./SettingsData";
+} from "./settings/SettingsData";
 
 import GenerateLinks from "./GenerateLinks";
-import { linkPreviewPlugin } from "./LinkPreviewEditor";
-import linkPreview from "./LinkPreviewReader";
+import linkPreview from "./preview/LinkPreviewReader";
+import { linkPreviewPlugin } from "./preview/LinkPreviewEditor";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;

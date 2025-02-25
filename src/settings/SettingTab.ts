@@ -1,8 +1,8 @@
-import ObsidianYouversionLinker from "./main";
+import ObsidianYouversionLinker from "../main";
 import { App, PluginSettingTab, Setting } from "obsidian";
-import VERSIONS from "../data/versions.json";
-import booksNames from "./BooksLists";
-import { generateBooksList } from "./Books";
+import VERSIONS from "../../data/versions.json";
+import booksNames from "../books/BooksLists";
+import { generateBooksList } from "../books/Books";
 
 export default class SettingTab extends PluginSettingTab {
 	plugin: ObsidianYouversionLinker;
@@ -40,6 +40,19 @@ export default class SettingTab extends PluginSettingTab {
 				text.setValue(this.plugin.settings.embedTrigger);
 				text.onChange(async (value) => {
 					this.plugin.settings.embedTrigger = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Footnote Trigger")
+			.setDesc(
+				"Trigger for autocomplete for inserting verse in footnote edit mode. Supports regex. NOTE: `^` is a part of insertion make sure that it's not before `[` so it want trigger in loop."
+			)
+			.addText((text) => {
+				text.setValue(this.plugin.settings.footnoteTrigger);
+				text.onChange(async (value) => {
+					this.plugin.settings.footnoteTrigger = value;
 					await this.plugin.saveSettings();
 				});
 			});

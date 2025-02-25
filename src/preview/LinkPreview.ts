@@ -1,6 +1,6 @@
 import { requestUrl } from "obsidian";
 import tippy from "tippy.js";
-import { htmlCleanupRegex, htmlDataRegex } from "./Regex";
+import { htmlCleanupRegex, htmlDataRegex } from "../Regex";
 
 type CacheElement = {
 	info: { version: string; title: string };
