@@ -15,6 +15,13 @@ export class VerseElement {
 	}
 }
 
+export enum VerseType {
+	EMBED = ">",
+	EMBED_NL = "<",
+	LINK = "@",
+	FOOTNOTE = "^",
+}
+
 export default abstract class Verse {
 	constructor(
 		private version: BibleVersion,

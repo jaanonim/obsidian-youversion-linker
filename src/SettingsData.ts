@@ -9,6 +9,7 @@ export interface ObsidianYouversionLinkerSettings {
 	linkPreviewLive: boolean;
 	linkTrigger: string;
 	embedTrigger: string;
+	footnoteTrigger: string;
 	selectedBooksLanguages: string[];
 	calloutName: string;
 }
@@ -24,6 +25,7 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	linkPreviewLive: true,
 	linkTrigger: "@",
 	embedTrigger: ">",
+	footnoteTrigger: "(?<!\\[)\\^",
 	selectedBooksLanguages: ["English"],
 	calloutName: "Bible",
 };

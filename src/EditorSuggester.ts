@@ -5,9 +5,10 @@ import {
 	chapterSeparatorRegex,
 	rangeSeparatorRegex,
 } from "./Regex";
-import { ObsidianYouversionLinkerSettings } from "./SettingsData";
-import Verse, { VerseElement } from "./Verse";
+import { BibleVersion, ObsidianYouversionLinkerSettings } from "./SettingsData";
+import Verse, { VerseElement, VerseType } from "./Verse";
 import VerseEmbed from "./VerseEmbed";
+import VerseFootnote from "./VerseFootnote";
 import VerseLink from "./VerseLink";
 import ObsidianYouversionLinker from "./main";
 import {
@@ -33,20 +34,42 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		file: TFile | null
 	): EditorSuggestTriggerInfo | null {
 		const currentLine = editor.getLine(cursor.line);
-		const link_pos = currentLine.search(
-			new RegExp(this.settings.linkTrigger, "u")
-		);
-		const embed_pos = currentLine.search(
-			new RegExp(this.settings.embedTrigger, "u")
-		);
 
-		if (link_pos < 0 && embed_pos < 0) return null;
-		const isLink =
-			link_pos >= 0 &&
-			(cursor.ch - link_pos < cursor.ch - embed_pos || embed_pos < 0);
-		const pos = isLink ? link_pos : embed_pos;
+		const regexTypeList = [
+			{
+				regex: new RegExp(this.settings.linkTrigger, "u"),
+				t: VerseType.LINK,
+			},
+			{
+				regex: new RegExp(this.settings.embedTrigger, "u"),
+				t: VerseType.EMBED,
+				tn: VerseType.EMBED_NL,
+			},
+			{
+				regex: new RegExp(this.settings.footnoteTrigger, "u"),
+				t: VerseType.FOOTNOTE,
+			},
+		];
+
+		const candidates = regexTypeList
+			.map((obj) => ({
+				...obj,
+				pos: currentLine.search(obj.regex),
+			}))
+			.filter((obj) => obj.pos >= 0)
+			.filter((obj) => obj.pos <= cursor.ch)
+			.sort((a, b) => b.pos - a.pos);
+
+		if (candidates.length < 1) return null;
+
+		const typeElement = candidates[0];
+		const pos = typeElement.pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 		const prefix = currentLine.substring(0, pos);
+		let type = typeElement.t;
+		if (typeElement.tn !== undefined && !prefix.match(/^ {1,3}$/gm)) {
+			type = typeElement.tn;
+		}
 
 		const matches = currentContent.match(linkRegex);
 		if (!matches) return null;
@@ -54,18 +77,13 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 			if (match && prev === null) {
 				const end = currentContent.lastIndexOf(match);
 				if (end === 0 || currentContent.charAt(end - 1) !== "[") {
-					const t = isLink
-						? "@"
-						: prefix.match(/^ {1,3}$/gm)
-						? ">"
-						: "<";
 					return {
 						end: cursor,
 						start: {
 							line: cursor.line,
 							ch: pos,
 						},
-						query: t + match,
+						query: type + match,
 					};
 				}
 			}
@@ -77,17 +95,18 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		context: EditorSuggestContext
 	): VerseLink[] | Promise<VerseLink[]> {
 		const query = context.query;
-		const isLink = query[0] == "@";
-		const insertNewLine = query[0] == "<";
 
-		if (query[0] !== "@" && query[0] !== ">" && query[0] !== "<") {
-			console.error(`INTERNAL: query should start with @ or >`);
+		let verseType = VerseType.LINK;
+		const types = Object.values(VerseType) as string[];
+		if (types.contains(query[0])) {
+			verseType = query[0] as VerseType;
+		} else {
+			console.error(`INTERNAL: query should start with type char`);
 		}
 
 		return getSuggestionsFromQuery(
 			query.substring(1),
-			isLink,
-			insertNewLine,
+			verseType,
 			this.settings
 		);
 	}
@@ -136,55 +155,99 @@ export function processVerses(verses_str: Array<string>): Array<VerseElement> {
 
 export function getSuggestionsFromQuery(
 	query: string,
-	isLink: boolean,
-	insertNewLine: boolean,
+	verseType: VerseType,
 	settings: ObsidianYouversionLinkerSettings
 ): Verse[] {
 	console.debug("get suggestion for query ", query.toLowerCase());
 
-	const bookName = query.match(bookRegex)?.first();
-	if (!bookName) {
+	const book = query.match(bookRegex)?.first();
+	if (!book) {
 		console.error(`could not find through query`, query);
 		return [];
 	}
 
-	const booksUrl = getBooks(bookName, settings);
+	const booksUrl = getBooks(book, settings);
 	if (!booksUrl.length) {
-		console.error(`could not find book url`, bookName);
+		console.error(`could not find book url`, book);
 		return [];
 	}
 
-	const numbersPartsOfQueryString = query.substring(bookName.length);
+	const numbersPartsOfQueryString = query.substring(book.length);
 	const [chapter_str, ...verses_str] = numbersPartsOfQueryString.split(
 		chapterSeparatorRegex
 	);
 	const verses = processVerses(verses_str);
-	const chapterNumber = parseInt(chapter_str);
+	const chapter = parseInt(chapter_str);
 
 	return booksUrl.flatMap(
 		(bookUrl) =>
 			settings.bibleVersions
-				.map((version) => {
-					if (isLink) {
-						return new VerseLink(
+				.map((version) =>
+					makeVerseByType(
+						verseType,
+						{
 							version,
 							bookUrl,
-							bookName,
-							chapterNumber,
-							verses
-						);
-					} else if (verses.length !== 0) {
-						return new VerseEmbed(
-							version,
-							bookUrl,
-							bookName,
-							chapterNumber,
+							book,
+							chapter,
 							verses,
-							insertNewLine,
-							settings.calloutName
-						);
-					}
-				})
+						},
+						settings
+					)
+				)
 				.filter((v) => v !== undefined) as Verse[]
 	);
+}
+
+interface VerseMakeInterface {
+	version: BibleVersion;
+	bookUrl: string;
+	book: string;
+	chapter: number;
+	verses: Array<VerseElement>;
+}
+
+function makeVerseByType(
+	verseType: VerseType,
+	data: VerseMakeInterface,
+	settings: ObsidianYouversionLinkerSettings
+) {
+	switch (verseType) {
+		case VerseType.EMBED:
+			return new VerseEmbed(
+				data.version,
+				data.bookUrl,
+				data.book,
+				data.chapter,
+				data.verses,
+				false,
+				settings.calloutName
+			);
+		case VerseType.EMBED_NL:
+			return new VerseEmbed(
+				data.version,
+				data.bookUrl,
+				data.book,
+				data.chapter,
+				data.verses,
+				true,
+				settings.calloutName
+			);
+		case VerseType.LINK:
+			return new VerseLink(
+				data.version,
+				data.bookUrl,
+				data.book,
+				data.chapter,
+				data.verses
+			);
+		case VerseType.FOOTNOTE:
+			return new VerseFootnote(
+				data.version,
+				data.bookUrl,
+				data.book,
+				data.chapter,
+				data.verses
+			);
+	}
 }
