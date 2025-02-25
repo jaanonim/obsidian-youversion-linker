@@ -1,4 +1,4 @@
-import booksNames from "../src/BooksLists";
+import booksNames from "../src/books/BooksLists";
 import _books from "../data/books/books.json";
 
 test("Valid books", () => {

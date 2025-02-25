@@ -1,8 +1,9 @@
 import { Editor, MarkdownView } from "obsidian";
 import { linkRegex } from "./Regex";
 import { getSuggestionsFromQuery } from "./EditorSuggester";
-import { ObsidianYouversionLinkerSettings } from "./SettingsData";
-import Verse, { VerseType } from "./Verse";
+import { ObsidianYouversionLinkerSettings } from "./settings/SettingsData";
+import Verse from "./verses/Verse";
+import { VerseType } from "./verses/VerseType";
 
 export default function GenerateLinks(
 	editor: Editor,

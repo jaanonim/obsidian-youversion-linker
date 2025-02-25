@@ -1,6 +1,6 @@
-import _books from "../data/books/books.json";
+import _books from "../../data/books/books.json";
 import booksNames from "./BooksLists";
-import { ObsidianYouversionLinkerSettings } from "./SettingsData";
+import { ObsidianYouversionLinkerSettings } from "../settings/SettingsData";
 
 export type BooksLangList = { [key: string]: { [key: string]: string[] } };
 

@@ -1,5 +1,5 @@
-import LinkPreviewManager from "./LinkPreview";
-import { BibleVersion } from "./SettingsData";
+import LinkPreviewManager from "../preview/LinkPreview";
+import { BibleVersion } from "../settings/SettingsData";
 import Verse, { VerseElement } from "./Verse";
 
 export default class VerseEmbed extends Verse {

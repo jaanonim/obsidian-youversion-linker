@@ -1,8 +1,8 @@
-import ObsidianYouversionLinker from "./main";
+import ObsidianYouversionLinker from "../main";
 import { App, PluginSettingTab, Setting } from "obsidian";
-import VERSIONS from "../data/versions.json";
-import booksNames from "./BooksLists";
-import { generateBooksList } from "./Books";
+import VERSIONS from "../../data/versions.json";
+import booksNames from "../books/BooksLists";
+import { generateBooksList } from "../books/Books";
 
 export default class SettingTab extends PluginSettingTab {
 	plugin: ObsidianYouversionLinker;

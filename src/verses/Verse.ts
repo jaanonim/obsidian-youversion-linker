@@ -1,5 +1,5 @@
-import { BibleVersion } from "./SettingsData";
-import VERSIONS from "../data/versions.json";
+import { BibleVersion } from "../settings/SettingsData";
+import VERSIONS from "../../data/versions.json";
 
 export class VerseElement {
 	public start: number;
@@ -15,12 +15,6 @@ export class VerseElement {
 	}
 }
 
-export enum VerseType {
-	EMBED = ">",
-	EMBED_NL = "<",
-	LINK = "@",
-	FOOTNOTE = "^",
-}
 
 export default abstract class Verse {
 	constructor(

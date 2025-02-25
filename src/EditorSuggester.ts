@@ -1,15 +1,13 @@
-import getBooks from "./Books";
+import getBooks from "./books/Books";
 import {
 	bookRegex,
 	linkRegex,
 	chapterSeparatorRegex,
 	rangeSeparatorRegex,
 } from "./Regex";
-import { BibleVersion, ObsidianYouversionLinkerSettings } from "./SettingsData";
-import Verse, { VerseElement, VerseType } from "./Verse";
-import VerseEmbed from "./VerseEmbed";
-import VerseFootnote from "./VerseFootnote";
-import VerseLink from "./VerseLink";
+import { ObsidianYouversionLinkerSettings } from "./settings/SettingsData";
+import Verse, { VerseElement } from "./verses/Verse";
+import VerseLink from "./verses/VerseLink";
 import ObsidianYouversionLinker from "./main";
 import {
 	Editor,
@@ -19,6 +17,11 @@ import {
 	EditorSuggestTriggerInfo,
 	TFile,
 } from "obsidian";
+import {
+	makeRegexTypeList,
+	makeVerseByType,
+	VerseType,
+} from "./verses/VerseType";
 
 export class EditorSuggester extends EditorSuggest<VerseLink> {
 	constructor(
@@ -34,35 +37,17 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		file: TFile | null
 	): EditorSuggestTriggerInfo | null {
 		const currentLine = editor.getLine(cursor.line);
-
-		const regexTypeList = [
-			{
-				regex: new RegExp(this.settings.linkTrigger, "u"),
-				t: VerseType.LINK,
-			},
-			{
-				regex: new RegExp(this.settings.embedTrigger, "u"),
-				t: VerseType.EMBED,
-				tn: VerseType.EMBED_NL,
-			},
-			{
-				regex: new RegExp(this.settings.footnoteTrigger, "u"),
-				t: VerseType.FOOTNOTE,
-			},
-		];
-
-		const candidates = regexTypeList
+		const candidates = makeRegexTypeList(this.settings)
 			.map((obj) => ({
 				...obj,
 				pos: currentLine.search(obj.regex),
 			}))
 			.filter((obj) => obj.pos >= 0)
-			.filter((obj) => obj.pos <= cursor.ch)
-			.sort((a, b) => b.pos - a.pos);
+			.filter((obj) => obj.pos <= cursor.ch);
 
 		if (candidates.length < 1) return null;
 
-		const typeElement = candidates[0];
+		const typeElement = candidates.sort((a, b) => b.pos - a.pos)[0];
 		const pos = typeElement.pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 		const prefix = currentLine.substring(0, pos);
@@ -197,57 +182,4 @@ export function getSuggestionsFromQuery(
 				)
 				.filter((v) => v !== undefined) as Verse[]
 	);
-}
-
-interface VerseMakeInterface {
-	version: BibleVersion;
-	bookUrl: string;
-	book: string;
-	chapter: number;
-	verses: Array<VerseElement>;
-}
-
-function makeVerseByType(
-	verseType: VerseType,
-	data: VerseMakeInterface,
-	settings: ObsidianYouversionLinkerSettings
-) {
-	switch (verseType) {
-		case VerseType.EMBED:
-			return new VerseEmbed(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses,
-				false,
-				settings.calloutName
-			);
-		case VerseType.EMBED_NL:
-			return new VerseEmbed(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses,
-				true,
-				settings.calloutName
-			);
-		case VerseType.LINK:
-			return new VerseLink(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses
-			);
-		case VerseType.FOOTNOTE:
-			return new VerseFootnote(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses
-			);
-	}
 }
