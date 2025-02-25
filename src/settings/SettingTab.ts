@@ -44,6 +44,19 @@ export default class SettingTab extends PluginSettingTab {
 				});
 			});
 
+		new Setting(containerEl)
+			.setName("Footnote Trigger")
+			.setDesc(
+				"Trigger for autocomplete for inserting verse in footnote edit mode. Supports regex. NOTE: `^` is a part of insertion make sure that it's not before `[` so it want trigger in loop."
+			)
+			.addText((text) => {
+				text.setValue(this.plugin.settings.footnoteTrigger);
+				text.onChange(async (value) => {
+					this.plugin.settings.footnoteTrigger = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
 		this.bookLanguageSettings();
 
 		new Setting(containerEl)
