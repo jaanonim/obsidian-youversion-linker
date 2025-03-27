@@ -80,7 +80,7 @@ export default class LinkPreviewManager {
 	}
 
 	static clearCache(notClear: Array<string>) {
-		console.info(
+		console.debug(
 			`Clearing cache... (${Math.abs(
 				Object.keys(this.cache).length - notClear.length
 			)} items)`
