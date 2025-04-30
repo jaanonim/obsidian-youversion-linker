@@ -27,26 +27,26 @@
         "rut"
     ],
     "1SA": [
-        "1. samuelova"
+        "1samuelova"
     ],
     "2SA": [
-        "2. samuelova"
+        "2samuelova"
     ],
     "1KI": [
-        "1. královská",
-        "1. kralovska"
+        "1královská",
+        "1kralovska"
     ],
     "2KI": [
-        "2. královská",
-        "2. kralovska"
+        "2královská",
+        "2kralovska"
     ],
     "1CH": [
-        "1. letopisů",
-        "1. letopisu"
+        "1letopisů",
+        "1letopisu"
     ],
     "2CH": [
-        "2. letopisů",
-        "2. letopisu"
+        "2letopisů",
+        "2letopisu"
     ],
     "EZR": [
         "ezdráš",
@@ -74,8 +74,8 @@
         "kazatel"
     ],
     "SNG": [
-        "píseň písní",
-        "pisen pisni"
+        "píseňpísní",
+        "pisenpisni"
     ],
     "ISA": [
         "izaiáš",
@@ -160,12 +160,12 @@
         "rimanum"
     ],
     "1CO": [
-        "1. korintským",
-        "1. korintskym"
+        "1korintským",
+        "1korintskym"
     ],
     "2CO": [
-        "2. korintským",
-        "2. korintskym"
+        "2korintským",
+        "2korintskym"
     ],
     "GAL": [
         "galatským",
@@ -184,18 +184,18 @@
         "koloskym"
     ],
     "1TH": [
-        "1. tesalonickým",
-        "1. tesalonickym"
+        "1tesalonickým",
+        "1tesalonickym"
     ],
     "2TH": [
-        "2. tesalonickým",
-        "2. tesalonickym"
+        "2tesalonickým",
+        "2tesalonickym"
     ],
     "1TI": [
-        "2. timoteovi"
+        "2timoteovi"
     ],
     "2TI": [
-        "2. timoteovi"
+        "2timoteovi"
     ],
     "TIT": [
         "titovi"
@@ -211,19 +211,19 @@
         "jakub"
     ],
     "1PE": [
-        "1. petr"
+        "1petr"
     ],
     "2PE": [
-        "2. petr"
+        "2petr"
     ],
     "1JN": [
-        "1. jan"
+        "1jan"
     ],
     "2JN": [
-        "2. jan"
+        "2jan"
     ],
     "3JN": [
-        "3. jan"
+        "3jan"
     ],
     "JUD": [
         "juda"
