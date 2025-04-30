@@ -4,6 +4,7 @@ Thanks to the community, we have support for the following languages:
 
 -   Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
 -   Chinese - [John Huang](https://github.com/junwhuan)
+-   Czech - [Filip Opálka](https://github.com/filip-opalka)
 -   Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
 -   Dutch - [Jaap Kramer](https://github.com/jaapkramer)
 -   English - [Jaanonim](https://github.com/jaanonim)
