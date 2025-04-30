@@ -14,7 +14,7 @@ export function generateBooksList(settings: ObsidianYouversionLinkerSettings) {
 	settings.selectedBooksLanguages.forEach((lang_name) => {
 		const lang = booksNames[lang_name];
 		Object.keys(booksLocal).forEach((book) => {
-			booksLocal[book].push(...lang[book]);
+			booksLocal[book].push(...lang[book].map(cleanBookName));
 		});
 	});
 	return booksLocal;
@@ -24,9 +24,13 @@ export default function getBooks(
 	str: string,
 	settings: ObsidianYouversionLinkerSettings
 ): Array<string> {
-	str = str.toLowerCase().replace(/\s/g, "");
+	str = cleanBookName(str)
 	if (books == null) {
 		books = generateBooksList(settings);
 	}
 	return Object.keys(books).filter((key) => books![key].includes(str));
+}
+
+export function cleanBookName(book: string): string{
+	return book.toLowerCase().replace(/\s/g, "");
 }
