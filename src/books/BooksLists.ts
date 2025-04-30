@@ -1,5 +1,6 @@
 import { BooksLangList } from "./Books";
 
+import cz from "../../data/books/cz.json";
 import da from "../../data/books/da.json";
 import en from "../../data/books/en.json";
 import nob from "../../data/books/nob.json";
@@ -19,6 +20,7 @@ import fr from "../../data/books/fr.json";
 
 // prettier-ignore
 const booksNames = {
+	"Czech": cz,
 	"Chinese Simplified": zhCN,
 	"Chinese Traditional": zhHK,
 	"Danish": da,
