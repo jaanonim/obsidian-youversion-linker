@@ -15,7 +15,7 @@ Thanks to the community, we have support for the following languages:
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
--   Rusian - [Sakardin](https://github.com/Sakardin)
+-   Rusian - [Sakardin](https://github.com/Sakardin), [n0-n4-m3](https://github.com/n0-n4-m3)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
 -   Korean - [Woollim](https://github.com/woollim)
 
