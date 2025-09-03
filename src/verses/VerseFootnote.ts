@@ -1,3 +1,4 @@
+import { escapeMarkdown } from "src/utils/Markdown";
 import LinkPreviewManager from "../preview/LinkPreview";
 import Verse from "./Verse";
 
@@ -16,7 +17,7 @@ export default class VerseFootnote extends Verse {
 			return `\n[^${linkText.replace(/\s/g,"")}${content.info.version}]: [${linkText} ${content.info.version}](${this.getUrl()})`;
 		} else {
 			// prettier-ignore
-			return `\n[^${linkText.replace(/\s/g,"")}${content.info.version}]: [${linkText} ${content.info.version}](${this.getUrl()}) ${content.verses.replace(/\n/g,' ')}`;
+			return `\n[^${linkText.replace(/\s/g,"")}${content.info.version}]: [${linkText} ${content.info.version}](${this.getUrl()}) ${escapeMarkdown(content.verses.replace(/\n/g,' '))}`;
 		}
 	}
 }
