@@ -23,7 +23,7 @@ export default class VerseEmbed extends Verse {
 			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
 			// prettier-ignore
-			return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${escapeMarkdown(content.verses.replace(/\n/g,'\n>'))}\n`;
+			return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${escapeMarkdown(content.verses).replace(/\n/g,'\n>')}\n`;
 		}
 	}
 }
