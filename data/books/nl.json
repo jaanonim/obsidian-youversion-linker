@@ -180,8 +180,8 @@
         "mat"
     ],
     "MRK": [
-        "marcus",
-        "marc"
+        "markus",
+        "mar"
     ],
     "LUK": [
         "lucas",
@@ -201,13 +201,11 @@
     ],
     "1CO": [
         "1korinthiërs",
-        "1kor",
-        "1cor"
+        "1kor"
     ],
     "2CO": [
         "2korinthiërs",
-        "2kor",
-        "2cor"
+        "2kor"
     ],
     "GAL": [
         "galaten",
@@ -216,7 +214,8 @@
     "EPH": [
         "efeziërs",
         "efz",
-        "ef"
+        "ef",
+        "efe"
     ],
     "PHP": [
         "filippenzen",
@@ -224,8 +223,7 @@
     ],
     "COL": [
         "kolossenzen",
-        "kol",
-        "col"
+        "kol"
     ],
     "1TH": [
         "1tessalonicenzen",
@@ -260,8 +258,7 @@
     ],
     "JAS": [
         "jakobus",
-        "jak",
-        "jac"
+        "jak"
     ],
     "1PE": [
         "1petrus",
