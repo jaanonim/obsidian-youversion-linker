@@ -11,8 +11,7 @@ export default class VerseEmbed extends Verse {
 		chapter: number,
 		verses: Array<VerseElement>,
 		private insertNewLine: boolean,
-		private calloutName: string,
-		private type: any
+		private calloutName: string
 	) {
 		super(version, bookUrl, book, chapter, verses);
 	}
