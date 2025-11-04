@@ -12,6 +12,7 @@ Thanks to the community, we have support for the following languages:
 -   German - [Tecur](https://github.com/Tecur)
 -   Norwegian - [Cmeeren](https://github.com/cmeeren)
 -   Polish - [Jaanonim](https://github.com/jaanonim)
+-   Slovak - [YeapGuy](https://github.com/yeapguy)
 -   Spanish - [Javier Rios](https://github.com/JavierRiosN)
 -   Swedish - [Eric Lundgren](https://github.com/TheFringe)
 -   Romanian - [Paul Timoce](https://github.com/paultimoce)
