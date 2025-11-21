@@ -1,9 +1,6 @@
 name: Obsidian Plugin Release
 # credits: https://github.com/scambier/obsidian-omnisearch/blob/master/.github/workflows/release.yml
 
-env:
-    VERSION: 1.6.3
-
 on: [workflow_dispatch]
 
 jobs:
@@ -20,6 +17,10 @@ jobs:
               uses: actions/checkout@v2
               with:
                   submodules: recursive
+
+            - name: Get version from package.json
+              id: get_version
+              run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
             - uses: pnpm/action-setup@v4.0.0
               with:
@@ -43,10 +44,9 @@ jobs:
               uses: actions/create-release@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  VERSION: ${{ env.VERSION }}
               with:
-                  tag_name: ${{ env.VERSION  }}
-                  release_name: ${{ env.VERSION  }}
+                  tag_name: ${{ steps.get_version.outputs.VERSION }}
+                  release_name: ${{ steps.get_version.outputs.VERSION }}
                   draft: false
                   prerelease: false
 
