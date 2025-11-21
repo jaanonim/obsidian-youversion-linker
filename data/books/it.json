@@ -1,0 +1,266 @@
+{
+	"GEN": [
+		"Genesi",
+		"gen"
+	],
+	"EXO": [
+		"Esodo",
+		"eso"
+	],
+	"LEV": [
+		"Levitico",
+		"lev"
+	],
+	"NUM": [
+		"Numeri",
+		"num"
+	],
+	"DEU": [
+		"Deuteronomio",
+		"deu"
+	],
+	"JOS": [
+		"Giosuè",
+		"gios"
+	],
+	"JDG": [
+		"Giudici",
+		"giud"
+	],
+	"RUT": [
+		"Ruth",
+		"rut"
+	],
+	"1SA": [
+		"1 Samuele",
+		"1sam"
+	],
+	"2SA": [
+		"2 Samuele",
+		"2sam"
+	],
+	"1KI": [
+		"1 Re",
+		"1re"
+	],
+	"2KI": [
+		"2 Re",
+		"2re"
+	],
+	"1CH": [
+		"1 Cronache",
+		"1cro"
+	],
+	"2CH": [
+		"2 Cronache",
+		"2cro"
+	],
+	"EZR": [
+		"Esdra",
+		"esd"
+	],
+	"NEH": [
+		"Nehemia",
+		"nee"
+	],
+	"EST": [
+		"Ester",
+		"est"
+	],
+	"JOB": [
+		"Giobbe",
+		"giob"
+	],
+	"PSA": [
+		"Salmi",
+		"sal"
+	],
+	"PRO": [
+		"Proverbi",
+		"pro"
+	],
+	"ECC": [
+		"Ecclesiaste",
+		"ecc"
+	],
+	"SNG": [
+		"Cantico de' Cantici",
+		"can"
+	],
+	"ISA": [
+		"Isaia",
+		"isa"
+	],
+	"JER": [
+		"Geremia",
+		"ger"
+	],
+	"LAM": [
+		"Lamentazioni",
+		"lam"
+	],
+	"EZK": [
+		"Ezechiele",
+		"eze"
+	],
+	"DAN": [
+		"Daniele",
+		"dan"
+	],
+	"HOS": [
+		"Osea",
+		"ose"
+	],
+	"JOL": [
+		"Gioele",
+		"gioe"
+	],
+	"AMO": [
+		"Amos",
+		"amo"
+	],
+	"OBA": [
+		"Abdia",
+		"abd"
+	],
+	"JON": [
+		"Giona",
+		"gion"
+	],
+	"MIC": [
+		"Michea",
+		"mic"
+	],
+	"NAM": [
+		"Nahum",
+		"nah"
+	],
+	"HAB": [
+		"Abacuc",
+		"ab"
+	],
+	"ZEP": [
+		"Sofonia",
+		"sof"
+	],
+	"HAG": [
+		"Aggeo",
+		"agg"
+	],
+	"ZEC": [
+		"Zaccaria",
+		"zac"
+	],
+	"MAL": [
+		"Malachia",
+		"mal"
+	],
+	"MAT": [
+		"Matteo",
+		"mat"
+	],
+	"MRK": [
+		"Marco",
+		"mar"
+	],
+	"LUK": [
+		"Luca",
+		"luc"
+	],
+	"JHN": [
+		"Giovanni",
+		"giov"
+	],
+	"ACT": [
+		"Atti",
+		"att"
+	],
+	"ROM": [
+		"Romani",
+		"rom"
+	],
+	"1CO": [
+		"1 Corinzi",
+		"1cor"
+	],
+	"2CO": [
+		"2 Corinzi",
+		"2cor"
+	],
+	"GAL": [
+		"Galati",
+		"gal"
+	],
+	"EPH": [
+		"Efesini",
+		"efe"
+	],
+	"PHP": [
+		"Filippesi",
+		"fil"
+	],
+	"COL": [
+		"Colossesi",
+		"col"
+	],
+	"1TH": [
+		"1 Tessalonicesi",
+		"1tes"
+	],
+	"2TH": [
+		"2 Tessalonicesi",
+		"2tes"
+	],
+	"1TI": [
+		"1 Timoteo",
+		"1tim"
+	],
+	"2TI": [
+		"2 Timoteo",
+		"2tim"
+	],
+	"TIT": [
+		"Tito",
+		"tit"
+	],
+	"PHM": [
+		"Filemone",
+		"filem"
+	],
+	"HEB": [
+		"Ebrei",
+		"ebr"
+	],
+	"JAS": [
+		"Giacomo",
+		"gia"
+	],
+	"1PE": [
+		"1 Pietro",
+		"1pie"
+	],
+	"2PE": [
+		"2 Pietro",
+		"2pie"
+	],
+	"1JN": [
+		"1 Giovanni",
+		"1giov"
+	],
+	"2JN": [
+		"2 Giovanni",
+		"2giov"
+	],
+	"3JN": [
+		"3 Giovanni",
+		"3giov"
+	],
+	"JUD": [
+		"Giuda",
+		"giuda"
+	],
+	"REV": [
+		"Apocalisse",
+		"apo"
+	]
+}
