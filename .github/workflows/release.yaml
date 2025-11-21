@@ -1,7 +1,11 @@
 name: Obsidian Plugin Release
 # credits: https://github.com/scambier/obsidian-omnisearch/blob/master/.github/workflows/release.yml
 
-on: [workflow_dispatch]
+on: 
+    push:
+        tags:
+            - v*
+    workflow_dispatch:
 
 jobs:
     build:
