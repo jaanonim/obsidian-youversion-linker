@@ -19,6 +19,7 @@ Thanks to the community, we have support for the following languages:
 -   Rusian - [Sakardin](https://github.com/Sakardin), [n0-n4-m3](https://github.com/n0-n4-m3)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
 -   Korean - [Woollim](https://github.com/woollim)
+-   Italian - [grnsmn](https://github.com/grnsmn)
 
 ## Adding new language support
 
@@ -44,11 +45,13 @@ const booksNames = {
 (See the other languages for examples.)
 
 4. Add your name to the list above in this file (`Languages.md`).
-5. If you can, run tests locally using command: 
+5. If you can, run tests locally using command:
+
 ```sh
 npm run test
 ```
-It checks if books names are valid so they will be detected by regex. (It's defined in `src/Regex.ts`.) 
+
+It checks if books names are valid so they will be detected by regex. (It's defined in `src/Regex.ts`.)
 
 6. Create a PR with the changes. Title it `Add {some_language} book names` for eg: `Add Polish book names`. (I will review it and merge it.)
 
