@@ -10,6 +10,7 @@ Thanks to the community, we have support for the following languages:
 -   English - [Jaanonim](https://github.com/jaanonim)
 -   French - [Cedriane](https://github.com/Cedriane)
 -   German - [Tecur](https://github.com/Tecur)
+-   Italian - [grnsmn](https://github.com/grnsmn)
 -   Norwegian - [Cmeeren](https://github.com/cmeeren)
 -   Polish - [Jaanonim](https://github.com/jaanonim)
 -   Slovak - [YeapGuy](https://github.com/yeapguy)
@@ -19,7 +20,6 @@ Thanks to the community, we have support for the following languages:
 -   Rusian - [Sakardin](https://github.com/Sakardin), [n0-n4-m3](https://github.com/n0-n4-m3)
 -   Ukrainian - [Seesmof](https://github.com/seesmof)
 -   Korean - [Woollim](https://github.com/woollim)
--   Italian - [grnsmn](https://github.com/grnsmn)
 
 ## Adding new language support
 
