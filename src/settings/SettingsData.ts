@@ -18,6 +18,10 @@ export interface ObsidianYouversionLinkerSettings {
   footnoteTrigger: string;
   selectedBooksLanguages: LanguageName[];
   calloutName: string;
+	quoteShowTranslation: boolean;
+	quoteShowBibleIcon: boolean;
+	quoteCollapsibleVerses: boolean;
+	quoteCollapsedByDefault: boolean;
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -36,4 +40,8 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
   footnoteTrigger: '\\^',
   selectedBooksLanguages: ['English'],
   calloutName: 'Bible',
+	quoteShowTranslation: true,
+	quoteShowBibleIcon: true,
+	quoteCollapsibleVerses: false,
+	quoteCollapsedByDefault: false,
 };

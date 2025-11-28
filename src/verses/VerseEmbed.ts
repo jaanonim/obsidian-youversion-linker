@@ -12,18 +12,22 @@ export default class VerseEmbed extends Verse {
     verses: Array<VerseElement>,
     private insertNewLine: boolean,
     private calloutName: string,
+		private showTranslation: boolean,
+		private showBibleIcon: boolean,
+		private collapsibleVerses: boolean,
+		private collapsedByDefault: boolean,
   ) {
     super(version, bookUrl, book, chapter, verses);
   }
 
-  async toReplace(): Promise<string> {
-    const content = await LinkPreviewManager.processUrl(this.getUrl());
-    const p = this.insertNewLine ? '\n' : '';
-    if (content.err) {
-      return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
-    } else {
-      // prettier-ignore
-      return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${escapeMarkdown(content.verses).replace(/\n/g,'\n>')}\n`;
-    }
-  }
+	async toReplace(): Promise<string> {
+		const content = await LinkPreviewManager.processUrl(this.getUrl());
+		const p = this.insertNewLine ? "\n" : "";
+		if (content.err) {
+			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
+		} else {
+			// prettier-ignore
+			return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${escapeMarkdown(content.verses).replace(/\n/g,'\n>')}\n`;
+		}
+	}
 }
