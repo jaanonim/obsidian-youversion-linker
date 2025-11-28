@@ -54,7 +54,11 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				false,
-				settings.calloutName
+				settings.calloutName,
+				settings.quoteShowTranslation,
+				settings.quoteShowBibleIcon,
+				settings.quoteCollapsibleVerses,
+				settings.quoteCollapsedByDefault
 			);
 		case VerseType.EMBED_NL:
 			return new VerseEmbed(
@@ -64,7 +68,11 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				true,
-				settings.calloutName
+				settings.calloutName,
+				settings.quoteShowTranslation,
+				settings.quoteShowBibleIcon,
+				settings.quoteCollapsibleVerses,
+				settings.quoteCollapsedByDefault
 			);
 		case VerseType.LINK:
 			return new VerseLink(
