@@ -26,12 +26,10 @@ export default class VerseEmbed extends Verse {
 		if (content.err) {
 			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
-			// Determine callout icon
 			let calloutIcon = this.showBibleIcon 
 				? `[!${this.calloutName}]`
 				: this.calloutName;
 			
-			// Add collapsible markers if enabled
 			if (this.showBibleIcon && this.collapsibleVerses) {
 				if (this.collapsedByDefault) {
 					calloutIcon += '-';
@@ -40,7 +38,6 @@ export default class VerseEmbed extends Verse {
 				}
 			}
 
-			// Determine version display
 			const versionText = this.showTranslation 
 				? ` ${content.info.version}` 
 				: '';
