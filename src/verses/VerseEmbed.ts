@@ -11,7 +11,11 @@ export default class VerseEmbed extends Verse {
 		chapter: number,
 		verses: Array<VerseElement>,
 		private insertNewLine: boolean,
-		private calloutName: string
+		private calloutName: string,
+		private showTranslation: boolean,
+		private showBibleIcon: boolean,
+		private collapsibleVerses: boolean,
+		private collapsedByDefault: boolean
 	) {
 		super(version, bookUrl, book, chapter, verses);
 	}
@@ -22,8 +26,24 @@ export default class VerseEmbed extends Verse {
 		if (content.err) {
 			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
+			let calloutIcon = this.showBibleIcon 
+				? `[!${this.calloutName}]`
+				: this.calloutName;
+			
+			if (this.showBibleIcon && this.collapsibleVerses) {
+				if (this.collapsedByDefault) {
+					calloutIcon += '-';
+				} else {
+					calloutIcon += '+';
+				}
+			}
+
+			const versionText = this.showTranslation 
+				? ` ${content.info.version}` 
+				: '';
+			
 			// prettier-ignore
-			return `${p}>[!${this.calloutName}] [${this.toSimpleText()} ${content.info.version}](${this.getUrl()})\n>${escapeMarkdown(content.verses).replace(/\n/g,'\n>')}\n`;
+			return `${p}>${calloutIcon} [${this.toSimpleText()}${versionText}](${this.getUrl()})\n>${escapeMarkdown(content.verses).replace(/\n/g,'\n>')}\n`;
 		}
 	}
 }
