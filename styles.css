@@ -21,6 +21,10 @@
 	color: var(--text-error);
 }
 
+.content-youversion {
+	white-space: pre-wrap;
+}
+
 .verse-link-info {
 	color: var(--text-faint);
 	padding-left: 1ch;
