@@ -76,21 +76,48 @@ export default class LinkPreviewManager {
 						// Attempt to locate each single-verse content inside baseText in order, inserting markers
 						let curPos = 0;
 						let result = "";
+
 						for (let i = 0; i < verseNumbers.length; i++) {
 							const markerVerse = verseNumbers[i];
+							
+							// Safety: ensure we actually have content for this single verse
 							const sv = (singles[i] && !singles[i].err) ? singles[i].verses.trim() : "";
 							if (!sv) continue;
-							const idx = baseText.indexOf(sv, curPos);
+
+							let idx = this.getFuzzyIndex(baseText, sv, curPos);
+
 							if (idx === -1) {
-								// If not found, bail out to safe fallback: return baseText without markers.
-								this.cache[url] = { err: false, info: rangeCombined.info, verses: baseText };
-								return this.cache[url];
+								console.warn(`[BiblePlugin] Fuzzy match failed for verse ${markerVerse}...`);
+								continue;
 							}
-							// Copy text before this verse, then insert marker, then the verse text
-							result += baseText.substring(curPos, idx) + `[${markerVerse}] ` + sv;
-							curPos = idx + sv.length;
+
+							// Check characters immediately BEFORE the match (idx - 1, idx - 2...)
+							// If we find opening punctuation, move 'idx' backwards to include it.
+
+							const openingPunctuation = new Set(['"', "'", '“', '‘', '(', '[', '{', '—', '-']);
+
+							// While we are not at the start of the string...
+							// AND the character before the current index is in our "safe punctuation" list...
+							while (idx > curPos && openingPunctuation.has(baseText[idx - 1])) {
+								// If we hit a newline, STOP. We don't want to jump up to the previous paragraph.
+								if (baseText[idx - 1] === '\n') break;
+								
+								// Step back
+								idx--;
+							}
+							// -----------------------------
+
+							// 2. Add everything from previous position up to the adjusted start
+							result += baseText.substring(curPos, idx);
+
+							// 3. Add the Marker
+							result += `[${markerVerse}] `;
+
+							// 4. Update curPos
+							curPos = idx;
 						}
-						// Append the remainder
+
+						// Append the remainder of the text (including the text of the very last verse found)
 						result += baseText.substring(curPos);
 
 						if (!result || result.length < 1) throw 1;
@@ -230,5 +257,38 @@ export default class LinkPreviewManager {
 			dict[ele] = this.cache[ele];
 		});
 		this.cache = dict;
+	}
+
+	private static getFuzzyIndex(baseText: string, searchStr: string, startPos: number): number {
+		// 1. Create a "Clean" version of the search string (letters/numbers only)
+		// \W matches anything that is NOT a letter or number.
+		const cleanSearch = searchStr.replace(/[\W_]+/g, "").toLowerCase();
+		
+		if (!cleanSearch) return -1; // Safety check
+	
+		// 2. Build a "Clean" baseText + an Index Map
+		// We scan baseText starting from startPos. If we find a letter, we keep it
+		// and record where it came from.
+		let cleanBase = "";
+		const indicesMap: number[] = [];
+	
+		for (let i = startPos; i < baseText.length; i++) {
+			const char = baseText[i];
+			// Check if char is alphanumeric (regex \w matches [A-Za-z0-9_])
+			if (/\w/.test(char)) { 
+				cleanBase += char.toLowerCase();
+				indicesMap.push(i); // This letter came from index 'i' in the real text
+			}
+		}
+	
+		// 3. Find the match in the clean strings
+		const foundIndexInClean = cleanBase.indexOf(cleanSearch);
+	
+		if (foundIndexInClean === -1) {
+			return -1;
+		}
+	
+		// 4. Convert the "Clean Index" back to the "Real Index"
+		return indicesMap[foundIndexInClean];
 	}
 }
