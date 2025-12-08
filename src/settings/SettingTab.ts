@@ -104,9 +104,9 @@ export default class SettingTab extends PluginSettingTab {
 				"Show or hide the verse translation/version in the verse reference"
 			)
 			.addToggle((toggle) => {
-				toggle.setValue(this.plugin.settings.quoteShowTranslation);
+				toggle.setValue(this.plugin.settings.quoteSettings.showTranslation);
 				toggle.onChange(async (value) => {
-					this.plugin.settings.quoteShowTranslation = value;
+					this.plugin.settings.quoteSettings.showTranslation = value;
 					await this.plugin.saveSettings();
 				});
 			});
@@ -117,13 +117,13 @@ export default class SettingTab extends PluginSettingTab {
 				'When this is true, it will render a Bible icon in Obsidian for quotes, disable this if you want to hide it or use standard Markdown. (This will disable the Collapsible option below)'
 			)
 			.addToggle((toggle) => {
-				toggle.setValue(this.plugin.settings.quoteShowBibleIcon);
+				toggle.setValue(this.plugin.settings.quoteSettings.showBibleIcon);
 				toggle.onChange(async (value) => {
-					this.plugin.settings.quoteShowBibleIcon = value;
+					this.plugin.settings.quoteSettings.showBibleIcon = value;
 					await this.plugin.saveSettings();
 					if (!value) {
-						this.plugin.settings.quoteCollapsibleVerses = false;
-						this.plugin.settings.quoteCollapsedByDefault = false;
+						this.plugin.settings.quoteSettings.collapsibleVerses = false;
+						this.plugin.settings.quoteSettings.collapsedByDefault = false;
 						await this.plugin.saveSettings();
 					}
 					this.display();
@@ -136,12 +136,12 @@ export default class SettingTab extends PluginSettingTab {
 				"Make the rendered verses collapsible, so that you can hide them when you don't need them (This option will be disabled if Bible Icon Prefix option above is disabled)"
 			)
 			.addToggle((toggle) => {
-				if (!this.plugin.settings.quoteShowBibleIcon) {
+				if (!this.plugin.settings.quoteSettings.showBibleIcon) {
 					toggle.setDisabled(true);
 				}
-				toggle.setValue(this.plugin.settings.quoteCollapsibleVerses);
+				toggle.setValue(this.plugin.settings.quoteSettings.collapsibleVerses);
 				toggle.onChange(async (value) => {
-					this.plugin.settings.quoteCollapsibleVerses = value;
+					this.plugin.settings.quoteSettings.collapsibleVerses = value;
 					await this.plugin.saveSettings();
 					this.display();
 				});
@@ -153,12 +153,12 @@ export default class SettingTab extends PluginSettingTab {
 				"When verses are collapsible, set the default state to open or closed (This option will be disabled if Make Verses Collapsible option above is disabled)"
 			)
 			.addToggle((toggle) => {
-				if (!this.plugin.settings.quoteCollapsibleVerses) {
+				if (!this.plugin.settings.quoteSettings.collapsibleVerses) {
 					toggle.setDisabled(true);
 				}
-				toggle.setValue(this.plugin.settings.quoteCollapsedByDefault);
+				toggle.setValue(this.plugin.settings.quoteSettings.collapsedByDefault);
 				toggle.onChange(async (value) => {
-					this.plugin.settings.quoteCollapsedByDefault = value;
+					this.plugin.settings.quoteSettings.collapsedByDefault = value;
 					await this.plugin.saveSettings();
 				});
 			});

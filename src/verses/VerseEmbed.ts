@@ -2,6 +2,7 @@ import { escapeMarkdown } from "src/utils/Markdown";
 import LinkPreviewManager from "../preview/LinkPreview";
 import { BibleVersion } from "../settings/SettingsData";
 import Verse, { VerseElement } from "./Verse";
+import { QuoteSettings } from "src/settings/SettingsData";
 
 export default class VerseEmbed extends Verse {
 	constructor(
@@ -12,10 +13,7 @@ export default class VerseEmbed extends Verse {
 		verses: Array<VerseElement>,
 		private insertNewLine: boolean,
 		private calloutName: string,
-		private showTranslation: boolean,
-		private showBibleIcon: boolean,
-		private collapsibleVerses: boolean,
-		private collapsedByDefault: boolean
+		private quoteSettings: QuoteSettings
 	) {
 		super(version, bookUrl, book, chapter, verses);
 	}
@@ -26,19 +24,19 @@ export default class VerseEmbed extends Verse {
 		if (content.err) {
 			return `${p}>[!Error] Cannot get content of ${this.toSimpleText()}.\n`;
 		} else {
-			let calloutIcon = this.showBibleIcon 
+			let calloutIcon = this.quoteSettings.showBibleIcon 
 				? `[!${this.calloutName}]`
 				: this.calloutName;
 			
-			if (this.showBibleIcon && this.collapsibleVerses) {
-				if (this.collapsedByDefault) {
+			if (this.quoteSettings.showBibleIcon && this.quoteSettings.collapsibleVerses) {
+				if (this.quoteSettings.collapsedByDefault) {
 					calloutIcon += '-';
 				} else {
 					calloutIcon += '+';
 				}
 			}
 
-			const versionText = this.showTranslation 
+			const versionText = this.quoteSettings.showTranslation 
 				? ` ${content.info.version}` 
 				: '';
 			
