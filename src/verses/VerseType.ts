@@ -52,10 +52,7 @@ export function makeVerseByType(
         data.verses,
         false,
         settings.calloutName,
-				settings.quoteShowTranslation,
-				settings.quoteShowBibleIcon,
-				settings.quoteCollapsibleVerses,
-				settings.quoteCollapsedByDefault
+        settings.quoteSettings,
       );
     case VerseType.EMBED_NL:
       return new VerseEmbed(
@@ -66,10 +63,7 @@ export function makeVerseByType(
         data.verses,
         true,
         settings.calloutName,
-				settings.quoteShowTranslation,
-				settings.quoteShowBibleIcon,
-				settings.quoteCollapsibleVerses,
-				settings.quoteCollapsedByDefault
+        settings.quoteSettings,
       );
     case VerseType.LINK:
       return new VerseLink(data.version, data.bookUrl, data.book, data.chapter, data.verses);
