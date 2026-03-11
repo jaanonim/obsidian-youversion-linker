@@ -3,6 +3,7 @@ import { App, PluginSettingTab, Setting } from "obsidian";
 import VERSIONS from "../../data/versions.json";
 import booksNames from "../books/BooksLists";
 import { generateBooksList } from "../books/Books";
+import { LinkDestination } from "./SettingsData";
 
 export default class SettingTab extends PluginSettingTab {
 	plugin: ObsidianYouversionLinker;
@@ -18,10 +19,32 @@ export default class SettingTab extends PluginSettingTab {
 
 		this.bibleVersionSettings();
 
-		new Setting(containerEl)
-			.setName("Link trigger")
-			.setDesc(
-				"Trigger for autocomplete for linking verse in edit mode. Supports regex."
+			new Setting(containerEl)
+				.setName("Link destination")
+				.setDesc(
+					"Choose whether linked references open in YouVersion or Route Bible."
+				)
+				.addDropdown((dropdown) => {
+					dropdown.addOption(
+						LinkDestination.YOUVERSION,
+						"YouVersion"
+					);
+					dropdown.addOption(
+						LinkDestination.ROUTE_BIBLE,
+						"Route Bible"
+					);
+					dropdown.setValue(this.plugin.settings.linkDestination);
+					dropdown.onChange(async (value) => {
+						this.plugin.settings.linkDestination =
+							value as LinkDestination;
+						await this.plugin.saveSettings();
+					});
+				});
+
+			new Setting(containerEl)
+				.setName("Link trigger")
+				.setDesc(
+					"Trigger for autocomplete for linking verse in edit mode. Supports regex."
 			)
 			.addText((text) => {
 				text.setValue(this.plugin.settings.linkTrigger);

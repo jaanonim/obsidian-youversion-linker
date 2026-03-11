@@ -1,4 +1,4 @@
-import { BibleVersion } from "../settings/SettingsData";
+import { BibleVersion, LinkDestination } from "../settings/SettingsData";
 import VERSIONS from "../../data/versions.json";
 
 export class VerseElement {
@@ -22,7 +22,8 @@ export default abstract class Verse {
 		private bookUrl: string,
 		private book: string,
 		private chapter: number,
-		private verses: Array<VerseElement>
+		private verses: Array<VerseElement>,
+		private linkDestination: LinkDestination
 	) {}
 
 	public render(el: HTMLElement) {
@@ -51,12 +52,22 @@ export default abstract class Verse {
 		return "";
 	}
 
-	getUrl(): string {
+	getPreviewUrl(): string {
 		const base = "https://www.bible.com/bible";
 		let url = `${base}/${this.version.id}/${this.bookUrl}.${this.chapter}`;
 		if (this.verses.length > 0) {
 			url += `.${this.verses.map((verse) => verse.toString()).join(",")}`;
 		}
 		return url;
+	}
+
+	getDestinationUrl(): string {
+		if (this.linkDestination === LinkDestination.ROUTE_BIBLE) {
+			return `https://route.bible/?q=${encodeURIComponent(
+				this.toSimpleText()
+			)}&utm_source=obsidian_youversion_linker&utm_medium=link`;
+		}
+
+		return this.getPreviewUrl();
 	}
 }

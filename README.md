@@ -2,7 +2,7 @@
 
 # Obsidian YouVersion Linker Plugin
 
-**Automatically link bible verses in your notes to [YouVersion bible](https://www.bible.com/).**
+**Automatically link bible verses in your notes to [YouVersion bible](https://www.bible.com/) or Route Bible.**
 
 **List of supported languages can be found [here](./Languages.md).**
 
@@ -15,7 +15,11 @@ You can for example type:
 It also supports multiple verses like: `John 3:16,18-20`.
 
 `@`, `>` and `^` chars are triggers for suggestion and they can be changed in settings.
-In settings you can select which version of bible you want to use and books names in which language will be detected.
+In settings you can select which version of bible you want to use, choose the `Link destination` (`YouVersion` or `Route Bible`), and pick which language of book names will be detected.
+
+Example setting:
+
+- `Link destination: Route Bible`
 
 I'm from Poland so plugin supports polish books names (eq. `J 1:1-6`, `Mt 24,1`). If you would like it to support your language books names read the guide in [Languages.md](./Languages.md).
 
