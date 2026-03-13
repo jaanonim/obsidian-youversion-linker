@@ -34,7 +34,7 @@ describe("Link destination", () => {
 		jest.clearAllMocks();
 	});
 
-	test("builds a Route Bible URL for a matched reference", async () => {
+	test("builds a route.bible URL for a matched reference", async () => {
 		const [suggestion] = getSuggestionsFromQuery(
 			"John 3:16",
 			VerseType.LINK,

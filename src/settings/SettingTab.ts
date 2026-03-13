@@ -22,7 +22,7 @@ export default class SettingTab extends PluginSettingTab {
 			new Setting(containerEl)
 				.setName("Link destination")
 				.setDesc(
-					"Choose whether linked references open in YouVersion or Route Bible."
+					"Choose whether linked references open in YouVersion or route.bible."
 				)
 				.addDropdown((dropdown) => {
 					dropdown.addOption(
@@ -31,7 +31,7 @@ export default class SettingTab extends PluginSettingTab {
 					);
 					dropdown.addOption(
 						LinkDestination.ROUTE_BIBLE,
-						"Route Bible"
+						"route.bible"
 					);
 					dropdown.setValue(this.plugin.settings.linkDestination);
 					dropdown.onChange(async (value) => {
