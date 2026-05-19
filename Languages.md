@@ -2,6 +2,7 @@
 
 Thanks to the community, we have support for the following languages:
 
+- Amharic - [Rock Lake](https://github.com/Rock-Lake)
 -   Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
 -   Chinese - [John Huang](https://github.com/junwhuan)
 -   Czech - [Filip Opálka](https://github.com/filip-opalka)
