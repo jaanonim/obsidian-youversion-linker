@@ -23,7 +23,7 @@ import it from "../../data/books/it.json";
 
 // prettier-ignore
 const booksNames = {
-	"Amharic": am;
+	"Amharic": am,
 	"Czech": cz,
 	"Chinese Simplified": zhCN,
 	"Chinese Traditional": zhHK,
