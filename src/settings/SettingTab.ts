@@ -60,6 +60,41 @@ export default class SettingTab extends PluginSettingTab {
 		this.bookLanguageSettings();
 
 		new Setting(containerEl)
+			.setName("Verse Formatting Options")
+			.setDesc("Sets how to format the verses in quotes and previews.")
+			.addDropdown((dropdown) => {
+				dropdown.addOption("translation", "Translation (natural paragraphs)");
+				dropdown.addOption("manuscript", "Manuscript (one paragraph)");
+				dropdown.addOption("single-verse", "Single verse per line");
+				dropdown.setValue(this.plugin.settings.verseFormat.text);
+				dropdown.onChange(async (value) => {
+					this.plugin.settings.verseFormat.text = value as any;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Verse Number Formatting Options")
+			.setDesc("Sets how to format the verse numbers in quotes and previews.")
+			.addDropdown((dropdown) => {
+				dropdown.addOption("none", "None");
+				dropdown.addOption("plain", "1");
+				dropdown.addOption("dot", "1.");
+				dropdown.addOption("paren", "1)");
+				dropdown.addOption("dash", "1 -");
+				dropdown.addOption("bold", "**1** (bold)");
+				dropdown.addOption("italic", "*1* (italic)");
+				dropdown.addOption("superscript", "^1 (superscript)");
+				dropdown.addOption("superscript-bold", "**^1** (bolded superscript)");
+				dropdown.addOption("superscript-italic", "*^1* (italic superscript)");
+				dropdown.setValue(this.plugin.settings.verseFormat.number);
+				dropdown.onChange(async (value) => {
+					this.plugin.settings.verseFormat.number = value as any;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
 			.setName("Link Preview in read view")
 			.setDesc(
 				"Enable or disable verse preview shown when hovered over link in read view. DISCLAIMER: Will take effect after restart."
