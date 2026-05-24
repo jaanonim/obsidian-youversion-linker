@@ -97,6 +97,71 @@ export default class SettingTab extends PluginSettingTab {
 					await this.plugin.saveSettings();
 				});
 			});
+
+		new Setting(containerEl)
+			.setName("Quote: Show Verse Translation")
+			.setDesc(
+				"Show or hide the verse translation/version in the verse reference"
+			)
+			.addToggle((toggle) => {
+				toggle.setValue(this.plugin.settings.quoteSettings.showTranslation);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.quoteSettings.showTranslation = value;
+					await this.plugin.saveSettings();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName('Quote: Show Bible Icon Prefix "[!Bible]"')
+			.setDesc(
+				'When this is true, it will render a Bible icon in Obsidian for quotes, disable this if you want to hide it or use standard Markdown. (This will disable the Collapsible option below)'
+			)
+			.addToggle((toggle) => {
+				toggle.setValue(this.plugin.settings.quoteSettings.showBibleIcon);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.quoteSettings.showBibleIcon = value;
+					await this.plugin.saveSettings();
+					if (!value) {
+						this.plugin.settings.quoteSettings.collapsibleVerses = false;
+						this.plugin.settings.quoteSettings.collapsedByDefault = false;
+						await this.plugin.saveSettings();
+					}
+					this.display();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Quote: Make Verses Collapsible")
+			.setDesc(
+				"Make the rendered verses collapsible, so that you can hide them when you don't need them (This option will be disabled if Bible Icon Prefix option above is disabled)"
+			)
+			.addToggle((toggle) => {
+				if (!this.plugin.settings.quoteSettings.showBibleIcon) {
+					toggle.setDisabled(true);
+				}
+				toggle.setValue(this.plugin.settings.quoteSettings.collapsibleVerses);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.quoteSettings.collapsibleVerses = value;
+					await this.plugin.saveSettings();
+					this.display();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName("Quote: Default Collapsed")
+			.setDesc(
+				"When verses are collapsible, set the default state to open or closed (This option will be disabled if Make Verses Collapsible option above is disabled)"
+			)
+			.addToggle((toggle) => {
+				if (!this.plugin.settings.quoteSettings.collapsibleVerses) {
+					toggle.setDisabled(true);
+				}
+				toggle.setValue(this.plugin.settings.quoteSettings.collapsedByDefault);
+				toggle.onChange(async (value) => {
+					this.plugin.settings.quoteSettings.collapsedByDefault = value;
+					await this.plugin.saveSettings();
+				});
+			});
 	}
 
 	bibleVersionSettings() {

@@ -3,6 +3,13 @@ export interface BibleVersion {
 	language: string;
 }
 
+export interface QuoteSettings {
+	showTranslation: boolean;
+	showBibleIcon: boolean;
+	collapsibleVerses: boolean;
+	collapsedByDefault: boolean;
+}
+
 export interface ObsidianYouversionLinkerSettings {
 	bibleVersions: BibleVersion[];
 	linkPreviewRead: boolean;
@@ -12,6 +19,7 @@ export interface ObsidianYouversionLinkerSettings {
 	footnoteTrigger: string;
 	selectedBooksLanguages: string[];
 	calloutName: string;
+	quoteSettings: QuoteSettings;
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -28,4 +36,10 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	footnoteTrigger: "(?<!\\[)\\^",
 	selectedBooksLanguages: ["English"],
 	calloutName: "Bible",
+	quoteSettings: {
+		showTranslation: true,
+		showBibleIcon: true,
+		collapsibleVerses: false,
+		collapsedByDefault: false,
+	},
 };
