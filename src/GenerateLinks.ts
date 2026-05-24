@@ -1,6 +1,6 @@
 import { Editor, MarkdownView } from "obsidian";
 import { linkRegex } from "./Regex";
-import { getSuggestionsFromQuery } from "./EditorSuggester";
+import { getSuggestionsFromQuery } from "./Suggestions";
 import { ObsidianYouversionLinkerSettings } from "./settings/SettingsData";
 import Verse from "./verses/Verse";
 import { VerseType } from "./verses/VerseType";

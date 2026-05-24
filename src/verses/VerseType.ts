@@ -1,7 +1,7 @@
 import {
 	BibleVersion,
 	ObsidianYouversionLinkerSettings,
-} from "src/settings/SettingsData";
+} from "../settings/SettingsData";
 import { VerseElement } from "./Verse";
 import VerseEmbed from "./VerseEmbed";
 import VerseLink from "./VerseLink";
@@ -47,40 +47,44 @@ export function makeVerseByType(
 ) {
 	switch (verseType) {
 		case VerseType.EMBED:
-			return new VerseEmbed(
+				return new VerseEmbed(
+					data.version,
+					data.bookUrl,
+					data.book,
+					data.chapter,
+					data.verses,
+					settings.linkDestination,
+					false,
+					settings.calloutName
+				);
+			case VerseType.EMBED_NL:
+				return new VerseEmbed(
+					data.version,
+					data.bookUrl,
+					data.book,
+					data.chapter,
+					data.verses,
+					settings.linkDestination,
+					true,
+					settings.calloutName
+				);
+			case VerseType.LINK:
+				return new VerseLink(
 				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses,
-				false,
-				settings.calloutName
-			);
-		case VerseType.EMBED_NL:
-			return new VerseEmbed(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses,
-				true,
-				settings.calloutName
-			);
-		case VerseType.LINK:
-			return new VerseLink(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses
-			);
-		case VerseType.FOOTNOTE:
-			return new VerseFootnote(
-				data.version,
-				data.bookUrl,
-				data.book,
-				data.chapter,
-				data.verses
-			);
+					data.bookUrl,
+					data.book,
+					data.chapter,
+					data.verses,
+					settings.linkDestination
+				);
+			case VerseType.FOOTNOTE:
+				return new VerseFootnote(
+					data.version,
+					data.bookUrl,
+					data.book,
+					data.chapter,
+					data.verses,
+					settings.linkDestination
+				);
+		}
 	}
-}
