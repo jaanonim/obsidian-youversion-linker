@@ -158,6 +158,7 @@
     ],
     "ZEP": [
         "sefanja",
+		"zefanja",
         "sef",
 		"zef"
     ],
@@ -181,10 +182,12 @@
     ],
     "MRK": [
         "marcus",
+		"markus",
         "marc"
     ],
     "LUK": [
         "lucas",
+		"lukas",
         "luc"
     ],
     "JHN": [
@@ -201,11 +204,13 @@
     ],
     "1CO": [
         "1korinthiërs",
+		"1korinthe",
         "1kor",
         "1cor"
     ],
     "2CO": [
         "2korinthiërs",
+		"2korinthe",
         "2kor",
         "2cor"
     ],
@@ -215,6 +220,7 @@
     ],
     "EPH": [
         "efeziërs",
+		"efeze",
         "efz",
         "ef"
     ],
