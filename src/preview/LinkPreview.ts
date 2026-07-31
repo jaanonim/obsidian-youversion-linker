@@ -1,6 +1,6 @@
 import { requestUrl } from "obsidian";
 import tippy from "tippy.js";
-import { htmlCleanupRegex, htmlDataRegex } from "../Regex";
+import { parseVerseData } from "../utils/VerseData";
 
 type CacheElement = {
 	info: { version: string; title: string };
@@ -39,35 +39,17 @@ export default class LinkPreviewManager {
 		if (!this.cache[url]) {
 			try {
 				const res = await requestUrl(url);
-				let text = await res.text;
+				const data = parseVerseData(await res.text);
 
-				const match = text.match(htmlDataRegex);
-				if (match) {
-					const json_text = match[0].replace(htmlCleanupRegex, "");
-
-					const data = JSON.parse(json_text);
-
-					if (data.props.pageProps.type !== "verse") {
-						throw 1;
-					}
-
-					const info = {
-						title: data.props.pageProps.referenceTitle.title,
-						version:
-							data.props.pageProps.version.local_abbreviation,
-					};
-					const verses = data.props.pageProps.verses
-						.map((ele: any) => ele.content)
-						.join(" ");
-
-					if (verses.length < 1) {
-						throw 1;
-					}
-
-					this.cache[url] = { err: false, info, verses };
-				} else {
+				if (!data) {
 					throw 1;
 				}
+
+				this.cache[url] = {
+					err: false,
+					info: data.info,
+					verses: data.verses,
+				};
 			} catch {
 				this.cache[url] = {
 					err: true,
