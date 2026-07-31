@@ -12,3 +12,8 @@ export const htmlDataRegex =
 
 export const htmlCleanupRegex =
 	/<script\s*id="__NEXT_DATA__"\s*type="application\/json"\s*>/;
+
+export const htmlFlightDataRegex =
+	/self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)/g;
+
+export const htmlFlightReferenceRegex = /^\$([0-9a-f]+)$/;
