@@ -3,6 +3,11 @@ export interface BibleVersion {
 	language: string;
 }
 
+export enum LinkDestination {
+	YOUVERSION = "youversion",
+	ROUTE_BIBLE = "route-bible",
+}
+
 export interface ObsidianYouversionLinkerSettings {
 	bibleVersions: BibleVersion[];
 	linkPreviewRead: boolean;
@@ -12,6 +17,7 @@ export interface ObsidianYouversionLinkerSettings {
 	footnoteTrigger: string;
 	selectedBooksLanguages: string[];
 	calloutName: string;
+	linkDestination: LinkDestination;
 }
 
 export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
@@ -28,4 +34,5 @@ export const DEFAULT_SETTINGS: ObsidianYouversionLinkerSettings = {
 	footnoteTrigger: "(?<!\\[)\\^",
 	selectedBooksLanguages: ["English"],
 	calloutName: "Bible",
+	linkDestination: LinkDestination.YOUVERSION,
 };
