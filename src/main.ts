@@ -8,7 +8,7 @@ import {
 
 import GenerateLinks from "./GenerateLinks";
 import linkPreview from "./preview/LinkPreviewReader";
-import { linkPreviewPlugin } from "./preview/LinkPreviewEditor";
+import { createLinkPreviewPlugin } from "./preview/LinkPreviewEditor";
 
 export default class ObsidianYouversionLinker extends Plugin {
 	settings: ObsidianYouversionLinkerSettings;
@@ -18,9 +18,11 @@ export default class ObsidianYouversionLinker extends Plugin {
 		this.registerEditorSuggest(new EditorSuggester(this, this.settings));
 
 		if (this.settings.linkPreviewRead)
-			this.registerMarkdownPostProcessor(linkPreview);
+			this.registerMarkdownPostProcessor((el, ctx) => 
+				linkPreview(el, ctx, this.settings.verseFormat)
+			);
 		if (this.settings.linkPreviewLive)
-			this.registerEditorExtension([linkPreviewPlugin]);
+			this.registerEditorExtension([createLinkPreviewPlugin(this.settings.verseFormat)]);
 
 		this.addSettingTab(new SettingTab(this.app, this));
 		this.addCommand({

@@ -11,11 +11,12 @@ import {
 	WidgetType,
 } from "@codemirror/view";
 import LinkPreviewManager from "./LinkPreview";
+import type { VerseFormat } from "src/settings/SettingsData";
 
 class LinkPreviewView implements PluginValue {
 	decorations: DecorationSet;
 
-	constructor(view: EditorView) {
+	constructor(view: EditorView, private formatSettings: VerseFormat) {
 		this.decorations = this.buildDecorations(view);
 	}
 
@@ -56,7 +57,7 @@ class LinkPreviewView implements PluginValue {
 								last_f,
 								last_t,
 								Decoration.replace({
-									widget: new LinkTooltip(content, slice),
+									widget: new LinkTooltip(content, slice, this.formatSettings),
 								})
 							);
 						}
@@ -74,13 +75,19 @@ const pluginSpec: PluginSpec<LinkPreviewView> = {
 	decorations: (value: LinkPreviewView) => value.decorations,
 };
 
-export const linkPreviewPlugin = ViewPlugin.fromClass(
-	LinkPreviewView,
-	pluginSpec
-);
+export function createLinkPreviewPlugin(formatSettings: VerseFormat) {
+	return ViewPlugin.fromClass(
+		class extends LinkPreviewView {
+			constructor(view: EditorView) {
+				super(view, formatSettings);
+			}
+		},
+		pluginSpec
+	);
+}
 
 class LinkTooltip extends WidgetType {
-	constructor(private text: string, private url: string) {
+	constructor(private text: string, private url: string, private formatSettings: VerseFormat) {
 		super();
 	}
 
@@ -90,7 +97,7 @@ class LinkTooltip extends WidgetType {
 		el.target = "_blank";
 		el.innerHTML = this.text;
 
-		LinkPreviewManager.processLink(el);
+		LinkPreviewManager.processLink(el, this.formatSettings);
 
 		return el;
 	}

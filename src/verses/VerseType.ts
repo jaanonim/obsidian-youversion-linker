@@ -54,7 +54,8 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				false,
-				settings.calloutName
+				settings.calloutName,
+				settings.verseFormat
 			);
 		case VerseType.EMBED_NL:
 			return new VerseEmbed(
@@ -64,7 +65,8 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				true,
-				settings.calloutName
+				settings.calloutName,
+				settings.verseFormat
 			);
 		case VerseType.LINK:
 			return new VerseLink(
@@ -80,7 +82,8 @@ export function makeVerseByType(
 				data.bookUrl,
 				data.book,
 				data.chapter,
-				data.verses
+				data.verses,
+				settings.verseFormat
 			);
 	}
 }
