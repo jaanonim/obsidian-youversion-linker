@@ -1,6 +1,6 @@
-import { escapeMarkdown } from "src/utils/Markdown";
 import LinkPreviewManager from "../preview/LinkPreview";
 import { BibleVersion } from "../settings/SettingsData";
+import { escapeMarkdown } from "../utils/Markdown";
 import Verse, { VerseElement } from "./Verse";
 
 export default class VerseEmbed extends Verse {

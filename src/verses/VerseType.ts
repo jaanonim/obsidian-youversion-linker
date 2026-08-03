@@ -1,11 +1,8 @@
-import {
-	BibleVersion,
-	ObsidianYouversionLinkerSettings,
-} from "src/settings/SettingsData";
 import { VerseElement } from "./Verse";
 import VerseEmbed from "./VerseEmbed";
 import VerseLink from "./VerseLink";
 import VerseFootnote from "./VerseFootnote";
+import type { BibleVersion, ObsidianYouversionLinkerSettings } from "../settings/SettingsData";
 
 export enum VerseType {
 	EMBED = ">",

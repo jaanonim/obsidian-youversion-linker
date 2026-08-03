@@ -1,5 +1,5 @@
-import { escapeMarkdown } from "src/utils/Markdown";
 import LinkPreviewManager from "../preview/LinkPreview";
+import { escapeMarkdown } from "../utils/Markdown";
 import Verse from "./Verse";
 
 export default class VerseFootnote extends Verse {
