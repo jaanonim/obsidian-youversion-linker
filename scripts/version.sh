@@ -1,5 +1,5 @@
 git pull
-pnpm run version
+npm run version
 git add .
 npm_package_version=$(node -p "require('./package.json').version")
 git commit -m "v${npm_package_version}"
