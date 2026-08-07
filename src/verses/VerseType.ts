@@ -51,7 +51,8 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				false,
-				settings.calloutName
+				settings.calloutName,
+				settings.quoteSettings
 			);
 		case VerseType.EMBED_NL:
 			return new VerseEmbed(
@@ -61,7 +62,8 @@ export function makeVerseByType(
 				data.chapter,
 				data.verses,
 				true,
-				settings.calloutName
+				settings.calloutName,
+				settings.quoteSettings
 			);
 		case VerseType.LINK:
 			return new VerseLink(
