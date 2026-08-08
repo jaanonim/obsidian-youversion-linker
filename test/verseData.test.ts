@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import { parseVerseData } from "../src/utils/VerseData";
+import {describe, expect, test} from '@jest/globals';
 
 function fixture(name: string): string {
 	return readFileSync(join(__dirname, "fixtures", name), "utf-8");

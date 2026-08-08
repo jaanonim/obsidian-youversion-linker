@@ -1,7 +1,8 @@
-import booksNames from "../src/books/BooksLists";
+import {booksNames} from "../src/books/BooksLists";
 import _books from "../data/books/books.json";
 import {testBookRegex } from "../src/Regex";
 import { cleanBookName } from "../src/books/Books";
+import {expect, test} from '@jest/globals';
 
 test("Valid books", () => {
 	const expectedKeys = [...Object.keys(_books)];
@@ -18,5 +19,3 @@ test("Valid books", () => {
 		});
 	});
 });
-
-booksNames;
