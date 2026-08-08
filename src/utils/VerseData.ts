@@ -57,8 +57,11 @@ function readEmbedded(html: string): Source | null {
 	}
 
 	try {
-		const pageProps = JSON.parse(match[0].replace(htmlCleanupRegex, ""))
-			.props.pageProps;
+		const pageProps = (
+			JSON.parse(match[0].replace(htmlCleanupRegex, "")) as {
+				props: { pageProps: PageProps };
+			}
+		).props.pageProps;
 		return { pageProps, payload: "" };
 	} catch {
 		return null;
@@ -78,7 +81,7 @@ function readStreamed(html: string): Source | null {
 	}
 
 	try {
-		return { pageProps: JSON.parse(object), payload };
+		return { pageProps: JSON.parse(object) as PageProps, payload };
 	} catch {
 		return null;
 	}
@@ -91,7 +94,7 @@ function joinChunks(html: string): string {
 	let match;
 	while ((match = htmlFlightDataRegex.exec(html)) !== null) {
 		try {
-			payload += JSON.parse(match[1]);
+			payload += JSON.parse(match[1]!);
 		} catch {
 			// skip the chunk and keep going
 		}
@@ -116,7 +119,7 @@ function readContent(payload: string, content: string): string | null {
 		return content;
 	}
 
-	return readRow(payload, reference[1]);
+	return readRow(payload, reference[1]!);
 }
 
 // Rows are written as "<row>:T<length>,<text>", with the length in hex and
@@ -130,7 +133,7 @@ function readRow(payload: string, row: string): string | null {
 	}
 
 	const text = payload.substring(header.index + header[0].length);
-	const length = parseInt(header[1], 16);
+	const length = parseInt(header[1]!, 16);
 	const bytes = new TextEncoder().encode(text);
 	if (bytes.length < length) {
 		return null;

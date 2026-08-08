@@ -1,5 +1,5 @@
 import { EditorSuggester } from "./EditorSuggester";
-import { Editor, MarkdownView, Plugin } from "obsidian";
+import { Editor, MarkdownFileInfo, MarkdownView, Plugin } from "obsidian";
 import SettingTab from "./settings/SettingTab";
 import {
 	DEFAULT_SETTINGS,
@@ -11,7 +11,7 @@ import linkPreview from "./preview/LinkPreviewReader";
 import { linkPreviewPlugin } from "./preview/LinkPreviewEditor";
 
 export default class ObsidianYouversionLinker extends Plugin {
-	settings: ObsidianYouversionLinkerSettings;
+	settings: ObsidianYouversionLinkerSettings = DEFAULT_SETTINGS;
 
 	async onload() {
 		await this.loadSettings();
@@ -26,7 +26,7 @@ export default class ObsidianYouversionLinker extends Plugin {
 		this.addCommand({
 			id: "generate-links",
 			name: "Generate links",
-			editorCallback: (editor: Editor, view: MarkdownView) =>
+			editorCallback: (editor: Editor, view: MarkdownView | MarkdownFileInfo) =>
 				GenerateLinks(editor, view, this.settings),
 		});
 	}
@@ -34,11 +34,11 @@ export default class ObsidianYouversionLinker extends Plugin {
 	onunload() {}
 
 	async loadSettings() {
-		this.settings = Object.assign(
-			{},
-			DEFAULT_SETTINGS,
-			await this.loadData()
-		);
+		const loaded: unknown = await this.loadData();
+		this.settings = {
+			...DEFAULT_SETTINGS,
+			...(loaded as Partial<ObsidianYouversionLinkerSettings>),
+		};
 	}
 
 	async saveSettings() {

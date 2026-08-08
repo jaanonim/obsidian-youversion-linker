@@ -48,6 +48,8 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		if (candidates.length < 1) return null;
 
 		const typeElement = candidates.sort((a, b) => b.pos - a.pos)[0];
+		if (!typeElement) return null;
+
 		const pos = typeElement.pos;
 		const currentContent = currentLine.substring(pos + 1, cursor.ch).trim();
 		const prefix = currentLine.substring(0, pos);
@@ -58,7 +60,7 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 
 		const matches = currentContent.match(linkRegex);
 		if (!matches) return null;
-		return matches?.reduce((prev, match) => {
+		return matches.reduce<EditorSuggestTriggerInfo | null>((prev, match) => {
 			if (match && prev === null) {
 				const end = currentContent.lastIndexOf(match);
 				if (end === 0 || currentContent.charAt(end - 1) !== "[") {
@@ -83,8 +85,9 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 
 		let verseType = VerseType.LINK;
 		const types = Object.values(VerseType) as string[];
-		if (types.contains(query[0])) {
-			verseType = query[0] as VerseType;
+		const firstChar = query[0];
+		if (firstChar !== undefined && types.contains(firstChar)) {
+			verseType = firstChar as VerseType;
 		} else {
 			console.error(`INTERNAL: query should start with type char`);
 		}
@@ -100,28 +103,25 @@ export class EditorSuggester extends EditorSuggest<VerseLink> {
 		value.render(el);
 	}
 
-	async selectSuggestion(
-		value: Verse,
-		evt: MouseEvent | KeyboardEvent
-	): Promise<void> {
-		if (this.context) {
-			const editor = this.context.editor as Editor;
-			editor.replaceRange(
-				await value.toReplace(),
-				this.context.start,
-				this.context.end
-			);
-			const endInsert = await value.endInsert();
-			if (endInsert && endInsert.length > 0) {
-				const lastLineNumber = editor.lastLine();
-				const lastCharNumber = editor.getLine(lastLineNumber).length;
-				const pos = {
-					line: lastLineNumber,
-					ch: lastCharNumber,
-				};
-				editor.replaceRange(endInsert, pos, pos);
-			}
-		}
+	selectSuggestion(value: Verse, _evt: MouseEvent | KeyboardEvent): void {
+		const context = this.context;
+		if (!context) return;
+
+		const editor = context.editor;
+		void value.toReplace().then((replacement) => {
+			editor.replaceRange(replacement, context.start, context.end);
+			void value.endInsert().then((endInsert) => {
+				if (endInsert && endInsert.length > 0) {
+					const lastLineNumber = editor.lastLine();
+					const lastCharNumber = editor.getLine(lastLineNumber).length;
+					const pos = {
+						line: lastLineNumber,
+						ch: lastCharNumber,
+					};
+					editor.replaceRange(endInsert, pos, pos);
+				}
+			});
+		});
 	}
 }
 
@@ -135,7 +135,7 @@ export function processVerses(verses_str: Array<string>): Array<VerseElement> {
 				? undefined
 				: new VerseElement(start, end);
 		})
-		.filter((v) => v !== undefined) as Array<VerseElement>;
+		.filter((v) => v !== undefined);
 }
 
 export function getSuggestionsFromQuery(
@@ -162,7 +162,7 @@ export function getSuggestionsFromQuery(
 		chapterSeparatorRegex
 	);
 	const verses = processVerses(verses_str);
-	const chapter = parseInt(chapter_str);
+	const chapter = parseInt(chapter_str ?? "");
 
 	return booksUrl.flatMap(
 		(bookUrl) =>

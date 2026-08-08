@@ -3,7 +3,7 @@ import LinkPreviewManager from "./LinkPreview";
 
 export default function linkPreview(
 	element: HTMLElement,
-	context: MarkdownPostProcessorContext
+	_context: MarkdownPostProcessorContext
 ) {
 	const targetLinks = Array.from(element.getElementsByTagName("a")).filter(
 		(link) =>
@@ -13,7 +13,7 @@ export default function linkPreview(
 	);
 
 	for (const link of targetLinks) {
-		LinkPreviewManager.processLink(link);
+		void LinkPreviewManager.processLink(link);
 	}
 	LinkPreviewManager.clearCache(targetLinks.map((ele) => ele.href));
 }

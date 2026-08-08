@@ -84,13 +84,13 @@ class LinkTooltip extends WidgetType {
 		super();
 	}
 
-	toDOM(view: EditorView): HTMLElement {
-		const el = document.createElement("a");
-		el.href = this.url;
-		el.target = "_blank";
-		el.innerHTML = this.text;
+	toDOM(_view: EditorView): HTMLElement {
+		const el = createEl("a", {
+			attr: { href: this.url, target: "_blank" },
+			text: this.text,
+		});
 
-		LinkPreviewManager.processLink(el);
+		void LinkPreviewManager.processLink(el);
 
 		return el;
 	}
