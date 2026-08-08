@@ -8,9 +8,9 @@
 
 You can for example type:
 
--   `@ John 1:1-6` to link verse
--   `> John 1:1-6` to quote verse
--   `^ John 1:1-6` to quote in footnote
+- `@ John 1:1-6` to link verse
+- `> John 1:1-6` to quote verse
+- `^ John 1:1-6` to quote in footnote
 
 It also supports multiple verses like: `John 3:16,18-20`.
 

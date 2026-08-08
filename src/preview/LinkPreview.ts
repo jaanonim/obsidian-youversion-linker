@@ -1,78 +1,73 @@
-import { requestUrl } from "obsidian";
-import tippy from "tippy.js";
-import { parseVerseData } from "../utils/VerseData";
+import { requestUrl } from 'obsidian';
+import tippy from 'tippy.js';
+import { parseVerseData } from '../utils/VerseData';
 
 type CacheElement = {
-	info: { version: string; title: string };
-	verses: string;
-	err: boolean;
+  info: { version: string; title: string };
+  verses: string;
+  err: boolean;
 };
 
 type CacheType = { [key: string]: CacheElement };
 
 export default class LinkPreviewManager {
-	static cache: CacheType = {};
+  static cache: CacheType = {};
 
-	static async processLink(link: HTMLAnchorElement) {
-		const content = await this.processUrl(link.href);
+  static async processLink(link: HTMLAnchorElement) {
+    const content = await this.processUrl(link.href);
 
-		const popup = createDiv({ cls: "preview-youversion" });
-		popup.addClass("preview-youversion");
+    const popup = createDiv({ cls: 'preview-youversion' });
+    popup.addClass('preview-youversion');
 
-		if (content.err) {
-			popup
-				.createSpan({ cls: "error-youversion" })
-				.setText("Verse preview is unavailable for this link.");
-		} else {
-			popup
-				.createSpan({ cls: "content-youversion" })
-				.setText(content.verses);
-			popup
-				.createSpan({ cls: "info-youversion" })
-				.setText(content.info.title + " " + content.info.version);
-		}
+    if (content.err) {
+      popup
+        .createSpan({ cls: 'error-youversion' })
+        .setText('Verse preview is unavailable for this link.');
+    } else {
+      popup.createSpan({ cls: 'content-youversion' }).setText(content.verses);
+      popup
+        .createSpan({ cls: 'info-youversion' })
+        .setText(content.info.title + ' ' + content.info.version);
+    }
 
-		tippy(link, { content: popup, allowHTML: true });
-	}
+    tippy(link, { content: popup, allowHTML: true });
+  }
 
-	static async processUrl(url: string): Promise<CacheElement> {
-		if (!this.cache[url]) {
-			try {
-				const res = await requestUrl(url);
-				const data = parseVerseData(res.text);
+  static async processUrl(url: string): Promise<CacheElement> {
+    if (!this.cache[url]) {
+      try {
+        const res = await requestUrl(url);
+        const data = parseVerseData(res.text);
 
-				if (!data) {
-					throw new Error("Could not parse verse data");
-				}
+        if (!data) {
+          throw new Error('Could not parse verse data');
+        }
 
-				this.cache[url] = {
-					err: false,
-					info: data.info,
-					verses: data.verses,
-				};
-			} catch {
-				this.cache[url] = {
-					err: true,
-					info: { title: "", version: "" },
-					verses: "",
-				};
-			}
-		}
-		return this.cache[url];
-	}
+        this.cache[url] = {
+          err: false,
+          info: data.info,
+          verses: data.verses,
+        };
+      } catch {
+        this.cache[url] = {
+          err: true,
+          info: { title: '', version: '' },
+          verses: '',
+        };
+      }
+    }
+    return this.cache[url];
+  }
 
-	static clearCache(notClear: Array<string>) {
-		console.debug(
-			`Clearing cache... (${Math.abs(
-				Object.keys(this.cache).length - notClear.length
-			)} items)`
-		);
-		let dict: CacheType = {};
-		notClear.forEach((ele) => {
-			const cached = this.cache[ele];
-			if (cached) dict[ele] = cached;
-			
-		});
-		this.cache = dict;
-	}
+  static clearCache(notClear: Array<string>) {
+    console.debug(
+      `Clearing cache... (${Math.abs(Object.keys(this.cache).length - notClear.length)} items)`,
+    );
+    let dict: CacheType = {};
+    notClear.forEach((ele) => {
+      const cached = this.cache[ele];
+      if (cached) dict[ele] = cached;
+    });
+    this.cache = dict;
+  }
 }

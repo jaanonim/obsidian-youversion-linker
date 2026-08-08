@@ -1,7 +1,7 @@
-import Verse from "./Verse";
+import Verse from './Verse';
 
 export default class VerseLink extends Verse {
-	async toReplace(): Promise<string> {
-		return `[${this.toSimpleText()}](${this.getUrl()})`;
-	}
+  async toReplace(): Promise<string> {
+    return `[${this.toSimpleText()}](${this.getUrl()})`;
+  }
 }
