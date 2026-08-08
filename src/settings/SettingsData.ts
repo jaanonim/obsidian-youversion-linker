@@ -1,3 +1,5 @@
+import type { LanguageName } from "../books/BooksLists";
+
 export interface BibleVersion {
 	id: string;
 	language: string;
@@ -10,7 +12,7 @@ export interface ObsidianYouversionLinkerSettings {
 	linkTrigger: string;
 	embedTrigger: string;
 	footnoteTrigger: string;
-	selectedBooksLanguages: string[];
+	selectedBooksLanguages: LanguageName[];
 	calloutName: string;
 }
 

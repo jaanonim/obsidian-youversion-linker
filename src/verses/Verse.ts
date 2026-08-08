@@ -1,5 +1,5 @@
+import { versions } from "../books/Versions";
 import { BibleVersion } from "../settings/SettingsData";
-import VERSIONS from "../../data/versions.json";
 
 export class VerseElement {
 	public start: number;
@@ -31,9 +31,9 @@ export default abstract class Verse {
 		const span = div.createSpan();
 		span.addClass("verse-link-info");
 
-		const versionAbbr = (VERSIONS as any)[this.version.language].data.find(
-			(v: any) => v.id == this.version.id
-		).abbreviation;
+		const versionAbbr = versions[this.version.language]?.data.find(
+			(v) => v.id === Number(this.version.id)
+		)?.abbreviation ?? "";
 		span.setText(`${this.bookUrl} - ${versionAbbr}`);
 	}
 
