@@ -1,4 +1,5 @@
 import { bookRegex, linkRegex } from "../src/Regex";
+import {describe, expect, test} from '@jest/globals';
 
 describe("Regex Tests", () => {
 	// Tests for linkRegex
