@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format && npm run test && npm run build",
     "version": "node version-bump.mjs && git add manifest.json versions.json"
   },
   "keywords": [],
