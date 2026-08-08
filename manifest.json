@@ -1,10 +1,10 @@
 {
-	"id": "youversion-linker",
-	"name": "YouVersion Linker",
-	"version": "1.7.0",
-	"minAppVersion": "1.2.3",
-	"description": "Automatically link bible verses in your notes to YouVersion bible.",
-	"author": "jaanonim",
-	"authorUrl": "https://jaanonim.github.io/",
-	"isDesktopOnly": false
+  "id": "youversion-linker",
+  "name": "YouVersion Linker",
+  "version": "1.8.0",
+  "minAppVersion": "1.2.3",
+  "description": "Automatically link bible verses in your notes to YouVersion bible.",
+  "author": "jaanonim",
+  "authorUrl": "https://jaanonim.github.io/",
+  "isDesktopOnly": false
 }
