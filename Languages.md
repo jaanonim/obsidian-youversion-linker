@@ -3,24 +3,24 @@
 Thanks to the community, we have support for the following languages:
 
 - Amharic - [Rock Lake](https://github.com/Rock-Lake)
--   Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
--   Chinese - [John Huang](https://github.com/junwhuan)
--   Czech - [Filip Opálka](https://github.com/filip-opalka)
--   Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
--   Dutch - [Jaap Kramer](https://github.com/jaapkramer)
--   English - [Jaanonim](https://github.com/jaanonim)
--   French - [Cedriane](https://github.com/Cedriane)
--   German - [Tecur](https://github.com/Tecur)
--   Italian - [grnsmn](https://github.com/grnsmn)
--   Norwegian - [Cmeeren](https://github.com/cmeeren)
--   Polish - [Jaanonim](https://github.com/jaanonim)
--   Slovak - [YeapGuy](https://github.com/yeapguy)
--   Spanish - [Javier Rios](https://github.com/JavierRiosN)
--   Swedish - [Eric Lundgren](https://github.com/TheFringe)
--   Romanian - [Paul Timoce](https://github.com/paultimoce)
--   Rusian - [Sakardin](https://github.com/Sakardin), [n0-n4-m3](https://github.com/n0-n4-m3)
--   Ukrainian - [Seesmof](https://github.com/seesmof)
--   Korean - [Woollim](https://github.com/woollim)
+- Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
+- Chinese - [John Huang](https://github.com/junwhuan)
+- Czech - [Filip Opálka](https://github.com/filip-opalka)
+- Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
+- Dutch - [Jaap Kramer](https://github.com/jaapkramer)
+- English - [Jaanonim](https://github.com/jaanonim)
+- French - [Cedriane](https://github.com/Cedriane)
+- German - [Tecur](https://github.com/Tecur)
+- Italian - [grnsmn](https://github.com/grnsmn)
+- Norwegian - [Cmeeren](https://github.com/cmeeren)
+- Polish - [Jaanonim](https://github.com/jaanonim)
+- Slovak - [YeapGuy](https://github.com/yeapguy)
+- Spanish - [Javier Rios](https://github.com/JavierRiosN)
+- Swedish - [Eric Lundgren](https://github.com/TheFringe)
+- Romanian - [Paul Timoce](https://github.com/paultimoce)
+- Rusian - [Sakardin](https://github.com/Sakardin), [n0-n4-m3](https://github.com/n0-n4-m3)
+- Ukrainian - [Seesmof](https://github.com/seesmof)
+- Korean - [Woollim](https://github.com/woollim)
 
 ## Adding new language support
 
@@ -31,7 +31,7 @@ If you want to add support for a new language, you can do so by following these 
 3. Import json file to `src/books/BooksLists.ts` as shown in the example:
 
 ```ts
-import pl from "../data/books/pl.json";
+import pl from '../data/books/pl.json';
 ```
 
 ```ts
@@ -40,7 +40,7 @@ const booksNames = {
 	// ...
 	"Polish": pl,
 	// ...
-} as BooksLangList;
+} as const;
 ```
 
 (See the other languages for examples.)

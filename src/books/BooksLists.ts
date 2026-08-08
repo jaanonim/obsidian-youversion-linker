@@ -1,5 +1,3 @@
-import { BooksLangList } from "./Books";
-
 import am from "../../data/books/am.json";
 import cz from "../../data/books/cz.json";
 import da from "../../data/books/da.json";
@@ -22,7 +20,7 @@ import sk from "../../data/books/sk.json";
 import it from "../../data/books/it.json";
 
 // prettier-ignore
-const booksNames = {
+export const booksNames = {
 	"Amharic": am,
 	"Czech": cz,
 	"Chinese Simplified": zhCN,
@@ -44,5 +42,6 @@ const booksNames = {
 	"Russian": ru,
 	"Korean": ko,
 
-} as BooksLangList;
-export default booksNames;
+} as const;
+
+export type LanguageName = keyof typeof booksNames;
