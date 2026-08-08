@@ -1,235 +1,68 @@
 {
-    "GEN": [
-        "genesis"
-    ],
-    "EXO": [
-        "exodus"
-    ],
-    "LEV": [
-        "leviticus"
-    ],
-    "NUM": [
-        "numeri"
-    ],
-    "DEU": [
-        "deuteronomium",
-        "deut"
-    ],
-    "JOS": [
-        "jozue"
-    ],
-    "JDG": [
-        "soudců",
-        "soudcu"
-    ],
-    "RUT": [
-        "rút",
-        "rut"
-    ],
-    "1SA": [
-        "1samuelova"
-    ],
-    "2SA": [
-        "2samuelova"
-    ],
-    "1KI": [
-        "1královská",
-        "1kralovska"
-    ],
-    "2KI": [
-        "2královská",
-        "2kralovska"
-    ],
-    "1CH": [
-        "1letopisů",
-        "1letopisu"
-    ],
-    "2CH": [
-        "2letopisů",
-        "2letopisu"
-    ],
-    "EZR": [
-        "ezdráš",
-        "ezdras"
-    ],
-    "NEH": [
-        "nehemiáš",
-        "nehemias"
-    ],
-    "EST": [
-        "ester"
-    ],
-    "JOB": [
-        "job"
-    ],
-    "PSA": [
-        "žalmy",
-        "zalmy"
-    ],
-    "PRO": [
-        "přísloví",
-        "prislovi"
-    ],
-    "ECC": [
-        "kazatel"
-    ],
-    "SNG": [
-        "píseňpísní",
-        "pisenpisni"
-    ],
-    "ISA": [
-        "izaiáš",
-        "izaias"
-    ],
-    "JER": [
-        "jeremiáš",
-        "jeremias"
-    ],
-    "LAM": [
-        "pláč",
-        "plac"
-    ],
-    "EZK": [
-        "ezechiel"
-    ],
-    "DAN": [
-        "daniel"
-    ],
-    "HOS": [
-        "ozeáš",
-        "ozeas"
-    ],
-    "JOL": [
-        "joel"
-    ],
-    "AMO": [
-        "amos"
-    ],
-    "OBA": [
-        "abdiáš",
-        "abdias"
-    ],
-    "JON": [
-        "jonáš",
-        "jonas"
-    ],
-    "MIC": [
-        "micheáš",
-        "micheas"
-    ],
-    "NAM": [
-        "nahum"
-    ],
-    "HAB": [
-        "abakuk"
-    ],
-    "ZEP": [
-        "sofoniáš",
-        "sofonias"
-    ],
-    "HAG": [
-        "ageus"
-    ],
-    "ZEC": [
-        "zachariáš",
-        "zacharias"
-    ],
-    "MAL": [
-        "malachiáš",
-        "malachias"
-    ],
-    "MAT": [
-        "matouš",
-        "matous"
-    ],
-    "MRK": [
-        "marek"
-    ],
-    "LUK": [
-        "lukáš",
-        "lukas"
-    ],
-    "JHN": [
-        "jan"
-    ],
-    "ACT": [
-        "skutky"
-    ],
-    "ROM": [
-        "římanům",
-        "rimanum"
-    ],
-    "1CO": [
-        "1korintským",
-        "1korintskym"
-    ],
-    "2CO": [
-        "2korintským",
-        "2korintskym"
-    ],
-    "GAL": [
-        "galatským",
-        "galatskym"
-    ],
-    "EPH": [
-        "efeským",
-        "efeskym"
-    ],
-    "PHP": [
-        "filipským",
-        "filipskym"
-    ],
-    "COL": [
-        "koloským",
-        "koloskym"
-    ],
-    "1TH": [
-        "1tesalonickým",
-        "1tesalonickym"
-    ],
-    "2TH": [
-        "2tesalonickým",
-        "2tesalonickym"
-    ],
-    "1TI": [
-        "2timoteovi"
-    ],
-    "2TI": [
-        "2timoteovi"
-    ],
-    "TIT": [
-        "titovi"
-    ],
-    "PHM": [
-        "filemonovi"
-    ],
-    "HEB": [
-        "židům",
-        "zidum"
-    ],
-    "JAS": [
-        "jakub"
-    ],
-    "1PE": [
-        "1petr"
-    ],
-    "2PE": [
-        "2petr"
-    ],
-    "1JN": [
-        "1jan"
-    ],
-    "2JN": [
-        "2jan"
-    ],
-    "3JN": [
-        "3jan"
-    ],
-    "JUD": [
-        "juda"
-    ],
-    "REV": [
-        "zjevení",
-        "zjeveni"
-    ]
+  "GEN": ["genesis"],
+  "EXO": ["exodus"],
+  "LEV": ["leviticus"],
+  "NUM": ["numeri"],
+  "DEU": ["deuteronomium", "deut"],
+  "JOS": ["jozue"],
+  "JDG": ["soudců", "soudcu"],
+  "RUT": ["rút", "rut"],
+  "1SA": ["1samuelova"],
+  "2SA": ["2samuelova"],
+  "1KI": ["1královská", "1kralovska"],
+  "2KI": ["2královská", "2kralovska"],
+  "1CH": ["1letopisů", "1letopisu"],
+  "2CH": ["2letopisů", "2letopisu"],
+  "EZR": ["ezdráš", "ezdras"],
+  "NEH": ["nehemiáš", "nehemias"],
+  "EST": ["ester"],
+  "JOB": ["job"],
+  "PSA": ["žalmy", "zalmy"],
+  "PRO": ["přísloví", "prislovi"],
+  "ECC": ["kazatel"],
+  "SNG": ["píseňpísní", "pisenpisni"],
+  "ISA": ["izaiáš", "izaias"],
+  "JER": ["jeremiáš", "jeremias"],
+  "LAM": ["pláč", "plac"],
+  "EZK": ["ezechiel"],
+  "DAN": ["daniel"],
+  "HOS": ["ozeáš", "ozeas"],
+  "JOL": ["joel"],
+  "AMO": ["amos"],
+  "OBA": ["abdiáš", "abdias"],
+  "JON": ["jonáš", "jonas"],
+  "MIC": ["micheáš", "micheas"],
+  "NAM": ["nahum"],
+  "HAB": ["abakuk"],
+  "ZEP": ["sofoniáš", "sofonias"],
+  "HAG": ["ageus"],
+  "ZEC": ["zachariáš", "zacharias"],
+  "MAL": ["malachiáš", "malachias"],
+  "MAT": ["matouš", "matous"],
+  "MRK": ["marek"],
+  "LUK": ["lukáš", "lukas"],
+  "JHN": ["jan"],
+  "ACT": ["skutky"],
+  "ROM": ["římanům", "rimanum"],
+  "1CO": ["1korintským", "1korintskym"],
+  "2CO": ["2korintským", "2korintskym"],
+  "GAL": ["galatským", "galatskym"],
+  "EPH": ["efeským", "efeskym"],
+  "PHP": ["filipským", "filipskym"],
+  "COL": ["koloským", "koloskym"],
+  "1TH": ["1tesalonickým", "1tesalonickym"],
+  "2TH": ["2tesalonickým", "2tesalonickym"],
+  "1TI": ["2timoteovi"],
+  "2TI": ["2timoteovi"],
+  "TIT": ["titovi"],
+  "PHM": ["filemonovi"],
+  "HEB": ["židům", "zidum"],
+  "JAS": ["jakub"],
+  "1PE": ["1petr"],
+  "2PE": ["2petr"],
+  "1JN": ["1jan"],
+  "2JN": ["2jan"],
+  "3JN": ["3jan"],
+  "JUD": ["juda"],
+  "REV": ["zjevení", "zjeveni"]
 }

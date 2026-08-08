@@ -1,305 +1,68 @@
 {
-    "GEN": [
-        "1mose",
-        "1mos",
-		"1mo",
-        "genesis",
-        "gen"
-    ],
-    "EXO": [
-        "2mose",
-        "2mos",
-		"2mo",
-        "exodus",
-        "ex"
-    ],
-    "LEV": [
-        "3mose",
-        "3mos",
-		"3mo",
-        "levitikus",
-        "lev"
-    ],
-    "NUM": [
-        "4mose",
-        "4mos",
-		"4mo",
-        "numeri",
-        "num"
-    ],
-    "DEU": [
-        "5mose",
-        "5mos",
-		"5mo",
-        "deuteronomium",
-        "dtn"
-    ],
-    "JOS": [
-        "josua",
-        "jos"
-    ],
-    "JDG": [
-        "richter",
-        "ri"
-    ],
-    "RUT": [
-        "rut",
-        "rt"
-    ],
-    "1SA": [
-        "1samuel",
-        "1sam"
-    ],
-    "2SA": [
-        "2samuel",
-        "2sam"
-    ],
-    "1KI": [
-        "1könige",
-        "1kön",
-		"1kö"
-    ],
-    "2KI": [
-        "2könige",
-        "2kön",
-		"2kö"
-    ],
-    "1CH": [
-        "1chronik",
-        "1chr"
-    ],
-    "2CH": [
-        "2chronik",
-        "2chr"
-    ],
-    "EZR": [
-        "esra",
-        "esr"
-    ],
-    "NEH": [
-        "nehemia",
-        "neh"
-    ],
-    "EST": [
-        "ester",
-        "est"
-    ],
-    "JOB": [
-        "job",
-        "hiob",
-        "ijob",
-        "hi"
-    ],
-    "PSA": [
-        "psalmen",
-        "psalter",
-        "ps"
-    ],
-    "PRO": [
-        "sprichwörter",
-        "sprüche",
-        "sprüchesalomos",
-        "spr"
-    ],
-    "ECC": [
-        "kohelet",
-        "prediger",
-        "ecclesiastes",
-        "predigersalomo",
-        "koh",
-        "pred"
-    ],
-    "SNG": [
-        "hoheslied",
-        "hld",
-		"hl"
-    ],
-    "ISA": [
-        "jesaja",
-        "jes",
-        "is"
-    ],
-    "JER": [
-        "jeremia",
-        "jer"
-    ],
-    "LAM": [
-        "klageliederjeremias",
-        "klagelieder",
-		"klgl",
-        "kla"
-    ],
-    "EZK": [
-        "ezechiel",
-        "ez",
-        "hes"
-    ],
-    "DAN": [
-        "daniel",
-        "dan"
-    ],
-    "HOS": [
-        "hosea",
-        "hos"
-    ],
-    "JOL": [
-        "joel"
-    ],
-    "AMO": [
-        "amos",
-        "am"
-    ],
-    "OBA": [
-        "obadja",
-        "obd",
-		"ob"
-    ],
-    "JON": [
-        "jona",
-		"jon"
-    ],
-    "MIC": [
-        "micha",
-        "mi"
-    ],
-    "NAM": [
-        "nahum",
-        "nah"
-    ],
-    "HAB": [
-        "habakuk",
-        "hab"
-    ],
-    "ZEP": [
-        "zefanja",
-        "zeph",
-		"zef"
-    ],
-    "HAG": [
-        "haggai",
-        "hag"
-    ],
-    "ZEC": [
-        "sacharja",
-        "sach"
-    ],
-    "MAL": [
-        "maleachi",
-        "mal"
-    ],
-    "MAT": [
-        "matthäus",
-        "mt"
-    ],
-    "MRK": [
-        "markus",
-        "mk"
-    ],
-    "LUK": [
-        "lukas",
-        "lk"
-    ],
-    "JHN": [
-        "johannes",
-        "joh"
-    ],
-    "ACT": [
-        "apostelgeschichte",
-        "act",
-        "apg"
-    ],
-    "ROM": [
-        "römer",
-        "röm"
-    ],
-    "1CO": [
-        "1korinther",
-        "1kor"
-    ],
-    "2CO": [
-        "2korinther",
-        "2kor"
-    ],
-    "GAL": [
-        "galater",
-        "gal"
-    ],
-    "EPH": [
-        "epheser",
-        "eph"
-    ],
-    "PHP": [
-        "philipper",
-        "phil"
-    ],
-    "COL": [
-        "kolosser",
-        "kol"
-    ],
-    "1TH": [
-        "1thessalonicher",
-        "1thess",
-		"1th"
-    ],
-    "2TH": [
-        "2thessalonicher",
-        "2thess",
-		"2th"
-    ],
-    "1TI": [
-        "1timotheus",
-        "1tim"
-    ],
-    "2TI": [
-        "2timotheus",
-        "2tim"
-    ],
-    "TIT": [
-        "titus",
-        "tit"
-    ],
-    "PHM": [
-        "philemon",
-        "phlm"
-    ],
-    "HEB": [
-        "hebräer",
-        "hebr"
-    ],
-    "JAS": [
-        "jakobus",
-        "jak"
-    ],
-    "1PE": [
-        "1petrus",
-        "1petr",
-		"1pt"
-    ],
-    "2PE": [
-        "2petrus",
-        "2petr",
-		"2pt"
-    ],
-    "1JN": [
-        "1johannes",
-        "1joh"
-    ],
-    "2JN": [
-        "2johannes",
-        "2joh"
-    ],
-    "3JN": [
-        "3johannes",
-        "3joh"
-    ],
-    "JUD": [
-        "judas",
-        "jud"
-    ],
-    "REV": [
-        "offenbarung",
-        "apokalypse",
-        "offb",
-        "apk"
-    ]
+  "GEN": ["1mose", "1mos", "1mo", "genesis", "gen"],
+  "EXO": ["2mose", "2mos", "2mo", "exodus", "ex"],
+  "LEV": ["3mose", "3mos", "3mo", "levitikus", "lev"],
+  "NUM": ["4mose", "4mos", "4mo", "numeri", "num"],
+  "DEU": ["5mose", "5mos", "5mo", "deuteronomium", "dtn"],
+  "JOS": ["josua", "jos"],
+  "JDG": ["richter", "ri"],
+  "RUT": ["rut", "rt"],
+  "1SA": ["1samuel", "1sam"],
+  "2SA": ["2samuel", "2sam"],
+  "1KI": ["1könige", "1kön", "1kö"],
+  "2KI": ["2könige", "2kön", "2kö"],
+  "1CH": ["1chronik", "1chr"],
+  "2CH": ["2chronik", "2chr"],
+  "EZR": ["esra", "esr"],
+  "NEH": ["nehemia", "neh"],
+  "EST": ["ester", "est"],
+  "JOB": ["job", "hiob", "ijob", "hi"],
+  "PSA": ["psalmen", "psalter", "ps"],
+  "PRO": ["sprichwörter", "sprüche", "sprüchesalomos", "spr"],
+  "ECC": ["kohelet", "prediger", "ecclesiastes", "predigersalomo", "koh", "pred"],
+  "SNG": ["hoheslied", "hld", "hl"],
+  "ISA": ["jesaja", "jes", "is"],
+  "JER": ["jeremia", "jer"],
+  "LAM": ["klageliederjeremias", "klagelieder", "klgl", "kla"],
+  "EZK": ["ezechiel", "ez", "hes"],
+  "DAN": ["daniel", "dan"],
+  "HOS": ["hosea", "hos"],
+  "JOL": ["joel"],
+  "AMO": ["amos", "am"],
+  "OBA": ["obadja", "obd", "ob"],
+  "JON": ["jona", "jon"],
+  "MIC": ["micha", "mi"],
+  "NAM": ["nahum", "nah"],
+  "HAB": ["habakuk", "hab"],
+  "ZEP": ["zefanja", "zeph", "zef"],
+  "HAG": ["haggai", "hag"],
+  "ZEC": ["sacharja", "sach"],
+  "MAL": ["maleachi", "mal"],
+  "MAT": ["matthäus", "mt"],
+  "MRK": ["markus", "mk"],
+  "LUK": ["lukas", "lk"],
+  "JHN": ["johannes", "joh"],
+  "ACT": ["apostelgeschichte", "act", "apg"],
+  "ROM": ["römer", "röm"],
+  "1CO": ["1korinther", "1kor"],
+  "2CO": ["2korinther", "2kor"],
+  "GAL": ["galater", "gal"],
+  "EPH": ["epheser", "eph"],
+  "PHP": ["philipper", "phil"],
+  "COL": ["kolosser", "kol"],
+  "1TH": ["1thessalonicher", "1thess", "1th"],
+  "2TH": ["2thessalonicher", "2thess", "2th"],
+  "1TI": ["1timotheus", "1tim"],
+  "2TI": ["2timotheus", "2tim"],
+  "TIT": ["titus", "tit"],
+  "PHM": ["philemon", "phlm"],
+  "HEB": ["hebräer", "hebr"],
+  "JAS": ["jakobus", "jak"],
+  "1PE": ["1petrus", "1petr", "1pt"],
+  "2PE": ["2petrus", "2petr", "2pt"],
+  "1JN": ["1johannes", "1joh"],
+  "2JN": ["2johannes", "2joh"],
+  "3JN": ["3johannes", "3joh"],
+  "JUD": ["judas", "jud"],
+  "REV": ["offenbarung", "apokalypse", "offb", "apk"]
 }
