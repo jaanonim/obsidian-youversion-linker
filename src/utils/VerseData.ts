@@ -94,7 +94,7 @@ function joinChunks(html: string): string {
   let match;
   while ((match = htmlFlightDataRegex.exec(html)) !== null) {
     try {
-      payload += JSON.parse(match[1]!);
+      if (match[1]) payload += JSON.parse(match[1]);
     } catch {
       // skip the chunk and keep going
     }
@@ -119,7 +119,7 @@ function readContent(payload: string, content: string): string | null {
     return content;
   }
 
-  return readRow(payload, reference[1]!);
+  return readRow(payload, reference[1] ?? '');
 }
 
 // Rows are written as "<row>:T<length>,<text>", with the length in hex and
@@ -131,7 +131,7 @@ function readRow(payload: string, row: string): string | null {
   }
 
   const text = payload.substring(header.index + header[0].length);
-  const length = parseInt(header[1]!, 16);
+  const length = parseInt(header[1] ?? '', 16);
   const bytes = new TextEncoder().encode(text);
   if (bytes.length < length) {
     return null;

@@ -7,3 +7,4 @@ versions.json
 data.json
 package-lock.json
 styles.css
+test/fixtures
