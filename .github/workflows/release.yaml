@@ -1,7 +1,6 @@
 name: Obsidian Plugin Release
-# credits: https://github.com/scambier/obsidian-omnisearch/blob/master/.github/workflows/release.yml
 
-on: 
+on:
     push:
         tags:
             - v*
@@ -12,37 +11,30 @@ jobs:
         runs-on: ubuntu-latest
         permissions: write-all
 
-        strategy:
-            matrix:
-                node-version: [18.x]
-
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v6
               with:
                   submodules: recursive
+
+            - name: Use Node.js
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 24.x
 
             - name: Get version from package.json
               id: get_version
               run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-            - uses: pnpm/action-setup@v4.0.0
-              with:
-                  version: 8.15.9
-                  run_install: true
-
-            - name: Use Node.js
-              uses: actions/setup-node@v1
-              with:
-                  node-version: "18.x"
+            - run: npm ci
 
             - name: Build
               id: build
               run: |
-                  pnpm install
-                  pnpm run build
+                  npm run build
                   ls
                   echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+
             - name: Create Release
               id: create_release
               uses: actions/create-release@v1
