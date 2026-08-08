@@ -1,4 +1,4 @@
-import { Editor, MarkdownView } from "obsidian";
+import { Editor, MarkdownFileInfo, MarkdownView } from "obsidian";
 import { linkRegex } from "./Regex";
 import { getSuggestionsFromQuery } from "./EditorSuggester";
 import { ObsidianYouversionLinkerSettings } from "./settings/SettingsData";
@@ -7,7 +7,7 @@ import { VerseType } from "./verses/VerseType";
 
 export default function GenerateLinks(
 	editor: Editor,
-	view: MarkdownView,
+	_view: MarkdownView | MarkdownFileInfo,
 	settings: ObsidianYouversionLinkerSettings
 ) {
 	const removeDuplicatedSuggestionsHandler = (suggestions: Verse[]) => {
@@ -30,19 +30,21 @@ export default function GenerateLinks(
 			const suggestions = removeDuplicatedSuggestionsHandler(
 				getSuggestionsFromQuery(match[0], VerseType.LINK, settings)
 			);
-			suggestions.forEach(async (s) => {
-				if (match.index === undefined) return;
-				editor.replaceRange(
-					await s.toReplace(),
-					{
-						line: i,
-						ch: match.index,
-					},
-					{
-						line: i,
-						ch: match[0].length + (match.index || 0),
-					}
-				);
+			suggestions.forEach((s) => {
+				void s.toReplace().then((replacement) => {
+					if (match.index === undefined) return;
+					editor.replaceRange(
+						replacement,
+						{
+							line: i,
+							ch: match.index,
+						},
+						{
+							line: i,
+							ch: match[0].length + match.index,
+						}
+					);
+				});
 			});
 		});
 	}

@@ -16,7 +16,7 @@ export default class LinkPreviewManager {
 	static async processLink(link: HTMLAnchorElement) {
 		const content = await this.processUrl(link.href);
 
-		const popup = document.createElement("div");
+		const popup = createDiv({ cls: "preview-youversion" });
 		popup.addClass("preview-youversion");
 
 		if (content.err) {
@@ -39,10 +39,10 @@ export default class LinkPreviewManager {
 		if (!this.cache[url]) {
 			try {
 				const res = await requestUrl(url);
-				const data = parseVerseData(await res.text);
+				const data = parseVerseData(res.text);
 
 				if (!data) {
-					throw 1;
+					throw new Error("Could not parse verse data");
 				}
 
 				this.cache[url] = {
@@ -69,7 +69,9 @@ export default class LinkPreviewManager {
 		);
 		let dict: CacheType = {};
 		notClear.forEach((ele) => {
-			dict[ele] = this.cache[ele];
+			const cached = this.cache[ele];
+			if (cached) dict[ele] = cached;
+			
 		});
 		this.cache = dict;
 	}
