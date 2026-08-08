@@ -1,0 +1,9 @@
+node_modules
+dist
+main.js
+*.config.mjs
+*.config.cjs
+versions.json
+data.json
+package-lock.json
+styles.css
