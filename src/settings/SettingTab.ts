@@ -84,7 +84,7 @@ export default class SettingTab extends PluginSettingTab {
     new Setting(containerEl)
       .setName('Callout name')
       .setDesc(
-        "When quoting verse, the name of the callout block. Can be set to any build in callout names (eg: 'Quote', 'info'), by default is set to custom callout 'Bible'.",
+        "When quoting verse, the name of the callout block. Can be set to any build in callout names (eg: 'Quote', 'info'), by default is set to custom callout 'bible'.",
       )
       .addText((text) => {
         text.setValue(this.plugin.settings.calloutName);
@@ -95,7 +95,7 @@ export default class SettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
-      .setName('Quote: Show Verse Translation')
+      .setName('Quote: Show verse translation')
       .setDesc('Show or hide the verse translation/version in the verse reference')
       .addToggle((toggle) => {
         toggle.setValue(this.plugin.settings.quoteSettings.showTranslation);
@@ -106,9 +106,9 @@ export default class SettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
-      .setName('Quote: Show Bible Icon Prefix "[!Bible]"')
+      .setName('Quote: Show bible icon prefix "[!bible]"')
       .setDesc(
-        'When this is true, it will render a Bible icon in Obsidian for quotes, disable this if you want to hide it or use standard Markdown. (This will disable the Collapsible option below)',
+        'When this is true, it will render a bible icon in Obsidian for quotes, disable this if you want to hide it or use standard Markdown. (This will disable the collapsible option below)',
       )
       .addToggle((toggle) => {
         toggle.setValue(this.plugin.settings.quoteSettings.showBibleIcon);
@@ -125,9 +125,9 @@ export default class SettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
-      .setName('Quote: Make Verses Collapsible')
+      .setName('Quote: Make verses collapsible')
       .setDesc(
-        "Make the rendered verses collapsible, so that you can hide them when you don't need them (This option will be disabled if Bible Icon Prefix option above is disabled)",
+        "Make the rendered verses collapsible, so that you can hide them when you don't need them (this option will be disabled if bible icon prefix option above is disabled)",
       )
       .addToggle((toggle) => {
         if (!this.plugin.settings.quoteSettings.showBibleIcon) {
@@ -142,9 +142,9 @@ export default class SettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
-      .setName('Quote: Default Collapsed')
+      .setName('Quote: Default collapsed')
       .setDesc(
-        'When verses are collapsible, set the default state to open or closed (This option will be disabled if Make Verses Collapsible option above is disabled)',
+        'When verses are collapsible, set the default state to open or closed (this option will be disabled if make verses collapsible option above is disabled)',
       )
       .addToggle((toggle) => {
         if (!this.plugin.settings.quoteSettings.collapsibleVerses) {
