@@ -1,5 +1,5 @@
 import am from '../../data/books/am.json';
-import bg from '../../data/books/bg.json'
+import bg from '../../data/books/bg.json';
 import cz from '../../data/books/cz.json';
 import da from '../../data/books/da.json';
 import en from '../../data/books/en.json';
