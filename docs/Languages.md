@@ -4,6 +4,7 @@ Thanks to the community, we have support for the following languages:
 
 - Amharic - [Rock Lake](https://github.com/Rock-Lake)
 - Brazilian Portuguese - [Brunofow](https://github.com/brunofow)
+- Bulgarian [Sebastian Kotarak](https://github.com/SebastianKotarak)
 - Chinese - [John Huang](https://github.com/junwhuan)
 - Czech - [Filip Opálka](https://github.com/filip-opalka)
 - Danish - [Nicolai Skødt Holmgaard](https://github.com/Nicolai9852)
